@@ -1,0 +1,6 @@
+Name English Math Science History Average
+John 59 22 37 70
+Ben 50 88 56 85
+Andy 60 94 96 70
+Chris 84 93 75 42
+Nick 95 34 20 37
