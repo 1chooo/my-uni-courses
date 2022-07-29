@@ -4,7 +4,7 @@ import java.net.URL;
 public class A12_1 {
   public static void main(String[] Args) throws IOException {
     String URLString = "https://www.csie.ncu.edu.tw";
-    String fileRoot = "./A12_1_109601003.txt";
+    String fileRoot = "./A12_1_stu_id.txt";
 
     GetWebsiteHTML getWebsiteHTML = new GetWebsiteHTML(URLString, fileRoot);
     getWebsiteHTML.WriteToFile();

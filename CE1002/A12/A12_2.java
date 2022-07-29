@@ -12,7 +12,7 @@ public class A12_2 {
     ArrayList<String> contentArray = new ArrayList<>();
 
     try {
-      Document document = Jsoup.parse(new File("./A12_1_109601003.txt"), "UTF-8");
+      Document document = Jsoup.parse(new File("./A12_1_stu_id.txt"), "UTF-8");
       int length = document.select("div.item-title").size();
       for (int i = 0; i < length; i++) {
         String date = document.select("div.item-time").get(i).text();
