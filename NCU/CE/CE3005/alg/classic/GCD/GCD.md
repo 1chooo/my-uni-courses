@@ -22,20 +22,24 @@
 2. 餘數為 1（其實就是不為零）
 
 
-<!-- <div style="text-align: center">
+<div style="text-align: center">
 <img src="https://miro.medium.com/max/1400/1*ZtKWx4DZ0FY6SBSctDWtUQ.png"/>
 </div>
 
 <div style="text-align: center">
-<img src="https://cdn-images-1.medium.com/max/1600/1*GLbMrGYdxAAT-3Vee-vXDA.png"/>
-</div> -->
+<img src="https://miro.medium.com/max/1400/1*GLbMrGYdxAAT-3Vee-vXDA.png"/>
+</div>
+
+<div style="text-align: center">
+<img src="https://miro.medium.com/max/875/1*Gd0_6zUNEZTYzI01peXPIA.png"/>
+</div>
 
 
-<center class="half">
+<!-- <center class="half">
     <img src="https://miro.medium.com/max/1400/1*ZtKWx4DZ0FY6SBSctDWtUQ.png" width="200"/>
 	<img src="https://miro.medium.com/max/1400/1*GLbMrGYdxAAT-3Vee-vXDA.png" width="200"/>
 	<img src="https://miro.medium.com/max/875/1*Gd0_6zUNEZTYzI01peXPIA.png" width="200"/>
-</center>
+</center> -->
 
 透過上方圖示我們便可看出輾轉的真正特性，透過互換且不斷地進行運算，已達到我們期望的結果，也可以從上圖中透過切割長方形的模式，在長方形中找出能切割的最大面積正方形，以此將整個長方形變成有正方形所組成的型態，這又可以回歸到上述所歸納的兩個解：
 
@@ -66,6 +70,8 @@ return n
 
 ### 以下我們使用 cpp 實作
 
+<br>
+
 ``` cpp
 int EuclidGCD(int m, int n) {
 	int r = m % n;
@@ -80,9 +86,11 @@ int EuclidGCD(int m, int n) {
 }
 ```
 
+<br>
+
 那上面我們討論到歐幾里德演算法的範疇實屬理論，那實際用途到底可以實現什麼情形呢？在分析這道問號題之前，我們可以再回想一下此演算法，最核心的就是要找出最大公因數，並且在由大化小的過程中，可以達成更有效率地轉換，畢竟是透過一系列輾轉的過程，所以其實輾轉相除法的應用層面非常廣，可以在密碼學、數學、計算機科學等⋯⋯領域做使用，甚至在音樂方面都能有實際上的應用，若想知道更多，網路上其實還有更多有趣的範例等著你們去挖掘呢！（維基百科下方的參考連結有超多有趣的例子！）
 
-
+<br>
 
 ### Reference
 1. https://zhuanlan.zhihu.com/p/56528787
