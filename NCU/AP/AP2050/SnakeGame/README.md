@@ -13,9 +13,8 @@ my Conda --version: conda 4.12.0
 * ### First steps: 
 
     Build a virtual enviroment which called pygameand install python 3.6.13 version. Then activate it...
-<br>
 
-    ```vim
+    ``` vim
     $ conda create --name pygame python=3.6.13
     $ conda activate pygame
     ```
