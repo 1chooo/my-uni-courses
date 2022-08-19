@@ -54,13 +54,13 @@ from linebot.exceptions import (
 '''
 
 # 生成實體物件
-line_bot_api = LineBotApi("1JzmI54EA4tmq1F3JabNlP06PN8eayE2vKLryh6MDZBUsnTp/EgZDdTTZ4R6vTOC0N0bHd6jIatZGunXFPA/w+rZBjkdyHMkHx/veUb+KID4vsOkxlER8x7ZDtRTmfzkn5o+TRuub9/12j5lpfQi8wdB04t89/1O/w1cDnyilFU=")
-handler = WebhookHandler("a00a452f2b4025a7d0c4e12f2181e076")
+line_bot_api = LineBotApi("your_line_bot_api")
+handler = WebhookHandler("your_handler")
 
 # AWS要知道大家是誰，需要類似身份帳號密碼的亂數
-client_aws_access_key_id = "ASIAUKFXBBIKYB2RHDWK"
-client_aws_secret_access_key = "SFLJennzpG/JMhcvfYk0cXeB1As3QIBeAdS8l1av"
-client_aws_session_token="FwoGZXIvYXdzEP3//////////wEaDH5rE2R5FfViE4vd1yK6AdRhzLidOP5rTMvPs9zCBaztWNQHMLZgYPhrna1mcn6latfeRvN8yUcBQ3VEppi5GbQLHNze9GEWaH8DUCHRq6RAoswtV0ryup/LOMYV0ZoVhS5TQNgN+GCs6cgLQKbtI5ZiWX4OS6oF7rLPiBPLsXqgDb28uW/FZDMMdGeK8dAsfghu/4fClEZFojTMmNGqo61+/eTTCrEN/jxpUcsSTVoepLHPO//1ShIfGf0ZBguPzVKD5qhEWwc+vSiRpZ+TBjItqNXWvmoWEeoyGA2RJ9FTbyYU/3ctXF/CqsEB+z05eXNj+ZI8jy/kFIAOPtrQ"
+client_aws_access_key_id = "your_aws_access_key_id"
+client_aws_secret_access_key = "your_aws_secret_access_key"
+client_aws_session_token="your_aws_session_token"
 
 # 模型在AWS的位置
 model_arn="你的AWS圖像辨識模型位置"

@@ -54,19 +54,19 @@ from linebot.exceptions import (
 '''
 
 # 生成實體物件
-line_bot_api = LineBotApi("gHDyhwOVseOPmbjmVn7SwsL0Y3rHiv8w+pNcXXe029C3y63zSJKF4UhmY4/pWxBD+5m4W7Jy2AqhQO5JUtjQoyUVbXm/IFArGBQj9hx8Bmtx4lMlRBMIDyvHKqZucRiW9DY5wydR231HQfnmzzLL4AdB04t89/1O/w1cDnyilFU=")
-handler = WebhookHandler("999ca8029c56dc5d50ec84e9df4fbc39")
+line_bot_api = LineBotApi("your_line_bot_api")
+handler = WebhookHandler("your_handler")
 
 # AWS要知道大家是誰，需要類似身份帳號密碼的亂數
-client_aws_access_key_id = "ASIAUKFXBBIK4NDRYEGD"
-client_aws_secret_access_key = "tDozbEJJNbAPlFxrjGCpmwNq0s95I+ImQaFTuIRh"
-client_aws_session_token="FwoGZXIvYXdzEP7//////////wEaDKUQ6oAqC+PQU3b0wCK6AWu7N3KDnjyiVjXAk9VID2ZN3z5nWN4e8HQ4wxTWdKrqE4YZ2cQyENVLMCKvjizk77bgSH5YFdnrF7Sqm6iQfM6/AQSnOgOTfAqcwqHbkKH/K66cCEqZg0eTipz9iAVae3VtWZvMY5fQF0fxNv/VyjCLEVASOpfN25tFC1BkM/qtfJhuVmNfDjSqH8fROXP/e1iwxmlUpyqJgWqqVFlQXYN6ItknwlzpTZX0kggWanlfvPI3kBFoD+1j7SiyociUBjItHe2X+EN+sYNp93RhIQ3ySO4n/uodtqypXylI22bSV373WzGXeG3dHdYlWuzZ"
+client_aws_access_key_id = "your_aws_access_key_id"
+client_aws_secret_access_key = "your_aws_secret_access_key"
+client_aws_session_token="your_aws_session_token"
 
 # 模型在AWS的位置
-model_arn="arn:aws:rekognition:us-east-1:296736590357:project/ncu-ai-bearbear/version/ncu-ai-bearbear.2022-05-19T19.16.16/1652958976442"
+model_arn="你的AWS圖像辨識模型位置"
 
 # 存放消費者上傳照片的桶子名
-client_bucket_name="ncu-ai-bearbear-lcho"
+client_bucket_name="你的資料儲存桶名"
 client_region_name="us-east-1"
 
 # 載入劇本Excel
