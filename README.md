@@ -22,6 +22,7 @@ The code come from the courses in my university or the internet that learned by 
 * ### [CE1002 - Introduction to Computer Science Ⅱ](https://github.com/1chooo/Programming-Evolution/tree/main/NCU/CE/CE1002)
 * ### [CE1003 - Introduction to Computer Science I Lab](https://github.com/1chooo/Programming-Evolution/tree/main/NCU/CE/CE1003)
 * ### [CE1004 - Introduction to Computer Science Ⅱ Lab](https://github.com/1chooo/Programming-Evolution/tree/main/NCU/CE/CE1004)
+* ### [CE2004 - Principles of Programming Languages](https://github.com/1chooo/Programming-Evolution/tree/main/NCU/CE/CE2004)
 * ### [CE2008 - Digital Design](https://github.com/1chooo/Programming-Evolution/tree/main/NCU/CE/CE2008)
 * ### [CE2010 - Experiment of Digital Design](https://github.com/1chooo/Programming-Evolution/tree/main/NCU/CE/CE2010)
 * ### [CE3005 - Algorithmics](https://github.com/1chooo/Programming-Evolution/tree/main/NCU/CE/CE3005)
