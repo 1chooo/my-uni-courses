@@ -1,4 +1,4 @@
-package Coding5;
+package Coding05;
 
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package Coding5;
+package Coding05;
 
 public class Coding5B {
     

@@ -1,4 +1,4 @@
-package Coding4;
+package Coding04;
 
 import java.util.Scanner;
 
