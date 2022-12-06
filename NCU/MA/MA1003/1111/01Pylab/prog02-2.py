@@ -11,4 +11,5 @@ xs = pylab.linspace(a, b, n)
 pylab.plot(xs, f(xs))
 pylab.grid()
 pylab.savefig("./img/sineFunction.png")
+
 pylab.show()
