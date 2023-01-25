@@ -1,0 +1,42 @@
+# do EX05_03.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:46:32 on Mar 30,2022
+# vlog -work work EX05_03.vo 
+# -- Compiling module EX05_03
+# -- Compiling module hard_block
+# 
+# Top level modules:
+# 	EX05_03
+# End time: 16:46:32 on Mar 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:46:32 on Mar 30,2022
+# vlog -work work Waveform.vwf.vt 
+# -- Compiling module EX05_03_vlg_vec_tst
+# 
+# Top level modules:
+# 	EX05_03_vlg_vec_tst
+# End time: 16:46:32 on Mar 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.EX05_03_vlg_vec_tst 
+# Start time: 16:46:33 on Mar 30,2022
+# Loading work.EX05_03_vlg_vec_tst
+# Loading work.EX05_03
+# Loading work.hard_block
+# Loading fiftyfivenm_ver.fiftyfivenm_lcell_comb
+# Loading fiftyfivenm_ver.fiftyfivenm_io_obuf
+# Loading fiftyfivenm_ver.fiftyfivenm_io_ibuf
+# Loading fiftyfivenm_ver.fiftyfivenm_unvm
+# Loading fiftyfivenm_ver.fiftyfivenm_adcblock
+# ** Warning: (vsim-3017) EX05_03.vo(260): [TFMPC] - Too few port connections. Expected 8, found 7.
+#    Time: 0 ps  Iteration: 0  Instance: /EX05_03_vlg_vec_tst/i1/\~QUARTUS_CREATED_ADC1~  File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/fiftyfivenm_atoms.v
+# ** Warning: (vsim-3722) EX05_03.vo(260): [TFMPC] - Missing connection for port 'clk_dft'.
+# ** Warning: (vsim-3017) EX05_03.vo(283): [TFMPC] - Too few port connections. Expected 8, found 7.
+#    Time: 0 ps  Iteration: 0  Instance: /EX05_03_vlg_vec_tst/i1/\~QUARTUS_CREATED_ADC2~  File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/fiftyfivenm_atoms.v
+# ** Warning: (vsim-3722) EX05_03.vo(283): [TFMPC] - Missing connection for port 'clk_dft'.
+# after#26
+# ** Note: $finish    : Waveform.vwf.vt(54)
+#    Time: 1 us  Iteration: 0  Instance: /EX05_03_vlg_vec_tst
+# End time: 16:46:33 on Mar 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 4
