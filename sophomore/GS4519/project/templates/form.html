@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+
+    <body>
+        <h1>梅雨還是沒雨？</h1>
+        <form action="/submit" method="post" enctype="multipart/form-data"> 
+            <br><br>
+            <label for="content">我們是一群大氣系的學生，我們想運用大氣的知識結合機器學習的技術來預測降雨的可能性，</label><br><br>
+            <label for="content">即便如今大氣預測降雨的機率已行之有年，不過我們依舊願意嘗試新的方法，就如同其他機器學習的預測，</label><br><br>
+            <label for="content">像是我們嘗試過的鐵達尼號生存預測、房價預測、借貸評估一般，在已知的數據中，得出更接近真實情況的結果預測，</label><br><br>
+            <label for="content">以下有些天氣數值可以提供給大家使用，</label><br><br>
+            <label for="content">歡迎輸入各種數據！！！</label><br><br>
+            <br><br>
+            <label for="inputPressure">輸入氣壓值:(範圍:900.0~1050)</label>
+            <br><br>
+            <span for="currentPressure">輸入當前氣壓:</span>
+            <input type="text" id="currentPressure" name="currentPressure" value="{{currentPressure}}">
+            <span for="todayMaximumPressure">輸入本日最高氣壓:</span>
+            <input type="text" id="todayMaximumPressure" name="todayMaximumPressure" value="{{todayMaximumPressure}}">
+            <span for="todayMinimumPressure">輸入本日最低氣壓:</span>
+            <input type="text" id="todayMinimumPressure" name="todayMinimumPressure" value="{{todayMinimumPressure}}"><br><br>
+            <br><br>
+            <label for="inputTemperature">輸入溫度值:(範圍:0~40)</label>
+            <br><br>
+            <span for="currentTemperature">輸入當前氣溫值:</span>
+            <input type="text" id="currentTemperature" name="currentTemperature" value="{{currentTemperature}}">
+            <span for="todayMaximumTemperature">輸入本日最高氣溫值:</span>
+            <input type="text" id="todayMaximumTemperature" name="todayMaximumTemperature" value="{{todayMaximumTemperature}}">
+            <span for="todayMinimumTemperature">輸入本日最低氣溫值:</span>
+            <input type="text" id="todayMinimumTemperature" name="todayMinimumTemperature" value="{{todayMinimumTemperature}}"><br><br>
+            <br><br>
+            <label for="relativeHumidity">輸入相對濕度:(範圍:0~100)</label>
+            <br><br>
+            <span for="currentRelativeHumidity">輸入當前相對濕度:</span>
+            <input type="text" id="currentRelativeHumidity" name="currentRelativeHumidity" value="{{currentRelativeHumidity}}">
+            <span for="todayMinimumRelativeHumidity">輸入本日最低相對濕度:</span>
+            <input type="text" id="todayMinimumRelativeHumidity" name="todayMinimumRelativeHumidity" value="{{todayMinimumRelativeHumidity}}"><br><br>
+            <br><br>
+            <label for="wind">風</label>
+            <br><br>
+            <span for="currentWindSpeed">輸入當前風速:(範圍:0.0~10.0)</span>
+            <input type="text" id="currentWindSpeed" name="currentWindSpeed" value="{{currentWindSpeed}}">
+            <span for="currentWindDirection">輸入當前風向:(範圍:1~360)</span>
+            <input type="text" id="currentWindDirection" name="currentWindDirection" value="{{currentWindDirection}}"><br><br>
+            <br><br>
+            <label for="gustWind">陣風</label>
+            <br><br>
+            <span for="currentGustWindSpeed">輸入當前陣風風速:(範圍:0.0~100.0)</span>
+            <input type="text" id="currentGustWindSpeed" name="currentGustWindSpeed" value="{{currentGustWindSpeed}}">
+            <span for="currentGustWindDirection">輸入當前陣風風向:(範圍:1~360)</span>
+            <input type="text" id="currentGustWindDirection" name="currentGustWindDirection" value="{{currentGustWindDirection}}"><br><br>
+            <br><br>
+            <input type="submit" value="submit">
+            <br><br>
+        </form>
+        <br>
+        <div>
+            <p>評估結果：{{prediction}}</p>
+        </div>
+    </body>
+</html>
