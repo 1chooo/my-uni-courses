@@ -6,12 +6,37 @@ The code come from the courses in my university or the internet that learned by 
 
 Freshman
 ---
-| Course Number | Course Number | Language |
-| :-------------: | :-------------: | :-------: |
-| [AP2049](/freshman/AP2049/) | Computer Programming and Graphics Ⅰ | `Fortran` |
-| [AP2050](/freshman/AP2050/) | Computer Programming and Graphics ⅠI| `Fortran`, `Python` |
-| [MA1003](/freshman/MA1003/) | Calculus | `Python` |
-| [MA1004](/freshman/MA1004/) | Calculus | `Python` |
-| [PH1031](/freshman/PH1031/) | General Physics A | `Python` |
-| [PH1032](/freshman/PH1032/) | General Physics A | `Python` |
-| [BME6706](/freshman/BME5706/) | Applications of MATLAB in Engineering | `Matlab` |
+| Course Number | Course Number | Language | Project |
+| :-------------: | :-------------: | :-------: | :-: |
+| [AP2049](/freshman/AP2049/) | Computer Programming and Graphics Ⅰ | `Fortran` | |
+| [AP2050](/freshman/AP2050/) | Computer Programming and Graphics ⅠI| `Fortran`, `Python` | [Snake Game](freshman/AP2050/SnakeGame), [Plot Taiwan](https://github.com/1chooo/atmo-lab/tree/main/draw_TAIWAN) |
+| [MA1003](/freshman/MA1003/) | Calculus | `Python` | |
+| [MA1004](/freshman/MA1004/) | Calculus | `Python` | |
+| [PH1031](/freshman/PH1031/) | General Physics A | `Python` | [Bubble Experiment](freshman/PH1031/bubble_experiment)|
+| [PH1032](/freshman/PH1032/) | General Physics A | `Python` | [Magnetic Field](freshman/PH1032/magnetic_field.py) |
+| [BME6706](/freshman/BME5706/) | Applications of MATLAB in Engineering | `Matlab` | |
+
+Sophomore
+---
+| Course Number | Course Number | Language | Project |
+| :-------------: | :-------------: | :-------: | :-: |
+| [AP2039](/sophomore/AP2039/) | Atmospheric Instrumentation and Observation Ⅰ | `Python` | |
+| [CE1001](/sophomore/CE1001/) | Introduction to Computer Science Ⅰ | `Python`, `C++` | |
+| [CE1002](/sophomore/CE1002/) | Introduction to Computer Science ⅠI | `C++`, `JAVA` | |
+| [CE1003](/sophomore/CE1003/) | Introduction to Computer Science Lab Ⅰ | `Python`, `C++` | [Uncle Wet's Get Moving!](https://github.com/1chooo/gym-route) |
+| [CE1004](/sophomore/CE1004/) | Introduction to Computer Science Lab ⅠI | `C++`, `JAVA` | [Uncle Wet's Get Moving!](https://github.com/1chooo/gym-route) |
+| [CE2004](/sophomore/CE2004/) | Principles of Programming Languages | `C++` | |
+| [CE2008](/sophomore/CE2008/) | Digital Design | `VHDL`, `C++` | [Microprogram Controller](sophomore/CE2008/HW_109601003_林群賀.pdf)|
+| [CE2010](/sophomore/CE2010/) | Experiment of Digital Design | `VHDL`, `C++` | |
+| [CE3005](/sophomore/CE3005/) | Algorithmics | `JAVA`, `Python`, `C++`, `C` | |
+| [GS3073](/sophomore/GS3073/) | Introduction to Artificial Intelligence | `Python` | [BearBear You](https://github.com/1chooo/bear-bear) |
+| [GS4519](/sophomore/GS4519/) | Introduction to machine learning | `Python` | [梅雨還是沒雨？](https://github.com/1chooo/rain-prediction) |
+| [GS4521](/sophomore/GS4521/) | Artificial Intelligence and Commercial Applications | `Python` | |
+
+Junior
+---
+| Course Number | Course Number | Language | Project |
+| :-------------: | :-------------: | :-------: | :-: |
+| [AP2042](/junior/AP2042/) | Introduction to Environmental Chemistry of The Earth | `Python` | [atmo lab]() |
+| [AP3021](/junior/AP3021/) | Numerical Analysis Ⅰ | `Python`, `Fortran` | [Thermal Calculator](https://github.com/1chooo/thermal-calculator) |
+
