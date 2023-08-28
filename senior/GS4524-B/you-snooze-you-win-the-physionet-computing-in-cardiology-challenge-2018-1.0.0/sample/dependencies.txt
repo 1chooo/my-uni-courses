@@ -1,0 +1,19 @@
+# file: dependencies.txt
+#
+# This file lists additional Debian packages that must be installed
+# prior to running your entry's 'setup.sh' and 'next.sh' scripts.
+# Each package must be on a separate line.
+
+## Likely to be useful for most challenge entries
+
+python3-numpy
+python3-scipy
+python3-h5py
+libopenblas-base
+
+## Additional libraries used by this example
+
+python3-sklearn
+python3-pandas
+python3-matplotlib
+python3-tk
