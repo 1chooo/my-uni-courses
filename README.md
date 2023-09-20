@@ -54,4 +54,5 @@ Senior
 | Course Number | Course Number | Language | Project |
 | :-------------: | :-------------: | :-------: | :-: |
 | [GS4524-B](/junior/GS4524-B/) | Special topic for interdisciplinary artificial intelligence | `Python` |  |
+| [GS4522](/junior/GS4522/) | Enterprise Application of pattern recognition | `Python` |  |
 
