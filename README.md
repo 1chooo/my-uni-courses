@@ -4,8 +4,8 @@ This repo will record all the code that I have ever written.
 
 The code come from the courses in my university or the internet that learned by myself, this will record what I revolute in the coding skill and how my computer science trip develop.
 
-Freshman
----
+## Freshman
+
 | Course Number | Course Number | Language | Project |
 | :-------------: | :-------------: | :-------: | :-: |
 | [AP2049](/freshman/AP2049/) | Computer Programming and Graphics Ⅰ | `Fortran` | |
@@ -16,8 +16,7 @@ Freshman
 | [PH1032](/freshman/PH1032/) | General Physics A | `Python` | [Magnetic Field](freshman/PH1032/magnetic_field.py) |
 | [BME6706](/freshman/BME5706/) | Applications of MATLAB in Engineering | `Matlab` | |
 
-Sophomore
----
+## Sophomore
 | Course Number | Course Number | Language | Project |
 | :-------------: | :-------------: | :-------: | :-: |
 | [AP2039](/sophomore/AP2039/) | Atmospheric Instrumentation and Observation Ⅰ | `Python` | |
@@ -33,8 +32,8 @@ Sophomore
 | [GS4519](/sophomore/GS4519/) | Introduction to machine learning | `Python` | [梅雨還是沒雨？](https://github.com/1chooo/rain-prediction) |
 | [GS4521](/sophomore/GS4521/) | Artificial Intelligence and Commercial Applications | `Python` | |
 
-Junior
----
+## Junior
+
 | Course Number | Course Number | Language | Project |
 | :-------------: | :-------------: | :-------: | :-: |
 | [AP2011](/junior/AP2011/) | Atmospheric Thermodynamics | `Python` | [atmo lab](https://github.com/1chooo/atmo-lab) |
@@ -49,10 +48,17 @@ Junior
 | [CE2012](/junior/CE2012/) | Assembly Language and System Programming | `Assembly` | [Hua Tank](https://github.com/1chooo/Tank) |
 | [GS4514](/junior/GS4514/) | Data visualization | `Javascripts` | [Video Game Analysis](https://github.com/1chooo/video-game-visualization) |
 
-Senior
----
+## Senior
+
 | Course Number | Course Number | Language | Project |
 | :-------------: | :-------------: | :-------: | :-: |
 | [GS4524-B](/junior/GS4524-B/) | Special topic for interdisciplinary artificial intelligence | `Python` |  |
 | [GS4522](/junior/GS4522/) | Enterprise Application of pattern recognition | `Python` |  |
 
+## License
+
+Released under [MIT](./LICENSE) by [Hugo ChunHo Lin](https://github.com/1chooo).
+
+This software can be modified and reused without restriction.
+The original license must be included with any copies of this software.
+If a significant portion of the source code is used, please provide a link back to this repository.
