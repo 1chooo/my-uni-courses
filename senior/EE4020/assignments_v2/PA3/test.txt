@@ -1,0 +1,11 @@
+1 package main
+2 import "fmt"
+3 import "os"
+4 func main() {
+5  fmt.Printf("Who's there?\n")
+6  text := " "
+7  fmt.Scanf("%s", &text)
+8  fmt.Printf("Hello, %s\n", text)
+9  fmt.Println("Hello,", text)
+10  fmt.Fprintf(os.Stdout, "Hello, %s\n", text)
+11 }13212313213213132

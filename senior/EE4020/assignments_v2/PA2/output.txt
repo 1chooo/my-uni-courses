@@ -1,0 +1,22 @@
+1 package main
+2 import "fmt"
+3 import "os"
+4 func check(e error) {
+5  if e != nil {
+6  panic(e)
+7  }
+8 }
+9 func main() {
+10  f, err := os.Open("hello-world.go")
+11  check(err)
+12  word1, word2 := "", ""
+13  fmt.Fscanln(f, &word1, &word2)
+14  fmt.Printf("%s %s\n", word1, word2)
+15 
+16  for i := 2; i <= 5; i++ {
+17  word1, word2 = "", ""
+18  fmt.Fscanln(f, &word1, &word2)
+19  fmt.Println(word1, word2)
+20  }
+21  f.Close()
+22 }
