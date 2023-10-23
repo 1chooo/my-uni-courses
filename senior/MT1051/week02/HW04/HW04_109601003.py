@@ -8,24 +8,24 @@ Student Number: 109601003
 
 from typing import Any
 
-init_people = 342032486
-year_day = 365
-year = 5
-hour = 24
-minute = 60
-second = 60
+# init_people = 342032486
+# year_day = 365
+# year = 5
+# hour = 24
+# minute = 60
+# second = 60
 
-born_rate = 7
-die_rate = 13
-immigrating_rate = 45
+# born_rate = 7
+# die_rate = 13
+# immigrating_rate = 45
 
-total_time = 365 * 5 * 24 * 60 * 60
+# total_time = 365 * 5 * 24 * 60 * 60
 
-born_people = total_time / born_rate
-die_people = total_time / die_rate
-immigrating_people = total_time / immigrating_rate
+# born_people = total_time / born_rate
+# die_people = total_time / die_rate
+# immigrating_people = total_time / immigrating_rate
 
-print(int(init_people + born_people + immigrating_people - die_people))
+# print(int(init_people + born_people + immigrating_people - die_people))
 
 class Census:
     init_people = 342032486
