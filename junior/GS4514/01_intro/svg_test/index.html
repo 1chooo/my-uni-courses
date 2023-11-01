@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="">
+    <title>svgTest</title>
+</head>
+
+<body>
+
+    <!-- The first try -->
+    <!-- <svg width="500" height="300">
+        <line x1="100" y1="100" x2="273.5" y2="100" stroke="black"></line>
+        <circle cx="273.5" cy="100" r="3"></circle>
+        <text x="100" y="120">台灣男生平均身高 173.5 cm</text>
+        <line x1="100" y1="200" x2="261.5" y2="200" stroke="black"></line>
+        <circle cx="261.5" cy="200" r="3"></circle>
+        <text x="100" y="220">台灣女生平均身高 161.5 cm</text>
+    </svg> -->
+
+    <!-- start with the (0, 0) -->
+
+    <!-- <svg width="500" height="300">
+        <line x1="0" y1="0" x2="173.5" y2="0" stroke="black"></line>
+        <circle cx="173.5" cy="0" r="3"></circle>
+        <text x="0" y="20">台灣男生平均身高 173.5 cm</text>
+        <line x1="0" y1="100" x2="161.5" y2="100" stroke="black"></line>
+        <circle cx="161.5" cy="100" r="3"></circle>
+        <text x="0" y="120">台灣女生平均身高 161.5 cm</text>
+    </svg> -->
+
+    <!-- g group -->
+
+    <!-- <svg width="500" height="300">
+        <g transform="translate(100,100)">
+            <line x1="0" y1="0" x2="173.5" y2="0" stroke="black"></line>
+            <circle cx="173.5" cy="0" r="3"></circle>
+            <text x="0" y="20">台灣男生平均身高 173.5 cm</text>
+            <line x1="0" y1="100" x2="161.5" y2="100" stroke="black"></line>
+            <circle cx="161.5" cy="100" r="3"></circle>
+            <text x="0" y="120">台灣女生平均身高 161.5 cm</text>
+        </g>
+    </svg> -->
+
+    <!-- Separate with two group to clarify two type of data. -->
+    <svg width="500" height="300">
+        <g transform="translate(100, 100)">
+            <line x1="0" y1="0" x2="173.5" y2="0" stroke="black"></line>
+            <circle cx="173.5" cy="0" r="3"></circle>
+            <text x="0" y="20">台灣男生平均身高 173.5 cm</text>
+        </g>
+        <g transform="translate(100, 200)">
+            <line x1="0" y1="0" x2="161.5" y2="0" stroke="black"></line>
+            <circle cx="161.5" cy="0" r="3"></circle>
+            <text x="0" y="20">台灣女生平均身高 161.5 cm</text>
+        </g>
+    </svg>
+
+</body>
+
+</html>

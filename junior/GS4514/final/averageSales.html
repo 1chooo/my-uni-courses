@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<!--
+	Strongly Typed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+	<title>Average Sales</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="shortcut icon" href="32officeicons-20_89419.ico" type="image/x-icon">
+	<link rel="stylesheet" href="average/style.css" />
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+
+<body class="no-sidebar is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<section id="header">
+			<div class="container">
+
+				<!-- Logo -->
+				<h1 id="logo">Average Sales</h1>
+				<p>關於 平均銷售額、遊戲種類、遊戲數量的故事</p>
+
+			</div>
+		</section>
+
+		<!-- Main -->
+		<section id="main">
+			<div class="container">
+				<div id="content">
+
+					<!-- Post -->
+					<article class="box post">
+						<header>
+							<h2>
+								動機
+							</h2>
+						</header>
+						<p style="text-align: center;">
+							從同學期中的報告發現如果以「總銷售額」的角度來出發會發現"任天堂"的強勢。<br><br>
+							因此我們決定以「平均銷售額」的角度出發，再一次探討發行商排行的問題。<br><br>
+							我們對於「不同種類的遊戲在不同地區是否有優勢」以及「不同種類的遊戲在不同時代的遊戲數量」的關係很好奇，因此決定從這兩個角度出發。
+						</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="main">
+			<div class="container">
+				<div id="content">
+					<!-- Post -->
+					<article class="box post">
+						<hr color="#FFF" style="align-items: center; margin-bottom: 0.2%;">
+						<hr color="#FFF" style="align-items: center; margin-bottom: 4em;">
+						<header>
+							<h2>
+								Bar Chart
+							</h2>
+						</header>
+
+						<div class="selector">
+							<div class="select1 select"></div>
+						</div>
+
+						<div class="happy-chart-container para" id="first-chart"></div>
+
+						<p style="font-weight: bold; margin-top: 5%;">圖表分析：</p>
+						<ol>
+							<li>以前玩家偏好平台和迷宮類型的遊戲</li>
+							<li>現在玩家偏好動作冒險的RPG遊戲以及射擊遊戲</li>
+						</ol>
+
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="main">
+			<div class="container">
+				<div id="content">
+					<!-- Post -->
+					<article class="box post">
+						<hr color="#FFF" style="align-items: center; margin-bottom: 0.2%;">
+						<hr color="#FFF" style="align-items: center; margin-bottom: 4em;">
+						<header>
+							<h2>
+								Line Chart
+							</h2>
+						</header>
+
+						<div class="selector">
+							<div class="select2 select"></div>
+						</div>
+
+						<div class="happy-linechart-container para" id="line-chart"></div>
+						<p style="font-weight: bold; margin-top: 5%;">圖表分析：</p>
+						<ol>
+							<li>遊戲市場曾經發生過一些危機，導致部分遊戲的發行數量都有下降的趨勢</li>
+							<li>PC 的普及造成遊戲種數的增加</li>
+							<li>2015 年導致的遊戲下滑推測是手遊興起造成的</li>
+						</ol>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="main">
+			<div class="container">
+				<div id="content">
+					<!-- Post -->
+					<article class="box post">
+						<hr color="#FFF" style="align-items: center; margin-bottom: 0.2%;">
+						<hr color="#FFF" style="align-items: center; margin-bottom: 4em;">
+						<header>
+							<h2>
+								Pie Chart
+							</h2>
+						</header>
+
+						<div class="selector">
+							<div class="PutSelectHere select"></div>
+						</div>
+
+						<div class="happy-piechart-container para" id="pie-chart"></div>
+						<p style="font-weight: bold; margin-top: 5%;">圖表分析：</p>
+
+						<ol>
+							<li>圖表中可以得知美洲的遊戲銷售額在大部分遊戲是最好的</li>
+							<li>銷售額高的地區具有的特色有：</li>
+							<ul>
+								<li>成熟的遊戲社群</li>
+								<li>人數有一定規模且消費能力足夠</li>
+								<li>宣傳力度足夠 </li>
+							</ul>
+							<li>日本遊戲在角色扮演部分可以跟美洲抗衡推測和消費者購買習慣有關</li>
+						</ol>
+
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="main">
+			<div class="container" style="padding-bottom: 10em;">
+				<div id="content">
+					<!-- Post -->
+					<article class="box post">
+						<hr color="#FFF" style="align-items: center; margin-bottom: 0.2%;">
+						<hr color="#FFF" style="align-items: center; margin-bottom: 4em;">
+						<header>
+							<h2>
+								Bar Chart
+							</h2>
+						</header>
+
+						<div class="selector">
+							<div class="select">
+								<select id="region-select"></select>
+							</div>
+						</div>
+						<div id="bar-chart-container"></div>
+						<p style="font-weight: bold; margin-top: 5%;">圖表分析：</p>
+
+						<ol>
+							<li>普遍銷售量：北美NA > 歐洲EU > 日本JP > 其他 </li>
+							<li>同時佔據北美、歐洲前 20 名平均銷售的發行商有 11 家，代表它們的市場具有一定共通性。</li>
+							<li>日本市場較為獨立，大多都為日商公司且只在JP地區上市，而任天堂是唯一一個佔據所有地區銷量榜的發行商。</li>
+							<li>榜上存在許多發行商其實是大公司的子公司，大多來自美國 & 日本，他們是 VIDEO GAMES 銷售的兩大強國。</li>
+						</ol>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer>
+			<p>
+				© 2023 '23 Spring Data-Viz G4. All rights reserved.
+				<a href="https://github.com/hapiwangy/final_project_datavisualization">
+					<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub"
+						class="github-icon">GitHub Repo
+				</a>
+			</p>
+		</footer>
+
+		<div class="erictooltip">
+			<div class="eric-tip-header">
+				<h3></h3>
+				<h4></h4>
+			</div>
+		</div>
+
+		<section id="navBar">
+			<div class="container">
+				<nav id="nav">
+					<ul>
+						<li><a class="icon solid fa-home" href="index.html"><span>Introduction</span></a></li>
+						<li><a class="icon solid fa-bar-chart" href="publisherAnalysis.html"><span>Publisher
+									Analysis</span></a></li>
+						<li><a class="icon solid fa-bar-chart" href="averageSales.html"><span>Average Sales</span></a>
+						</li>
+						<li><a class="icon solid fa-bar-chart" href="barChartRace.html"><span>Bar Chart Race</span></a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<!-- 連結到 d3、barChart.js 和 lineChart.js -->
+	<script src="//unpkg.com/d3"></script>
+	<script type="module" src="average/happy_main.js"></script>
+</body>
+
+</html>

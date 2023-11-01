@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bar Chart Race</title>
+    <link rel="stylesheet" type="text/css" href="./inspector.css">
+    <style>
+        /* Add styling for the navigation bar and footer */
+        nav {
+            background-color: #f2f2f2;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        nav button {
+            margin-right: 10px;
+        }
+        footer {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button onclick="changePage('Home')">Home</button>
+        <button onclick="changePage('Ho')">Ho</button>
+        <button onclick="changePage('happy')">Happy</button>
+        <button onclick="changePage('example')">example</button>
+      </nav>
+    <h1>Bar Chart Race (Every year Platform Profit)</h1>
+    <div>
+        This bar chart race is designed to showcase the total revenue for each platform on a yearly basis. Therefore, it displays information for one year at a time, and the monetary unit is US dollars (US$).
+    </div>
+    <div id="bar-chart-race"></div>
+    <footer>
+        This is the footer section.
+    </footer>
+
+    <div id="bar-chart-race">
+        <script type="module">
+            import define from "./index.js";
+            import { Runtime, Library, Inspector } from "./runtime.js";
+            const runtime = new Runtime();
+            const main = runtime.module(define, Inspector.into(document.getElementById('bar-chart-race')));
+        </script>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

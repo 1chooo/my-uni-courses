@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<!--
+	Strongly Typed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+	<title>Publisher Analysis</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="shortcut icon" href="32officeicons-20_89419.ico" type="image/x-icon">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="publisher/style.css" />
+</head>
+
+<body class="no-sidebar is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<section id="header">
+			<div class="container">
+
+				<!-- Logo -->
+				<h1 id="logo"><a href="publisherAnalysis.html">Publisher Analysis</a></h1>
+				<p>Sales Analysis for Different Publishers</p>
+
+			</div>
+		</section>
+
+		<!-- Main -->
+		<section id="main">
+			<div class="container">
+				<div id="content">
+
+					<!-- Post -->
+					<article class="box post">
+						<header>
+							<h2>bar chart</h2>
+						</header>
+						<h4 style="font-size: larger; margin-bottom: 2%;">
+							I. Using bar chart to observe the sales ranking of publishers in different regions.
+						</h4>
+						<!-- bar chart 的容器 -->
+						<div class="bar-chart-container chart"></div>
+						<!-- 切換 bar chart 的按鈕 -->
+						<div class="controls" style="margin-top: 1%;">
+							<button class="button" data-name="Global_Sales">Global</button>
+							<button class="button" data-name="NA_Sales">North America</button>
+							<button class="button" data-name="EU_Sales">Europe</button>
+							<button class="button" data-name="JP_Sales">Japan</button>
+							<button class="button" data-name="Other_Sales">Other Region</button>
+						</div>
+						<p style="font-weight: bold;">圖表分析：</p>
+						<ol>
+							<li>Nintendo 是全球累計銷量最高的遊戲發行商，佔據北美、歐洲、日本的累計銷量冠軍寶座。僅在其他地區的表現輸給全球累計銷量第 2 名的 Electronic Arts。
+							</li>
+							<li>全球累計銷量第 3 名的遊戲發行商 - Activision，在日本的銷量表現極差，沒有進入日本累計銷量前 15 名的榜單中。</li>
+							<li>北美累計銷量前 15 名的發行商均在歐洲累計銷量前 15 名的榜單上，由此可見北美和歐洲市場的相似性極高。而日本的前 15 名的榜單的結果較歐美市場的差距較大。</li>
+						</ol>
+
+					</article>
+
+				</div>
+			</div>
+		</section>
+
+		<section id="main">
+			<div class="container">
+				<div id="content">
+					<article class="box post">
+						<hr color="#FFF" style="align-items: center; margin-bottom: 0.2%;">
+						<hr color="#FFF" style="align-items: center; margin-bottom: 4em;">
+						<header>
+							<h2>stack bar chart</h2>
+						</header>
+						<h4 style="font-size: larger; margin-bottom: 2%;">
+							II. Using stack bar chart to observe the composition of global sales of the Top15 publishers
+							in global.
+						</h4>
+						<!-- stack bar chart 的容器 -->
+						<div class="test-stack-bar-chart-container chart"></div>
+
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="main">
+			<div class="container" style="padding-bottom: 10em;">
+				<div id="content">
+					<article class="box post">
+						<hr color="#FFF" style="align-items: center; margin-bottom: 0.2%;">
+						<hr color="#FFF" style="align-items: center; margin-bottom: 4em;">
+						<header>
+							<h2>line chart</h2>
+						</header>
+						<h4 style="font-size: larger; margin-bottom: 2%;">
+							III. Using line chart to observe the sales of publishers in different years.
+						</h4>
+						<!-- line chart 的容器 -->
+						<div class="line-chart-container div"></div>
+						<!-- 切換 line chart 的下拉式選單 -->
+						<div class="selector">
+							<div class="select">
+								<select class="publisher" name="select">
+									<option value="Activision">Activision</option>
+									<option value="Atari">Atari</option>
+									<option value="Capcom">Capcom</option>
+									<!-- <option value="Disney Interactive Studios">Disney Interactive Studios</option> -->
+									<!-- <option value="Eidos Interactive">Eidos Interactive</option> -->
+									<!-- <option value="Enix Corporation">Enix Corporation</option> -->
+									<option value="Electronic Arts">Electronic Arts</option>
+									<option value="Konami Digital Entertainment">Konami Digital Entertainment</option>
+									<option value="Microsoft Game Studios">Microsoft Game Studios</option>
+									<option value="Namco Bandai Games">Namco Bandai Games</option>
+									<option value="Nintendo">Nintendo</option>
+									<option value="Sega">Sega</option>
+									<option value="Sony Computer Entertainment">Sony Computer Entertainment</option>
+									<option value="Square Enix">Square Enix</option>
+									<!-- <option value="SquareSoft">SquareSoft</option> -->
+									<option value="THQ">THQ</option>
+									<option value="Take-Two Interactive">Take-Two Interactive</option>
+									<option value="Ubisoft">Ubisoft</option>
+									<option value="Warner Bros. Interactive Entertainment">Warner Bros. Interactive
+										Entertainment</option>
+								</select>
+							</div>
+							<div class="select">
+								<select class="region" name="select">
+									<option value="Global_Sales">Global</option>
+									<option value="NA_Sales">North America</option>
+									<option value="EU_Sales">Europe</option>
+									<option value="JP_Sales">Japan</option>
+									<option value="Other_Sales">Other Region</option>
+								</select>
+							</div>
+						</div>
+						<br>
+						<p style="font-weight: bold;">圖表分析：</p>
+						<ol>
+							<b>
+								<li>Nintendo：全球遊戲發行商的權威</li>
+							</b>
+							<ul>
+								<li>1983 年 (紅白機時期):
+									兩個月內售出超過 50萬部</li>
+								<li>1989 年 (Game boy 時期、超級任天堂時期)
+									Game boy 仍是當前最佳銷量的掌上遊戲機之一</li>
+								<li>1996 年推出的「寶可夢 紅／綠」成為「有史以來銷量最高的RPG」</li>
+								<li>2006 年遊戲銷量最高的年份超過 200M ，遠大於其他家的銷量</li>
+								<li>2006 年 11、12月 Nintendo所發布的 <b>Wii家用遊戲機</b> 正式在美國、日本、歐洲發售，其總銷量超過了 1億部</li>
+							</ul>
+							<b>
+								<li>Electronic Arts：全球銷售排名第 2 卻廣受批評?</li>
+							</b>
+							<ul>
+								<li>
+									EA 依靠雄厚財力，自上市後便開始的大規模收購其他遊戲工作室，但是 EA 甚少用心經營遊戲品牌，而是非常勢利地對待這些品牌，一但發現
+									失去賺錢的能力，便直接砍掉專案或解散團隊而不是想辦法提升遊戲品質
+								</li>
+							</ul>
+							<b>
+								<li>Activision：最大市場在美國</li>
+							</b>
+							<ul>
+								<li>2006 年左右，<b>大型多人線上遊戲 (MMO) </b>逐漸熱門，動視旗下當時並沒有 MMO 遊戲</li>
+								<li>2009 ~ 2011 年，動視所發布的「決勝時刻」系列在美、英首日總銷售均超過 3億元</li>
+							</ul>
+						</ol>
+						<p style="font-weight: bold;">結論：</p>
+						<ol>
+							<li>Nintendo 能成為世界遊戲龍頭的原因在於經歷了許多世代並不斷推陳出新</li>
+							<li>EA 能成為銷售第二的開發商可能是因為其收購了許多遊戲工作室</li>
+							<li>2006 年開始迅速發展的 MMO 類型遊戲成為許多公司主要進攻目標(如 Activision, EA)</li>
+						</ol>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer>
+			<p>
+				© 2023 '23 Spring Data-Viz G4. All rights reserved.
+				<a href="https://github.com/hapiwangy/final_project_datavisualization">
+					<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub"
+						class="github-icon">GitHub Repo
+				</a>
+			</p>
+		</footer>
+
+		<section id="navBar">
+			<div class="container">
+				<nav id="nav">
+					<ul>
+						<li><a class="icon solid fa-home" href="index.html"><span>Introduction</span></a></li>
+						<li><a class="icon solid fa-bar-chart" href="publisherAnalysis.html"><span>Publisher
+									Analysis</span></a></li>
+						<li><a class="icon solid fa-bar-chart" href="averageSales.html"><span>Average Sales</span></a>
+						</li>
+						<li><a class="icon solid fa-bar-chart" href="barChartRace.html"><span>Bar Chart Race</span></a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+
+		<!-- Tooltip bar chart -->
+		<div class="tooltip barChartTip">
+			<div class="tip-header">
+				<h3></h3>
+			</div>
+			<div class="tip-body">
+			</div>
+		</div>
+		<!-- Tooltip line chart grandpa-->
+		<div class="tooltip lineChartTip">
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<!-- 連結到 d3、barChart.js 和 lineChart.js -->
+	<script src="//unpkg.com/d3"></script>
+	<script type="module" src="publisher/barChart.js"></script>
+	<script type="module" src="publisher/stackBarChart.js"></script>
+	<script type="module" src="publisher/lineChart.js"></script>
+</body>
+
+</html>
