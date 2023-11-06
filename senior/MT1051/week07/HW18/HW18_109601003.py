@@ -7,10 +7,10 @@ Student Number: 109601003
 """
 
 def func(y):
-    return (y + 3.2) * (y - 5.3) * (y + 2.7)
+    return (y + 3.2) * (y - 5.3) * (y + 9.2) * (y + 2.7)
 
 target = 1823
-lower_bound = 0.0
+lower_bound = 5.3
 upper_bound = 20.0
 precision = 0.001
 
