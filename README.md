@@ -54,6 +54,7 @@ The code come from the courses in my university or the internet that learned by 
 | :-------------: | :-------------: | :-------: | :-: |
 | [GS4524-B](/junior/GS4524-B/) | Special topic for interdisciplinary artificial intelligence | `Python` |  |
 | [GS4522](/junior/GS4522/) | Enterprise Application of pattern recognition | `Python` |  |
+| [GS4719](/junior/GS4719/) | Programming-Python | `Python` |  |
 
 ## License
 
