@@ -1,0 +1,26 @@
+go is the keyword before the function to make a thread
+a channel is a way to send values safely from one goroutine to annother goroutine kinda like shared memory in c
+this is how you make a channel c := make(chan int)
+to put a value in a channel you do this c <- 99
+that puts 99 into c in a safe manner
+to recieve flip the arrow
+
+you can close a channel to signify no more values will be sent by doing close(c)
+reading from a closed channel will cause the cpu to burn up resources
+
+you can use a range for loop to read from a channel
+func filterGopher(upstream, downstream chan string) {
+    for item := range upstream {
+        if !strings.Contains(item, "bad") {
+            downstream <- item
+        }
+    }
+    close(downstream)
+}
+
+the go compiler has functionality that can find a race condition
+
+
+just like c there is no monitors so concurrent resources are only linked to the thing protecting them by commenting
+
+mutexes cannot be locked when they are allready locked or unlocked when they are allready unlocked unlike c

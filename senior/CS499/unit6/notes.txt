@@ -1,0 +1,11 @@
+accessing a member of a struct does not require derefrencing
+arrays also have automatic derefrencing
+Pointer arithmetic is not allowed 
+Type safety is enforced in go pointers
+arrays are not pointers in GO
+pass by refrence is only if you pass a pointer because it actually passes a copy of the pointer
+
+nil is the null value in go for pointers
+methods have to guard against nill values
+
+go uses multiple return values to handle errors. The last value returned should allways be the error code
