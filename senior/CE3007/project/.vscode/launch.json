@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/linchunho/Developer/socket-programming/materials/distance_vector_c_code",
+      "program": "/Users/linchunho/Developer/socket-programming/materials/distance_vector_c_code/build/Debug/outDebug"
+    }
+  ]
+}
