@@ -1,0 +1,377 @@
+%% 
+%% This is file, `math_514_theorems.tex',
+%% generated with the extract package.
+%% 
+%% Generated on :  2018/12/14,18:37
+%% From source  :  "Math 514 Lecture Notes".tex
+%% Using options:  active,generate=Math_514_Theorems,extract-env={theorem,corollary,claim}
+%% 
+\documentclass[12pt]{article}
+  \usepackage{amsthm}
+  \usepackage{amsfonts, amsmath}
+  \usepackage[dvipsnames]{xcolor}
+  %\newtheorem{theorem}{Theorem}
+  \theoremstyle{definition}
+  \definecolor{Tm}{rgb}{0,0,0.80}
+  %\newtheorem{definition}{Definition}
+  \newtheorem{definition}{\color{NavyBlue}{\textbf{Definition}}}
+  \newtheorem{theorem}{\color{ForestGreen}{\textbf{Theorem}}}
+  \newtheorem{corollary}{Corollary}
+  %\newtheorem{example}{Example}
+   \usepackage{bm}
+\newcommand{\e}{\epsilon}
+%\newcommand{\d}{\delta}
+\newcommand{\D}{\Delta}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\U}{\mathcal{U}}
+\usepackage{mathtools}
+\DeclarePairedDelimiterX{\inp}[2]{\langle}{\rangle}{#1, #2}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\x}{\bm{x}}
+\newcommand{\xib}{\bm{\xi}}
+\usepackage{mathrsfs}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+\algnewcommand\algorithmicforeach{\textbf{for each}}
+\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+
+\begin{document}
+
+\begin{theorem}[The Mean Value Theorem]
+Suppose $f$ is a real-valued function, defined and continuous on the closed interval $[a,b] \in \R$ and $f$ differentiable on the open interval $(a,b)$. Then there exists a number $\xi \in (a,b)$ such that
+\begin{equation}
+f(b) - f(a) = f'(\xi) (b - a)
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Taylor's Theorem]
+Suppose that $n$ is a nonnegative integer, and $f$ is a real-valued function, defined and continuous on the closed interval $[a,b]$ of $\R$, such that the derivatives of $f$ of order up to and including $n$ are defined and continuous on the closed interval $[a,b]$. Suppose further that $f^{(n)}$ is differentiable on the open interval $(a,b)$. Then, for each value of $x \in [a,b]$, there exists a number $\xi = \xi(x)$ in the open interval $(a,b)$ such that
+\begin{equation}
+f(x) = f(a) + (x-a)f'(a) + \cdots + \frac{(x-a)^n}{n!} f^{(n)}(a) + \frac{(x-a)^{n+1}}{(n+1)!} f^{(n+1)}(\xi)
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Existence of Root]\label{zeroexists}
+Let $f$ be a real-valued function, defined and continuous on a bounded closed interval $[a,b]$ of the real line. Assume further, that $f(a)f(b) \leq 0$; then, there exists $\xi$ in $[a,b]$ such that $f(\xi) = 0$.
+\end{theorem}
+
+\begin{theorem}[Brouwer's Fixed Point Theorem]
+Suppose that $g$ is a real-valued function, defined and continuous on a bounded closed interval $[a,b]$ of the real line, and let $g(x) \in [a,b]$ for all $x \in [a,b]$. Then, there exists $\xi \in [a,b]$ such that $\xi = g(\xi)$. $\xi$ is called a fixed point of the function $g$.
+\end{theorem}
+
+\begin{theorem}[Contraction Mapping Theorem]
+Suppose that $g$ is a real-valued function, defined and continuous on a bounded closed interval $[a,b]$ of the real line, and let $g(x) \in [a,b]$ for all $x \in [a,b]$. Suppose $g$ is a contraction on $[a,b]$. Then, $g$ has a unique fixed point $\xi$ in the interval $[a,b]$. Moreover, the sequence $(x_k)$ defined by simple iteration converges to $\xi$ as $k \to \infty$ for any starting value $x_0$ in $[a,b]$.
+
+Let $\epsilon > 0$ be a certain tolerance, and let $k_0 (\epsilon)$ denote the smallest positive integer such that $x_k$ is no more than $\epsilon$ away from the fixed point $\xi$ (i.e. $|x_k - \xi| \leq \epsilon$) for all $k \geq k_0 (\epsilon)$. Then,
+\begin{equation}
+k_0 (\epsilon) \leq \left\lfloor \frac{\ln|x_1 - x_0| - \ln(\epsilon (1 - L))}{\ln (1 / L)}\right\rfloor + 1
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Contraction Mapping Theorem when Differentiable]
+Suppose that $g$ is a real-valued function, defined and continuous on a bounded closed interval $[a,b]$ of the real line, and let $g(x) \in [a,b]$ for all $x \in [a,b]$. Let $\xi= g(\xi) \in [a,b]$ be a fixed point of $g$ (the existence of this point is guaranteed by Brouwer's fixed point theorem). Assume $g$ has a continuous derivative in some neighborhood of $\xi$ with $|g'(\xi)| < 1$. Then the sequence $(x_k)$ defined by simple iteration $x_{k+1} = g(x_k)$, $k \geq 0$, converges to $\xi$ as $k \to \infty$, provided that $x_0$ is close to $\xi$.
+\end{theorem}
+
+\begin{theorem}[Unstable Fixed Points]
+Suppose that $\xi = g(\xi)$, where the function $g$ has a continuous derivative in some neighborhood of $\xi$, and let $|g'(\xi)| > 1$ (thus $\xi$ is an unstable fixed point). Then the sequence $(x_k)$ defined by simple iteration $x_{k+1} = g(x_k)$, $k \geq 0$, does not converge to $\xi$ from any starting value $x_0$, $x_0 \neq \xi$.
+\end{theorem}
+
+\begin{theorem}[Convergence of Newton's Method]
+Suppose that $f$ is a continuous real-valued function with continuous second derivative $f''$ defined on the closed interval $I_\delta = [\xi - \delta, \xi + \delta]$, $\delta > 0$, such that $f(\xi) = 0$ and $f''(\xi) \neq 0$. Additionally suppose that there exists a positive constant $A$ such that
+\begin{equation}
+\frac{|f''(x)|}{|f'(y)|} \leq A \quad \forall x,y, \in I_\delta
+\end{equation}
+If initially
+\begin{equation}
+|\xi - x_0| \leq h = \min(\delta, \frac{1}{A})
+\end{equation}
+then the sequence $(x_k)$ defined by Newton's method converges quadratically to $\xi$.
+\end{theorem}
+
+\begin{theorem}[Convergence of Secant Method]
+Suppose that $f$ is a real-valued function, defined and continuously differentiable on an interval $I = [\xi - h, \xi + h]$, $h > 0$, with center point $\xi$. Suppose further that $f(\xi) = 0$, $f'(\xi) \neq 0$. Then, the sequence $(x_k)$ defined by the secant method converges at least linearly to $\xi$ provided that $x_0$ and $x_1$ are sufficiently close to $\xi$.
+\end{theorem}
+
+\begin{theorem}[The $1$-norm of a matrix is the largest absolute-value column sum]
+Let $A \in \R^{m \times n }$ and denote the columns of $A$ by $a_j$, $j=1, \ldots, n$. Then $\norm{A}_1 = \max_{j=1, \ldots, n} \sum_{i=1}^{m} |a_{ij}| =  \max_{j=1, \ldots, n} \norm{a_j}$.
+\end{theorem}
+
+\begin{theorem}[The $\infty$-norm of a matrix is the largest absolute-value row sum]
+Let $A \in \R^{m \times n }$ and denote the rows of $A$ by $b_i$, $i=1, \ldots, m$. Then $\norm{A}_{\infty} = \max_{i=1, \ldots, m} \sum_{j=1}^{n} |a_{ij}| =  \max_{i=1, \ldots, m} \norm{b_i}$.
+\end{theorem}
+
+\begin{theorem}[The $2$-norm of a symmetric positive definite matrix is the maximum absolute value of its eigenvalues]
+Let $A$ be a positive definite $n \times n$ matrix. Then
+\begin{equation}
+\norm{A}_2 = \max_{i=1,\ldots, n} |\lambda_i|
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[The $2$-norm of a matrix $A_{m \times n}$ equals its largest singular value]
+Let $A$ be an $m \times n$ matrix and denote the eigenvalues of the matrix $B = A^TA$ by $\lambda_i$, $i=1,\ldots, n$. Then
+\begin{equation}
+\norm{A}_2 = \max_i \sqrt{\lambda_i}
+\end{equation}
+The square roots of the (nonnegative) eigenvalues of $A^TA$ are referred to as the singular values of $A$.
+\end{theorem}
+
+\begin{theorem}[Properties of spd matrices]
+Let $A$ be an $n \times n$ real, spd matrix. Then
+\begin{enumerate}
+\item $a_{ii} > 0$ for all $i=1, \ldots, n$ (the diagonal elements of $A$ are positive).
+\item $A x_i \ = \lambda_i x_i \implies \lambda_i \in \R_{>0}, \x \in \R^n \setminus \{0\}$ (the eigenvalues of $A$ are real and positive, and the eigenvectors of $A$ belong to $\R^n \setminus \{0\}$).
+\item $x_i \perp x_j$ if $\lambda_i \neq \lambda_j$ (the eigenvectors of distinct eigenvalues of $A$ are orthogonal)
+\item $\det(A) > 0$ (the determinant of $A$ is positive)
+\item Every submatrix $B$ of $A$ obtained by deleting any set of rows and the corresponding set of columns from $A$ is symmetric and positive definite (in particular, every principal submatrix is positive definite).
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Cholesky]
+If $A$ is spd, then there exists a lower diagonal matrix $L$ such that $A = L L^T$. This is called the Cholesky decomposition.
+\end{theorem}
+
+\begin{theorem}[Contraction Mapping Theorem in $\R^n$]
+Suppose $D$ is a closed subset of $\R^n$ and $g: \R^n \to \R^n$ is defined on $D$, and $g(D) \subset D$. Suppose further that $g$ is a contraction on $D$ in the $\infty$-norm. Then,
+\begin{enumerate}
+\item $g$ has a unique fixed point $\xib \in D$
+\item The sequence $(\x^{(k)})$ defined by $\x^{(k+1)} = g(\x^{k})$ converges to $\xib$ for any starting value $x^{(0)} \in D$.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Jacobian and Fixed Point Stability]
+Let $g = (g_1, \ldots, g_n)^T : \R^n \to \R^n$ be a function defined and continuous on a closed set $D \subset \R^n$. Let $\xib \in D$ be a fixed point of $g$. Suppose the first partial derivatives of each $g_i$ are defined and continuous in some (open) neighborhood $N(\xib) \in D$ of $\xib$, with
+\begin{equation}
+\norm{J_g(\xib)}_\infty < 1
+\end{equation}
+Then there exists $\e > 0$ such that $g (\bar B_\e(\xib)) \subset \bar B_\e(\xib)$, and the sequence $\x^{(k+1)} = g(\x^{k})$ converges to $\xib$ for all $\x^{(0)} \in \bar B_\e(\xib)$ (in other words, the sequence converges to $\xib$ as long as $\x^{(0)}$ is close enough to $\xib$).
+\end{theorem}
+
+\begin{theorem}
+Suppose $f(\xib) = 0$, that in some (open) neighborhood $N(\xib)$ of $\xib$, where $f$ is defined and continuous, all the second-order partial derivatives of $f$ are defined and continuous, and that the Jacobian matrix $J_f(\x^{(k)})$ of $f$ at the point $\xib$ is nonsingular. Then the sequence defined by Newton's method converges to $\xib$ provided that $\x^{(0)}$ is sufficiently close to $\xib$.
+\end{theorem}
+
+\begin{theorem}[Abel(-Ruffini) Theorem, or ``No-go Theorem'']
+There is no algebraic solution (that is, a solution expressed in terms of radicals) to general polynomial equations of degree five or higher with arbitrary coefficients.
+\end{theorem}
+
+\begin{theorem}[Convergence of Power Iteration]
+Suppose $|\lambda_1|  > |\lambda_2| \geq \ldots \geq |\lambda_n|$ and $q_1^T v^{(0)} \neq 0$. Then the iterates of power iteration satisfy
+\begin{align}
+\norm{v^{(k)} - (\pm q_1)} &= \mathcal{O}\left( \left\vert \frac{\lambda_2}{\lambda_1} \right\vert^k \right) \tag{error of eigenvector} \\
+|\lambda^{(k)} - \lambda_1 | &= \mathcal{O}\left( \left\vert \frac{\lambda_2}{\lambda_1} \right\vert^{2k} \right) \tag{error of eigenvalue}
+\end{align}
+\end{theorem}
+
+\begin{theorem}[Error of Rayleigh Quotient]
+Let $x_1$ be the eigenvector that corresponds to the largest (in absolute value) eigenvalue. If $\norm{x - x_1} = \mathcal{O}(\e)$, then
+\begin{equation}
+\left\vert \frac{\inp{x}{Ax}}{\inp{x}{x}}  - \lambda_1 \right\vert = \mathcal{O}(\e^2)
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Equivalence of Simultaneous Iteration and the QR Algorithm]
+Simultaneous Iteration and the QR Algorithm generate identical sequences of matrices $\underline R^{(k)}, \underline Q^{(k)}, A^{(k)}$. Both give
+\begin{align}
+(a): A^{(k)} &= \underline Q^{(k)} \underline R^{(k)} \tag{$QR$ factorization of the $k$th power of $A$}\\
+(b): A^{(k)} &= (\underline Q^{(k)})^T A \underline Q^{(k)} \tag{projection}
+\end{align}
+\end{theorem}
+
+\begin{theorem}[Error of Lagrange interpolation polynomial]
+Suppose that $n\geq 0$ and the $f$ is a real-valued function, defined and continuous on the closed real interval $[a,b]$, such that derivative of $f$ or order $n+1$ exists and is continuous on $[a,b]$. Then, with $x \in [a,b]$, there exists $\xi = \xi(x)$ in $(a,b)$ such that
+\begin{equation}
+f(x) - p(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \prod_{k=0}^n (x-x_k)
+\end{equation}
+is the interpolation error, where $p(x)$ is $n$-th order.
+\end{theorem}
+
+\begin{theorem}[Chebyshev grid to minimize polynomial interpolation error]
+The solution to
+\begin{equation}
+\min_{\{x_i\}} \sup_{x \in [a,b]} \bigg\lvert \prod_{k=0}^n (x-x_k) \bigg\rvert
+\end{equation}
+is given by a Chebyshev grid:
+\begin{equation}
+x_i = \cos (\theta_i), \quad \theta_i = \frac{i\pi}{n}
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Orthogonal polynomials form a basis for the space of polynomials]
+\begin{equation}
+\mathbb{P}_k = span(\phi_0,\ldots,\phi_k)
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[OP Recurrence Relation]
+A set of orthogonal polynomials $\{\phi\}_{i=0}^\infty$ satisfies
+\begin{equation}
+\phi_{n+1} = (\alpha_n x + \beta_n)\phi_n + \gamma_n \phi_{n-1}
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Roots of Orthogonal Polynomials]
+If $\{\phi\}_{i=0}^\infty$, then $\phi_n(x)$ has $n$ real roots, called Gaussian quadratures.
+\end{theorem}
+
+\begin{theorem}[Locations of Gaussian Quadratures from Recurrence Relation]
+Give the recurrence relation
+\begin{equation}
+\phi_{n+1} = (\alpha_n x + \beta_n)\phi_n + \gamma_n \phi_{n-1}
+\end{equation}
+we can rewrite this as
+\begin{equation}
+\alpha_n x \phi_n = \phi_{n+1} - \beta_n \phi_n - \gamma_n \phi_{n-1}
+\end{equation}
+Thus for constants $a_n,b_n,c_n$ we have that
+\begin{equation}
+x \phi_n = \phi_{n-1} +  b_n \phi_n + c_n \phi_{n+1}
+\end{equation}
+where this equality holds for all $x$ in the domain. We can write this system in matrix form as follows
+\begin{equation}
+x
+\begin{pmatrix}
+\phi_0(x) \\ \phi_1(x) \\ \vdots \\ \vdots \\ \phi_n(x)
+\end{pmatrix}
+=
+\begin{pmatrix}
+b_0 & c_0 \\
+a_1 & b_1 & c_1 \\
+& a_2 & b_2 & \ddots \\
+& & \ddots & \ddots \\
+& & & & & c_{n-1} \\
+& & & & a_n & b_n
+\end{pmatrix}
+\begin{pmatrix}
+\phi_0(x) \\ \phi_1(x) \\ \vdots \\ \vdots \\ \phi_n(x)
+\end{pmatrix}
++
+\begin{pmatrix}
+0 \\ 0 \\ \vdots \\ \vdots \\ c_n \phi_{n+1}
+\end{pmatrix}
+\end{equation}
+where $A$ is the matrix of coefficients. We want to find the roots $\phi_{n+1}(x_i) = 0$, where $i=1,\ldots,n+1$. Then the eigenvalues of $A$ are the zeros of $\phi_{n+1}$. In sum
+\begin{equation}
+\text{GQ of } \phi_{n+1} = eig(A)
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Exact integration of $f(x) \in \mathbb{P}_{2N+1}$ using $N+1$ grid points]
+Suppose. $f(x) \in \mathbb{P}_{2N+1}$. Then
+\begin{equation}
+\int_{a}^b f(x)w(x)dx = \sum_{i=0}^N f(x_k) w_k
+\end{equation}
+if $\{x_0, \ldots, x_N\}$ are the GQ (roots) of $\phi_{N+1}$, where
+\begin{equation}
+w_k = \int_a^b l_k(x)w(x)dx
+\end{equation}
+where $l_k(x)$ is a Lagrange polynomial.
+\end{theorem}
+
+\begin{theorem}[Projection Coefficients Equivalent to Numerical Representation]
+Let $f(x) \in \mathbb{P}_{N+1}$. Then
+\begin{equation}
+\alpha_i = \inp{f}{\phi_i} = \int_a^b f(x)\phi_i(x)w(x)dx = \sum_{k=0}^N f(x_k)\phi_i(x_k)w_k = c_i
+\end{equation}
+That is the projection coefficients $c_i$ are equal to the numerical representation $\alpha_i$, where the grid points are the GQ of $\phi_{N+1}$.
+\end{theorem}
+
+\begin{theorem}[Interpolation with Orthogonal Polynomials (Almost Unitary Matrix)]
+We interpolate $f$ as follows:
+\begin{equation}
+p(x) = \sum_{n=0}^N c_n \phi_n(x)
+\end{equation}
+such that $p(x_i) = f(x_i)$ where the $x_i$ are the GQ of $\phi_{N+1}$. Then
+\begin{equation}
+\begin{bmatrix}
+\phi_0(x_0) & \phi_1(x_0) & \hdots & \phi_N(x_0) \\
+\phi_0(x_1) & \phi_1(x_1) & \hdots & \phi_N(x_1) \\
+\vdots & \vdots & & \vdots  \\
+\phi_0(x_N) & \phi_1(x_N) & \hdots & \phi_N(x_N)
+\end{bmatrix}
+\begin{bmatrix}
+c_0 \\ \vdots \\ \vdots \\ c_N
+\end{bmatrix}
+=
+\begin{bmatrix}
+f(x_0) \\ f(x_1) \\ \vdots \\ \vdots  \\ f(x_N)
+\end{bmatrix}
+\end{equation}
+Then $A$, the matrix above, is almost unitary. In particular,
+\begin{equation}
+A^T \cdot W \cdot A = I
+\end{equation}
+where $W$ is a diagonal matrix with elements $w_0, w_1, \ldots, w_N$.
+\end{theorem}
+
+\begin{theorem}[Projection the best approximation in the $L^2$-norm:]
+$p_N(x)$ is the best approximation in the $L^2$-norm:
+\begin{equation}
+\norm{f-p_N(x)}^2_2 \leq \norm{f-q(x)}^2_2
+\end{equation}
+for all $q \in \mathbb{P_N}$.
+\end{theorem}
+
+\begin{theorem}[Error from Approximation by Projection]
+Suppose $f \in \mathcal{C}^\infty$ and $\{\phi_i\}_{i=0}^{\infty}$ is a set orthogonal polynomials. We can write
+\begin{equation}
+f(x) = \sum_{k=0}^\infty c_k \phi_k(x)
+\end{equation}
+and define the projection
+\begin{equation}
+p_N(x) = \sum_{k=0}^N \alpha_k \phi_k(x)
+\end{equation}
+Then the error of this approximation is
+\begin{equation}
+error = \sum_{k=N+1}^\infty \alpha_k \phi_k(x)
+\end{equation}
+which depends on $\{\alpha_{N+1}, \alpha_{N+2}, \ldots \}$. In particular, if $f(x) \in \mathcal{C}^\gamma$, then
+\begin{equation}
+\alpha_n = \mathcal{O}(n^{-\gamma})
+\end{equation}
+for $n > N$ and
+\begin{equation}
+\alpha_n = \mathcal{O}\left(\frac{1}{N^\gamma}\right)
+\end{equation}
+for $n < N$.
+\end{theorem}
+
+\begin{theorem}[First mean value theorem for definite integrals]
+If $f:[a,b] \to \R$ is continuous and $g$ is an integrable function that does not change sign on $[a,b]$, then there exists $c \in [a,b]$ such that
+\begin{equation}
+\int_a^b f(x)g(x) dx = f(c)\int_a^b g(x)dx
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[ODE reduction]
+Any high order, non-autonomous ODE can be reduced to a 1st order, autonomous ODE (system).
+\end{theorem}
+
+\begin{theorem}[Uniqueness]
+If the force term $f(u)$ is uniformly Lipshitz, then the equation has a unique solution.
+\end{theorem}
+
+\begin{theorem}[Forward Euler (one-step) is consistent]
+\end{theorem}
+
+\begin{theorem}[Trapezoidal method 2nd-order convergent]
+If $f(u)$ is Lipschitz (with constant $\lambda$), then the trapezoidal method is 2nd-order convergent.
+\end{theorem}
+
+\begin{theorem}[Forward Euler convergent if forcing term Lipschitz]
+If $f(u)$ is Lipschitz in $u$ (with Lipschitz constant $\lambda$), then the Forward Euler method is a 1st-order convergent method.
+\end{theorem}
+
+\begin{theorem}[Consistency of LMM]
+For consistency, we require that
+\begin{enumerate}
+\item $\rho(1) = 0$
+\item $\rho'(1) = \sigma(1)$
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Zero-Stability of LMM]
+If $\xi_i$ is a single root, then $|\xi_i| \leq 1$. If $\xi_i$ is a double root, then $|\xi_i| < 1$.
+\end{theorem}
+
+\end{document}

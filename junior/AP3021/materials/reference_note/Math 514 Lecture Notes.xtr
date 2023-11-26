@@ -1,0 +1,3 @@
+\begin{XTRtheorem}[Zero-Stability of LMM]
+If $\xi_i$ is a single root, then $|\xi_i| \leq 1$. If $\xi_i$ is a double root, then $|\xi_i| < 1$.
+\end{XTRtheorem}

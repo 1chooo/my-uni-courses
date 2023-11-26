@@ -1,0 +1,2592 @@
+\documentclass[12pt]{article}
+%\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+% \usepackage[active,
+%             generate=Math_514_Definitions,
+%             %extract-cmd={section},
+%             extract-env={definition,algorithm}]{extract}
+
+\usepackage[active,
+            generate=Math_514_Theorems,
+            %extract-cmd={section},
+            extract-env={theorem,corollary,claim}]{extract}
+
+\begin{extract*}
+  \usepackage{amsthm}
+  \usepackage{amsfonts, amsmath}
+  \usepackage[dvipsnames]{xcolor} 
+  %\newtheorem{theorem}{Theorem}
+  \theoremstyle{definition}
+  \definecolor{Tm}{rgb}{0,0,0.80}
+  %\newtheorem{definition}{Definition}
+  \newtheorem{definition}{\color{NavyBlue}{\textbf{Definition}}}
+  \newtheorem{theorem}{\color{ForestGreen}{\textbf{Theorem}}}
+  \newtheorem{corollary}{Corollary}
+  %\newtheorem{example}{Example}
+  	\usepackage{bm}
+	\newcommand{\e}{\epsilon}
+	%\newcommand{\d}{\delta}
+	\newcommand{\D}{\Delta}
+	\newcommand{\R}{\mathbb{R}}
+	\newcommand{\Z}{\mathbb{Z}}
+	\newcommand{\U}{\mathcal{U}}
+	\usepackage{mathtools}
+	\DeclarePairedDelimiterX{\inp}[2]{\langle}{\rangle}{#1, #2}
+	\newcommand{\norm}[1]{\lVert#1\rVert}
+	\newcommand{\x}{\bm{x}}
+	\newcommand{\xib}{\bm{\xi}}
+	\usepackage{mathrsfs}
+	\usepackage{algpseudocode,algorithm,algorithmicx}
+	\algnewcommand\algorithmicforeach{\textbf{for each}}
+	\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
+	\newcommand*\Let[2]{\State #1 $\gets$ #2}
+\end{extract*}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+%\usepackage{amsfonts, amsmath}
+\usepackage{amssymb, geometry}
+\usepackage{scalefnt}
+\usepackage{setspace}
+\usepackage{color,hyperref}
+%\usepackage{epsfig,subfigure,morefloats}
+\usepackage{natbib}
+\usepackage{dsfont}
+\usepackage{color,hyperref}
+\usepackage{epstopdf}
+%\usepackage{amsthm}
+\usepackage{amssymb}
+%\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{booktabs,siunitx}
+\usepackage{bm}
+\usepackage[section]{placeins}
+%\usepackage{hypcap}
+\usepackage{afterpage}
+
+
+\setcounter{MaxMatrixCols}{10}
+
+\providecommand{\u}[1]{\protect\rule{.1in}{.1in}}
+\providecommand{\u}[1]{\protect\rule{.1in}{.1in}}
+% \newtheorem{theorem}{\color{ForestGreen}{\textbf{Theorem}}}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+%\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}{\color{JungleGreen}Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}{Conjecture}
+% \newtheorem{corollary}{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+% \newtheorem{definition}{Definition}
+% \theoremstyle{definition}
+\newtheorem{example}{\color{WildStrawberry}Example}
+\newtheorem{exercise}{\color{YellowOrange}Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\theoremstyle{definition}
+%\newtheorem{solution}[theorem]{Solution}
+\newtheorem{solution}{\color{Goldenrod}Solution}
+\newtheorem{summary}[theorem]{Summary}
+\geometry{left=1in,right=1in,top=1in,bottom=1in}
+%\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+%\hypersetup{pdftex,colorlinks=true,allcolors=black,citecolor=black}
+
+%\usepackage{floatrow}
+\usepackage{float}
+\usepackage{indentfirst}
+
+% \algrenewcommand\alglinenumber[1]{
+%     {\sf\footnotesize\addfontfeatures{Colour=888888,Numbers=Monospaced}#1}}
+% \algrenewcommand\algorithmicrequire{\textbf{Precondition:}}
+%\algrenewcommand\algorithmicensure{\textbf{Postcondition:}}
+
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\graphicspath{{./figures/}}
+
+\usepackage{listings}
+\usepackage{subcaption} 
+\usepackage[toc,page]{appendix}
+%\usepackage[extendedchars]{grffile}
+
+\usepackage{mathpazo} % math & rm
+\linespread{1.05}        % Palatino needs more leading (space between lines)
+\usepackage[scaled]{helvet} % ss
+\usepackage{courier} % tt
+\normalfont
+\usepackage[T1]{fontenc}
+
+%% Math commands
+% \newcommand{\e}{\epsilon}
+% %\newcommand{\d}{\delta}
+% \newcommand{\D}{\Delta}
+% \newcommand{\R}{\mathbb{R}}
+% \newcommand{\Z}{\mathbb{Z}}
+% \usepackage{mathtools}
+% \DeclarePairedDelimiterX{\inp}[2]{\langle}{\rangle}{#1, #2}
+% \newcommand{\norm}[1]{\lVert#1\rVert}
+% \newcommand{\x}{\bm{x}}
+% \newcommand{\xib}{\bm{\xi}}
+% \usepackage{mathrsfs}
+
+
+\title{Numerical Analysis Lecture Notes}
+\author{Rebekah Dix}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage 
+
+\section{Results from Real Analysis}
+\begin{theorem}[The Mean Value Theorem]
+Suppose $f$ is a real-valued function, defined and continuous on the closed interval $[a,b] \in \R$ and $f$ differentiable on the open interval $(a,b)$. Then there exists a number $\xi \in (a,b)$ such that
+\begin{equation}
+	f(b) - f(a) = f'(\xi) (b - a)
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Taylor's Theorem]
+Suppose that $n$ is a nonnegative integer, and $f$ is a real-valued function, defined and continuous on the closed interval $[a,b]$ of $\R$, such that the derivatives of $f$ of order up to and including $n$ are defined and continuous on the closed interval $[a,b]$. Suppose further that $f^{(n)}$ is differentiable on the open interval $(a,b)$. Then, for each value of $x \in [a,b]$, there exists a number $\xi = \xi(x)$ in the open interval $(a,b)$ such that 
+\begin{equation}
+	f(x) = f(a) + (x-a)f'(a) + \cdots + \frac{(x-a)^n}{n!} f^{(n)}(a) + \frac{(x-a)^{n+1}}{(n+1)!} f^{(n+1)}(\xi)
+\end{equation}
+\end{theorem}
+
+\section{Solution of equations by iteration}
+
+\subsection{Simple Iteration}
+\begin{theorem}[Existence of Root]\label{zeroexists}
+Let $f$ be a real-valued function, defined and continuous on a bounded closed interval $[a,b]$ of the real line. Assume further, that $f(a)f(b) \leq 0$; then, there exists $\xi$ in $[a,b]$ such that $f(\xi) = 0$.
+\end{theorem}
+\begin{proof}
+The condition $f(a)f(b) \leq 0$ implies that $f(a)$ and $f(b)$ have opposite signs, or one of them is $0$. If either $f(a)$ or $f(b)$ is $0$, then we've found a root. Suppose that both endpoints are non-zero (in which case they have opposite signs). In this case, $0$ must belong to the open interval whose endpoints are $f(a)$ and $f(b)$. The intermediate value theorem gives the existence of a root in the open interval $(a,b)$. Thus, in both cases, a zero is guaranteed. 
+\end{proof}
+
+\begin{itemize}
+\item The converse of Theorem \ref{zeroexists} is clearly false.
+\end{itemize}
+
+\begin{theorem}[Brouwer's Fixed Point Theorem]
+Suppose that $g$ is a real-valued function, defined and continuous on a bounded closed interval $[a,b]$ of the real line, and let $g(x) \in [a,b]$ for all $x \in [a,b]$. Then, there exists $\xi \in [a,b]$ such that $\xi = g(\xi)$. $\xi$ is called a fixed point of the function $g$. 
+\end{theorem}
+\begin{proof}
+Define a function $f(x) = x - g(x)$. If we find a root $\xi$ of $f$, then $\xi$ is a fixed point of $g$. Then,
+\begin{equation}
+f(a)f(b) = (a - g(a))(b-g(b)) \leq 0
+\end{equation}
+By assumption, $a \leq g(a), g(b) \leq b$. Therefore, the first term is negative and the second term is positive. Therefore, $f(a)f(b) \leq 0$. By Theorem \ref{zeroexists}, there exists a $\xi \in [a,b]$ such that $f(\xi)=0$. Then, for this $\xi$, $g(\xi) = \xi$.
+\end{proof}
+
+\begin{definition}[Simple Iteration]
+Suppose that $g$ is a real-valued function, defined and continuous on a bounded closed interval $[a,b]$ of the real line, and let $g(x) \in [a,b]$ for all $x \in [a,b]$. Given that $x_0 \in [a,b]$, the recursion defined by 
+\begin{equation}
+x_{k+1} = g(x_k)
+\end{equation}
+is called simple iteration; the numbers $x_k$, $k \geq 0$, are referred to as iterates.
+\end{definition}
+
+\begin{itemize}
+\item If this sequence converges, the limit must be a fixed of $g$, since $g$ is continuous on a closed interval. Note that
+\begin{equation}
+\xi = \lim_{k \to \infty} x_{k+1} = \lim_{k \to \infty} g(x_k) = g\left( \lim_{k \to \infty} x_k \right) = g(\xi)
+\end{equation}
+\end{itemize}
+
+\begin{definition}[Contraction]
+Let $g$ be a real-valued function, defined and continuous on a bounded closed interval $[a,b]$ of the real line. Then, $g$ is said to be a contraction on $[a,b]$ if there exists a constant $L$ such that $0<L<1$ and 
+\begin{equation}
+|g(x)-g(y)| \leq L|x-y| \quad \forall x,y \in [a,b]
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Contraction Mapping Theorem]
+Suppose that $g$ is a real-valued function, defined and continuous on a bounded closed interval $[a,b]$ of the real line, and let $g(x) \in [a,b]$ for all $x \in [a,b]$. Suppose $g$ is a contraction on $[a,b]$. Then, $g$ has a unique fixed point $\xi$ in the interval $[a,b]$. Moreover, the sequence $(x_k)$ defined by simple iteration converges to $\xi$ as $k \to \infty$ for any starting value $x_0$ in $[a,b]$. 
+
+Let $\epsilon > 0$ be a certain tolerance, and let $k_0 (\epsilon)$ denote the smallest positive integer such that $x_k$ is no more than $\epsilon$ away from the fixed point $\xi$ (i.e. $|x_k - \xi| \leq \epsilon$) for all $k \geq k_0 (\epsilon)$. Then,
+\begin{equation}
+k_0 (\epsilon) \leq \left\lfloor \frac{\ln|x_1 - x_0| - \ln(\epsilon (1 - L))}{\ln (1 / L)}\right\rfloor + 1
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let $E_k = |x_k - \xi|$ be the error at $k$. Then 
+\begin{align*}
+|x_{k+1} - \xi| &= |g(x_k) - g(\xi)| \tag{definition of $g$ and $\xi$ a fixed point}\\
+&< L |x_k - \xi| \tag{$g$ a contraction}
+\end{align*}
+Therefore by induction
+\begin{equation}
+	E_{k} \leq L^k E_0
+\end{equation}
+Since $L < 1$, $L^k \to 0$ as $k \to \infty$, so that $\lim_{k \to \infty} |x_k - \xi| = 0$. 
+\end{proof}
+
+\begin{theorem}[Contraction Mapping Theorem when Differentiable]
+Suppose that $g$ is a real-valued function, defined and continuous on a bounded closed interval $[a,b]$ of the real line, and let $g(x) \in [a,b]$ for all $x \in [a,b]$. Let $\xi= g(\xi) \in [a,b]$ be a fixed point of $g$ (the existence of this point is guaranteed by Brouwer's fixed point theorem). Assume $g$ has a continuous derivative in some neighborhood of $\xi$ with $|g'(\xi)| < 1$. Then the sequence $(x_k)$ defined by simple iteration $x_{k+1} = g(x_k)$, $k \geq 0$, converges to $\xi$ as $k \to \infty$, provided that $x_0$ is close to $\xi$. 
+\end{theorem}
+
+\begin{definition}[Stable, Unstable Fixed Point]
+Suppose that $g$ is a real-valued function, defined and continuous on a bounded closed interval $[a,b]$ of the real line, and let $g(x) \in [a,b]$ for all $x \in [a,b]$, and let $\xi$ denote a fixed point of $g$. $\xi$ is a stable fixed point of $g$ if the sequence $(x_k)$ defined by the iteration $x_{k+1} = g(x_k)$, $k\geq 0$, converges to $\xi$ whenever the starting value $x_0$ is sufficiently close to $\xi$. Conversely, if no sequence $(x_k)$ defined by this iteration converges to $\xi$ for any starting value $x_0$ close to $\xi$, except for $x_0 = \xi$, then we say that $\xi$ is an unstable fixed point of $g$. 
+\end{definition}
+\begin{itemize}
+	\item With this definition, a fixed point may be neither stable nor unstable.
+	\item If $|g'(\xi)| < 1$, then $\xi$ is a stable fixed point (provided $g$ is continuous, differentiable etc.)
+\end{itemize}
+
+\begin{theorem}[Unstable Fixed Points]
+	Suppose that $\xi = g(\xi)$, where the function $g$ has a continuous derivative in some neighborhood of $\xi$, and let $|g'(\xi)| > 1$ (thus $\xi$ is an unstable fixed point). Then the sequence $(x_k)$ defined by simple iteration $x_{k+1} = g(x_k)$, $k \geq 0$, does not converge to $\xi$ from any starting value $x_0$, $x_0 \neq \xi$. 
+\end{theorem}
+
+\begin{definition}[Rate of Convergence]
+Suppose $\xi = \lim_{k \to \infty} x_k$. Define $E_k = |x_k - \xi|$.
+\end{definition}
+\begin{itemize}
+\item The sequence $(x_k)$ converges to $\xi$ linearly if there exists a number $\mu \in (0,1)$ such that 
+\begin{equation}
+\lim_{k \to \infty} \frac{E_{k+1}}{E_k} = \mu
+\end{equation}
+\item The sequence $(x_k)$ converges to $\xi$ superlineraly if $\mu = 0$. That is, the sequence of $\mu_k$ generated at each step $\rightarrow 0$ as $k \rightarrow \infty$.
+\item The sequence $(x_k)$ converges to $\xi$ with order $q$ if there exists a $\mu > 0$ such that
+\begin{equation}
+\lim_{k \to \infty} \frac{E_{k+1}}{E_k^q} = \mu
+\end{equation}
+In particular, if $q=2$, then the sequence converges quadratically.
+\end{itemize}
+
+\subsection{Newton's Method}
+
+\begin{definition}[Newton's Method]
+Newton's method for the solution of $f(x) = 0$ is defined by 
+\begin{equation}
+	x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}
+\end{equation}
+\end{definition}
+
+Geometrically, $(x_{n+1}, 0)$ is the intersection of the $x$-axis and the tangent of the graph of $f$ at $(x_n, f(x_n))$. 
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=.5]{newton_method.png}
+	\end{center}
+	\caption{Geometric Interpretation of Newton's Method in $\R$}
+\end{figure}
+
+Intuitively, the fixed points of this iteration $g$ will be stable. 
+
+We can show that $|g'(\xi)| < 1$. 
+\begin{align*}
+	g'(x) &= 1 - \frac{f'\cdot f' - f\cdot f''}{(f')^2} \\
+	&= 1 - \left( 1 - \frac{f(x)\cdot f''(x)}{(f'(x))^2}\right) \\
+	&= \frac{f(x)\cdot f''(x)}{(f'(x))^2}
+\end{align*}
+Therefore
+\begin{equation}
+	|g'(\xi)| = \left\vert \frac{f(\xi)\cdot f''(\xi)}{(f'(\xi))^2} \right\vert = 0 < 1
+\end{equation}
+
+\begin{theorem}[Convergence of Newton's Method]
+Suppose that $f$ is a continuous real-valued function with continuous second derivative $f''$ defined on the closed interval $I_\delta = [\xi - \delta, \xi + \delta]$, $\delta > 0$, such that $f(\xi) = 0$ and $f''(\xi) \neq 0$. Additionally suppose that there exists a positive constant $A$ such that 
+\begin{equation}
+	\frac{|f''(x)|}{|f'(y)|} \leq A \quad \forall x,y, \in I_\delta
+\end{equation}
+If initially
+\begin{equation}
+	|\xi - x_0| \leq h = \min(\delta, \frac{1}{A})
+\end{equation}
+then the sequence $(x_k)$ defined by Newton's method converges quadratically to $\xi$. 
+\end{theorem}
+
+\begin{proof}
+We first compute the Taylor expansion of $f(\xi)$, expanding about the point $x_k \in I_\delta$, where $|\xi - x_k| \leq h = \min(\delta, \frac{1}{A})$. Thus
+\begin{equation}
+	f(\xi) = f(x_k) + (\xi - x_k)f'(x_k) + \frac{(\xi - x_k)^2}{2} f''(\eta_k)
+\end{equation}
+where $\eta_k$ is between $\xi$ and $x_k$. Recall that $f(\xi) = 0$. We can use this fact and the definition of Newton's iteration to rearrange the above expansion as
+\begin{equation}
+	\xi - x_{k+1} = - \frac{(\xi - x_k)^2 f''(\eta_k) }{2f'(x_k)}
+\end{equation}
+A small modification to this equation allows us to derive a relationship between adjacent errors
+\begin{equation}
+	E_{k+1} = \frac{f''(\eta_k)}{2f'(x_k)} E_k^2
+\end{equation}
+Recall by assumption we have that $|\xi - x_k| \leq h = \min(\delta, \frac{1}{A})$ and $\frac{|f''(x)|}{|f'(y)|} \leq A \quad \forall x,y, \in I_\delta$. Therefore, 
+\begin{equation}
+ 	|E_{k+1}| = \frac{1}{2} \left\vert \frac{f''(\eta_k)}{f'(x_k)} \right\vert |E_k|^2 \leq \frac{1}{2} |E_k|
+\end{equation} 
+We are given that $|\xi - x_0| \leq h = \min(\delta, \frac{1}{A})$, so that induction gives that 
+\begin{equation}
+	|E_k| = |\xi - x_k| \leq \frac{1}{2^k} h
+\end{equation}
+Therefore $(x_k)$ converges to $\xi$ as $k \to \infty$. 
+
+
+To show convergence is quadratic, notice that
+\begin{align*}
+	\lim_{k \to \infty} \frac{|E_{k+1}|}{|E_k|} &= \lim_{k \to \infty} \frac{1}{2} \frac{|f''(\eta_k)|}{|f'(x_k)|} \\
+	&= \frac{1}{2} \frac{|f''(\xi)|}{|f'(\xi)|} = \mu \leq \frac{A}{2}. 
+\end{align*}
+This shows that convergence is quadratic. 
+\end{proof}
+
+\subsection{Secant Method}
+Observe that Newton's method requires us to know the first derivative $f'$ of $f$. In applications, we might not know $f'$ or it could be expensive to calculate. This motivates approximating the $f'(x_k)$ in Newton's method with
+\begin{equation}
+	f'(x_k) \approx \frac{f(x_k) - f(x_{k-1})}{x_k - x_{k-1}}
+\end{equation}
+
+\begin{definition}[Secant Method]
+The secant method is defined by 
+\begin{equation}
+	x_{k+1} = x_k - f(x_k) \frac{x_k - x_{k-1}}{f(x_k) - f(x_{k-1})}
+\end{equation}
+\end{definition}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=.5]{secant_method.png}
+	\end{center}
+	\caption{Geometric Interpretation of Secant Method in $\R$}
+\end{figure}
+
+\begin{theorem}[Convergence of Secant Method]
+Suppose that $f$ is a real-valued function, defined and continuously differentiable on an interval $I = [\xi - h, \xi + h]$, $h > 0$, with center point $\xi$. Suppose further that $f(\xi) = 0$, $f'(\xi) \neq 0$. Then, the sequence $(x_k)$ defined by the secant method converges at least linearly to $\xi$ provided that $x_0$ and $x_1$ are sufficiently close to $\xi$. 
+\end{theorem}
+
+\begin{proof}
+Without loss of generality, assume that $\alpha = f'(\xi) > 0$ in a small neighborhood of $\xi$. We'll choose this neighborhood such that
+\begin{equation}
+	0 < \frac{3}{4}\alpha < f'(x) < \frac{5}{4}\alpha
+\end{equation}
+for all $x$ in the interval.
+
+Recall that the secant method is defined by 
+\begin{equation}
+	x_{k+1} = x_k - f(x_k) \frac{x_k - x_{k-1}}{f(x_k) - f(x_{k-1})}
+\end{equation}
+
+We can repeatedly use the mean value theorem to approximate each of these terms. First observe that
+\begin{equation}
+	\frac{f(x_k) - f(\xi)}{x_k - \xi} = f'(\eta_k)
+\end{equation}
+for some $\eta_k$ between $x_k$ and $\xi$. Since $f(\xi) = 0$, this equation implies that
+\begin{equation}
+	f'(x_k) = f'(\eta_k)(x_k - \xi)
+\end{equation}
+Next observe that
+\begin{equation}
+	\frac{f(x_k) - f(x_{k-1})}{x_k - x_{k-1}} = f'(\theta_k) 
+\end{equation}
+for some $\theta_k$ between $x_k$ and $x_{k-1}$. Therefore, we can put these pieces together to observe that,
+\begin{equation}
+	_{k+1} = x_k - \frac{f'(\eta_k)(x_k - \xi)}{f'(\theta_k)}
+\end{equation}
+To show convergence, we can compare successive error terms.
+\begin{align*}
+	E_{k+1} &= x_{k+1} - \xi \\
+	&= E_k - \frac{f'(\eta_k)}{f'(\theta_k)}E_k  \\
+	&= \left( 1 - \frac{f'(\eta_k)}{f'(\theta_k)} \right) E_k
+\end{align*}
+Therefore
+\begin{align*}
+	\frac{E_{k+1}}{E_k} &= 1 - \frac{f'(\eta_k)}{f'(\theta_k)} \\
+	&< 1 - \frac{5\alpha/4}{3\alpha/4} \\
+	&= \frac{2}{3} \\
+	&< 1
+\end{align*}	
+Therefore the secant method converges at least linearly. 
+\end{proof}
+
+\section{Solution of systems of linear equations}
+
+\subsection{LU Decomposition}
+
+\subsection{Least Squares}
+Given a system of equations $Ax = b$, the least squares problem is
+\begin{equation}
+	\min_{x \in \R^n} \norm{Ax - b}^2_2 
+\end{equation}
+We can expand the objective function out as
+\begin{align*}
+	\norm{Ax - b}^2_2 &= (Ax - b)^T (Ax - b) \\
+	&= x^T A^T A x - 2 b^T A x + b^T b 
+\end{align*}
+To find the $x$ that minimizes this expression we find the $x$ that satisfies $\nabla_x F = 0$. That is
+\begin{equation}
+	\nabla_x F = 0 = 2 A^T A x - 2 A^T b
+\end{equation}
+Therefore the minimizer is $x = (A^T A)^{-1} A^T b$. $(A^T A)^{-1} A^T$ is called the pseudo-inverse of $A$. If $A$ is square and invertible, then the pseudo-inverse equals $A^{-1}$.
+
+\subsection{Gram-Schimdt Orthogonalization}
+Algorithm: Denote the columns of $A$ by $a_i$. 
+\begin{enumerate}
+	\item $q_1 = a_1$. Then normalized by $q_1 = \frac{q_1}{\norm{q_1}}$.
+	\item $q_2 = a_2 - \inp{q_1}{a_2}q_1$. Then normalize by $q_2 = \frac{q_2}{\norm{q_2}}$. It's simple to verify that $q_2 \perp q_1$. 
+	\item For an arbitrary $k$, $q_k = a_k - \inp{a_k}{q_1}q_1 - \inp{a_k}{q_2}q_2 - \ldots - \inp{a_k}{q_{k-1}}q_{k-1}$. Then normalize by $q_k = \frac{q_k}{\norm{q_k}}$.
+\end{enumerate}
+
+We can observe the following properties:
+\begin{enumerate}
+	\item $\norm{q_i} = 1$ (this follows directly)
+	\item $q_i \perp q_j$ for all $i \neq j$
+	\item $q_k \in span(a_1, \ldots, a_k)$ and $a_k \in span(q_1, \ldots, q_k)$ so that $span(a_1, \ldots, a_k) = span(q_1, \ldots, q_k)$.
+\end{enumerate}
+
+[[Write proof for 2]].
+
+\subsection{QR Factorization}
+\begin{definition}(Unitary Matrix)
+A matrix $Q = [q_1 \ldots q_n] \in \R^{m\times n}$ is unitary if and only if $\inp{q_i}{q_j} = \delta_{ij}$.
+\end{definition}
+
+Observations about this definition:
+\begin{enumerate}
+	\item $Q^T Q = I$
+	\item If $Q$ is square, then $Q^T = Q^{-1}$.
+\end{enumerate}
+
+To calculate the $QR$ decomposition, we can find $Q$ by using the Gram-Schmidt process. Then $R$ can be found as
+\begin{equation}
+	R = 
+	\begin{pmatrix}
+	\inp{e_1}{a_1} & \inp{e_1}{a_2} & \inp{e_1}{a_3} & \hdots \\
+	0 & \inp{e_2}{a_2} & \inp{e_2}{a_3} & \hdots \\
+	0 & 0 & \inp{e_3}{a_3} & \hdots \\
+	\vdots & \vdots & \vdots & \ddots
+	\end{pmatrix}
+\end{equation}
+
+\subsubsection{Application to Least Squares}
+Suppose that we can write $A = QR$, where $A \in \R^{ m \times n}$, $Q \in \R^{ m \times n}$ and unitary, and $R \in \R^{n \times n}$ and upper triangular. Then the least squares solution to $Ax = b$ is given by
+\begin{align*}
+x &= (A^T A)^{-1} A^T b \\
+&= (R^T Q^T Q R)^{-1} R^T Q^T b \\
+&= (R^T R)^{-1} R^T Q^T b \\
+\implies (R^T R) x &= R^T Q^T b \\
+R x &= Q^T b \tag{assume $R$ is invertible (i.e. no zeros on the diagonal)}
+\end{align*}
+We can then solve for $x$ using back substitution, which is $\mathcal{O}(n^2)$.
+
+
+\subsection{Norms and Condition Numbers}
+\begin{definition}(Norm)\label{norm}
+Suppose that $\mathcal{V}$ is a linear space over the field $\R$. The \textit{nonnegative} real-valued function $\norm{\cdot}$ is a norm on $\mathcal{V}$ if the following axioms are satisfied: Fix $v \in \mathcal{V}$
+\begin{enumerate}
+	\item Positivity: $\norm{v} = 0$ if and only if $v = 0$
+	\item Scale Preservation: $\norm{\alpha v} = |\alpha| \norm{v}$ for all $\alpha \in \R$
+	\item Triangle Inequality: $\norm{v + w} \leq \norm{v} + \norm{w}$.
+\end{enumerate}
+\end{definition}
+
+\begin{example}[Examples of Norms]
+\begin{enumerate}
+	\item 1-norm:
+	\begin{equation}
+		\norm{v}_1 = \sum_{i=1}^n |v_i| = |v_1| + \cdots + |v_n|
+	\end{equation}
+	\item 2-norm:
+	\begin{equation}
+		\norm{v}_2 = \left( \sum_{i=1}^n v_i^2 \right)^{\frac{1}{2}} = \sqrt{v_1^2 + \cdots + v_n^2} = \sqrt{v^T v}
+	\end{equation}
+	\item $\infty$-norm
+	\begin{equation}
+		\norm{x}_{\infty} = \max_{i=1, \ldots, n} |v_i|
+	\end{equation}
+	\item $p$-norm
+	\begin{equation}
+		\norm{v}_p = \left( \sum_{i=1}^n |v_i|^p \right)^{\frac{1}{p}}
+	\end{equation}
+	For the $p$-norm, proving the triangle inequality follows from the Minkowski's inequality.
+\end{enumerate}
+\end{example}
+
+\begin{definition}[Operator Norm]
+Let $A$ be an $m \times n$ matrix. That is, $A$ is a linear transformation form $\R^n$ to $\R^m$. Then the operator norm (or subordinate matrix norm) of $A$ is
+\begin{equation}
+	\norm{A}_{p,q} = \sup_{x \in \R^n, x\neq 0} \frac{\norm{Ax}_q}{\norm{x}_p}.
+\end{equation}
+\end{definition}
+
+Observations about this definition:
+\begin{enumerate}
+	\item It's easy to check that this definition of the operator norm satisfies the properties of a norm given in Definition \ref{norm}. For the triangle inequality, observe that
+	\begin{align*}
+		&\norm{(A + B)x}_p \leq \norm{Ax}_p + \norm{Bx}_p \tag{from Minkowski's inequality} \\
+		\implies & \frac{\norm{(A + B)x}_p}{\norm{x}_p} \leq \frac{\norm{Ax}_p}{\norm{x}_p} + \frac{\norm{Bx}_p}{\norm{x}_p}
+	\end{align*}
+	Taking the supremum of both sides over $x$ shows that $\norm{A + B}_p \leq \norm{A}_p + \norm{B}_p$.
+	\item The definition immediately implies that for an arbitrary $x \in \mathbb{R}^n$, $x \neq 0$, 
+	\begin{equation}
+		\norm{Ax}_q \leq \norm{A}_{p,q} \norm{x}_p
+	\end{equation}
+	We can generalize this inequality to claim that
+	\begin{equation}
+		\norm{AB} \leq \norm{A} \norm{B}
+	\end{equation}
+	for conformable matrices $A, B$. Indeed, fix $0 \neq x \in R^n$. Then
+	\begin{equation}
+		\norm{ABx} \leq \norm{A} \norm{Bx} \leq \norm{A}\norm{B}\norm{x}
+	\end{equation}
+	We can divide all inequalities by $\norm{x}$ to see that for all $x \neq 0$,
+	\begin{equation}
+		\frac{\norm{ABx}}{\norm{x}} \leq \norm{A}\norm{B}
+	\end{equation}
+	Taking the supremum over $x$ on the left hand side shows that $\norm{AB} \leq \norm{A} \norm{B}$.
+\end{enumerate}
+
+\begin{theorem}[The $1$-norm of a matrix is the largest absolute-value column sum]
+Let $A \in \R^{m \times n }$ and denote the columns of $A$ by $a_j$, $j=1, \ldots, n$. Then $\norm{A}_1 = \max_{j=1, \ldots, n} \sum_{i=1}^{m} |a_{ij}| =  \max_{j=1, \ldots, n} \norm{a_j}$.
+\end{theorem}
+\begin{proof}
+Fix $x \in \R^n$. Let $C = \max_{j=1, \ldots, n} \sum_{i=1}^{m} |a_{ij}|$. First consider the product $A\cdot x$. The $i$th element is $\sum_{j=1}^n a_{ij} x_j$. Then
+\begin{align*}
+	\norm{Ax}_1 &= \sum_{i=1}^m |(Ax)_i | = \sum_{i=1}^m |\sum_{j=1}^n a_{ij} x_j| \\
+	&\leq \sum_{i=1}^m \sum_{j=1}^n |a_{ij}| |x_j| \tag{triangle inequality} \\
+	&= \sum_{j=1}^n |x_j| \left(\sum_{i=1}^m |a_{ij}| \right) \tag{interchange order of summation, assumed finite} \\
+	&\leq C \norm{x}_1
+\end{align*}
+Therefore $\frac{\norm{Ax}_1}{\norm{x}_1} \leq C$ for all $x$. Next, we find an $x$ such we achieve equality with $C$. Call index $J$ the index such that $\norm{a_J}_1 = C = \max_{j=1, \ldots, n} \sum_{i=1}^{m} |a_{ij}|$. Then let $e_J$ be the $n$-vector of zeros with a $1$ in the $J$th entry. Clearly $\norm{e_J}_1 = 1$. But then
+\begin{equation}
+ 	\norm{A e_J}_1 = \norm{a_J}_1 = C
+\end{equation} 
+In sum, we first showed that for all $x \in \R^n$
+\begin{equation}
+	\frac{\norm{Ax}_1}{\norm{x}_1} \leq C
+\end{equation}
+We then found an $x \in \R^n$ such that $\frac{\norm{Ax}_1}{\norm{x}_1} = C$. Therefore 
+\begin{equation}
+	\norm{A}_1 = \sup_{x \in \R^n, x\neq 0} \frac{\norm{Ax}_1}{\norm{x}_1} = C = \max_{j=1, \ldots, n} \sum_{i=1}^{m} |a_{ij}| =  \max_{j=1, \ldots, n} \norm{a_j}
+\end{equation}
+\end{proof}
+
+\begin{theorem}[The $\infty$-norm of a matrix is the largest absolute-value row sum]
+Let $A \in \R^{m \times n }$ and denote the rows of $A$ by $b_i$, $i=1, \ldots, m$. Then $\norm{A}_{\infty} = \max_{i=1, \ldots, m} \sum_{j=1}^{n} |a_{ij}| =  \max_{i=1, \ldots, m} \norm{b_i}$.
+\end{theorem}
+\begin{proof}
+Fix $x \in \R^n$. Let $C = \max_{i=1, \ldots, m} \sum_{j=1}^{n} |a_{ij}|$.
+\begin{align*}
+	\norm{Ax}_{\infty} &= \max_{i=1,\ldots,m} |\sum_{j=1}^n a_{ij} x_j| \\
+	&\leq \max_{i=1,\ldots,m} \sum_{j=1}^n |a_{ij}| |x_j| \tag{by the triangle inequality} \\
+	&\leq  \max_{i=1,\ldots,m} \sum_{j=1}^n |a_{ij}| \norm{x}_{\infty} \tag{since $|x_j| \leq \norm{x}_{\infty}$ for all $j$}\\
+	&= C \norm{x}_{\infty}
+\end{align*}
+
+Next, we find an $x$ such we achieve equality with $C$. Call $I$ the index for which $\norm{b_I}_\infty = C$. Define
+\begin{equation}
+	x_j = 
+	\begin{cases} 
+      1 & a_{Ij} > 0 \\
+      -1 & a_{Ij} < 0
+   \end{cases}
+\end{equation}
+Observe that $\norm{x}_\infty = 1$. Then
+\begin{align*}
+	|A\cdot x|_I &= |b_I^T \cdot x| \\
+	&=  |\sum_{j=1}^m a_{Ij} x_j | \\
+	&= |\sum_{j=1}^m a_{Ij}| \\
+	&= C
+\end{align*}
+We then found an $x \in \R^n$ such that $\frac{\norm{Ax}_\infty}{\norm{x}_\infty} = C$. Therefore 
+\begin{equation}
+	\norm{A}_\infty = \sup_{x \in \R^n, x\neq 0} \frac{\norm{Ax}_\infty}{\norm{x}_\infty} = C = \max_{i=1, \ldots, m} \sum_{j=1}^{n} |a_{ij}| =  \max_{i=1, \ldots, m} \norm{b_i}
+\end{equation}
+\end{proof}
+
+\begin{theorem}[The $2$-norm of a symmetric positive definite matrix is the maximum absolute value of its eigenvalues]
+Let $A$ be a positive definite $n \times n$ matrix. Then 
+\begin{equation}
+	\norm{A}_2 = \max_{i=1,\ldots, n} |\lambda_i|
+\end{equation}
+\end{theorem}
+\begin{proof}
+Since $A$ is positive definite, $A$ has $n$ distinct eigenvalues, which implies that it has $n$ linearly independent eigenvectors. Therefore, for an arbitrary $x \in \R^n$, we can write $x$ as a linearly combination of the eigenvectors $x_1$, $\ldots$, $x_n$. Then
+\begin{align*}
+	x &= c_1 x_1 + \cdots + c_n x_n \\
+	A x &= c_1 A x_1 + \cdots + c_n A x_n \\
+	&= c_1 \lambda_1 x_2 + \cdots + c_n \lambda_n x_n 
+\end{align*}
+We can normalize the eigenvectors of $A$ so that $x_i^T x_i = 1$. Then $\norm{Ax}_2 = \sqrt{\sum_{i=1}^n c_i^2 \lambda_i^2}$ and $\norm{x}_2 = \sqrt{\sum_{i=1}^n c_i^2}$. Therefore 
+\begin{equation}
+	\frac{\norm{Ax}_2}{\norm{x}_2} = \sqrt{\frac{\sum_{i=1}^n c_i^2 \lambda_i^2}{\sum_{i=1}^n c_i^2}} \leq \max_i |\lambda_i| = |\lambda_I|
+\end{equation}
+Now we'll find an $x$ such that we actually achieve equality. Call $I$ the index of the maximum absolute value of an eigenvalue. Then, consider the eigenvector associated with this eigenvalue, called $x_i$. Then
+\begin{equation}
+	\frac{\norm{Ax_I}_2}{\norm{x_I}_2} = \frac{|\lambda_I|\norm{x_I}}{\norm{x_I}} = |\lambda_I|
+\end{equation}
+This shows that $\norm{A}_2 =  \max_i |\lambda_i|$.
+\end{proof}
+
+\begin{theorem}[The $2$-norm of a matrix $A_{m \times n}$ equals its largest singular value]
+Let $A$ be an $m \times n$ matrix and denote the eigenvalues of the matrix $B = A^TA$ by $\lambda_i$, $i=1,\ldots, n$. Then 
+\begin{equation}
+	\norm{A}_2 = \max_i \sqrt{\lambda_i}
+\end{equation}
+The square roots of the (nonnegative) eigenvalues of $A^TA$ are referred to as the singular values of $A$.
+\end{theorem}
+
+\subsubsection{Conditioning}
+Conditioning helps us quantify the sensitivity of the output to perturbations of the input. In what follows, let $f$ be a mapping from a subset $D$ of a normed linear space $\mathcal{V}$ to another normed linear space $\mathcal{W}$. 
+\begin{definition}[Absolute Condition Number]
+\begin{equation}
+	Cond(f) = \sup_{x,y \in D, x\neq y} \frac{\norm{f(x) - f(y)}}{\norm{x - y}}
+\end{equation}
+\end{definition}
+
+\begin{definition}[Absolute Local Condition Number]
+\begin{equation}
+	Cond_x(f) = \sup_{x + \delta x \in D, \delta x \neq 0} \frac{\norm{f(x + \delta x) - f(x)}}{\norm{\delta x}}
+\end{equation}
+\end{definition}
+
+The previous two definitions depend on the magnitudes of $f(x)$ and $x$. In applications, it's often better to rescale as follows
+\begin{definition}[Relative Local Condition Number]
+\begin{equation}
+	cond_x(f) = \sup_{x + \delta x \in D, \delta x \neq 0} \frac{\norm{f(x + \delta x) - f(x)} / \norm{f(x)}}{\norm{\delta x} / \norm{x}}
+\end{equation}
+\end{definition}
+
+\textbf{In these definitions, if $f$ is differentiable then we can replace the differences with the appropriate derivatives.} 
+
+\begin{example}[Example of condition numbers]
+Let $D$ be a subinterval of $[0, \infty)$ and $f(x) = \sqrt{x}$. Then $f'(x) = \frac{1}{2 \sqrt{x}}$. 
+\begin{enumerate}
+	\item If $D = [1,2]$, then $Cond(f) = \frac{1}{2}$.
+	\item If $D = [0, 1]$, then $Cond(f) = \infty$.
+	\item If $D = (0, \infty)$, then the the absolute local condition number of $f$ at $x \in D$ is 
+	\begin{equation}
+		Cond_x(f) = \frac{1}{2 \sqrt{x}}
+	\end{equation}
+	Thus as $x \to $, $Cond_x(f) \to \infty$, and as $x \to \infty$, $Cond_x(f) \to 0$.
+	\item If $D = (0, \infty)$, then the relative local condition number of $f$ is $cond_x(f) = 1/2$ for all $x \in D$. 
+\end{enumerate}
+\end{example}
+
+\begin{definition}[Condition Number of a Nonsingular Matrix]
+The condition number of a nonsingular matrix $A$ is defined by 
+\begin{equation}
+	\kappa(A) = \norm{A} \Vert A^{-1} \Vert
+\end{equation}
+If $\kappa(A) \gg 1$, the matrix is said to be ill-conditioned.
+\end{definition}
+Observations about this definition:
+\begin{enumerate}
+	\item $\kappa(A) = \kappa(A^{-1})$ 
+	\item For all $A$, $\kappa(A) \geq 1$. This follows because
+	\begin{equation}
+		1 = \norm{I} = \Vert A A^{-1} \Vert \leq \norm{A} \Vert A^{-1} \Vert
+	\end{equation}
+	\item The condition number of a matrix is unaffected by scaling all its elements by multiplying by a nonzero constant.
+	\item There is a condition number for each norm, and the size of the condition number is strongly dependent on the choice of norm.
+\end{enumerate}
+
+\section{Special Matrices}
+\subsection{Symmetric Positive Definite Matrices }
+\begin{definition}[Symmetric, Positive Definite, spd]
+The real matrix $A$ is said to be symmetric if $A = A^T$. A square $n \times n$ matrix is called positive definite if 
+\begin{equation}
+ 	\x^T A \x > 0
+\end{equation}
+for all $\x \in \R^n$, $\x \neq 0$. 
+\end{definition}
+
+\begin{theorem}[Properties of spd matrices]
+Let $A$ be an $n \times n$ real, spd matrix. Then
+\begin{enumerate}
+	\item $a_{ii} > 0$ for all $i=1, \ldots, n$ (the diagonal elements of $A$ are positive). 
+	\item $A x_i \ = \lambda_i x_i \implies \lambda_i \in \R_{>0}, \x \in \R^n \setminus \{0\}$ (the eigenvalues of $A$ are real and positive, and the eigenvectors of $A$ belong to $\R^n \setminus \{0\}$).
+	\item $x_i \perp x_j$ if $\lambda_i \neq \lambda_j$ (the eigenvectors of distinct eigenvalues of $A$ are orthogonal)
+	\item $\det(A) > 0$ (the determinant of $A$ is positive)
+	\item Every submatrix $B$ of $A$ obtained by deleting any set of rows and the corresponding set of columns from $A$ is symmetric and positive definite (in particular, every principal submatrix is positive definite). 
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+We prove each claim in the theorem as follows
+\begin{enumerate}
+	\item Let $e_i$ be the $i$th canonical basis vector in $\R^n$. Then
+	\begin{equation}
+		a_{ii} = e_i^T A e_i > 0
+	\end{equation}
+	since $A$ is pd. A few observations: this only relies on $A$ being pd. $e_i^T A$ picks out the $i$th row of $A$. $A e_i$ picks out the $i$th column of $A$. 
+	\item We'll first show that the eigenvalues of $A$ are real. Suppose $\lambda$, $\x$ are an eigenvalue/vector pair of $A$. Thus $A \x = \lambda \x$. We can conjugate this equation to find that $\bar A \bar \x = A \bar \x = \bar \lambda \bar x$ (thus complex eigenvalues of real valued matrices come in conjugate pairs). Then
+	\begin{align*}
+	\x^T A \bar\x &= \bar \lambda \x^T \bar \x \\
+	\x^T A^T \bar\x &= (A\x)^T \bar \x = \lambda \x^T \bar \x
+	\end{align*}
+	Since $A = A^T$, we know that $\lambda \x^T \bar \x = \lambda \x^T \bar \x$. As long as $\x \neq 0$, then $\x^T \bar \x \neq 0$. Therefore $\bar \lambda = \lambda$, which shows $\lambda \in \R$. 
+
+	The fact that the eigenvector associated with $\lambda$ has real elements follows by noting that all elements of the singular matrix $A - \lambda I$ are real numbers. Therefore, the columns of $A - \lambda I$ are linearly dependent in $\R^n$. Hence there exists an $\x \in \R^n$ such that $(A - \lambda I)\x = 0$. 
+
+	This proof only requires that $A$ is symmetric -- therefore any real, symmetric matrix has real eigenvalues/vectors. 
+
+	Next we'll show the eigenvalues of $A$ are positive. Suppose $\lambda$, $\x$ are an eigenvalue/vector pair of $A$. Then
+	\begin{equation}
+		0 < \x^T A \x = \lambda \x^T \x
+	\end{equation}
+	Since $\x \neq 0$ and $\x^T \x$ is positive (it's actually the squared $2$-norm of $\x$), then $\lambda > 0$. Note that this part of the proves requires $A$ be pd.
+
+	\item Let $\lambda_i, \lambda_j$ be distinct eigenvalues of $A$, and $\x_i, \x_j$ the corresponding eigenvectors. Then
+	\begin{align*}
+		\x_i^T A \x_j &= \lambda_j \x_i^T \x_j \\
+		\x_i^T A^T \x_j &= (A\x_i)^T x_j = \lambda_i \x_i^T \x_j 
+	\end{align*}
+	Since $A$ is symmetric, these two string of equalities must be equal. We can subtract them to find that 
+	\begin{equation}
+		(\lambda_i - \lambda_j)\x_i^T \x_j = 0
+	\end{equation}
+	Since we assumed $\lambda_i \neq \lambda_j$, then it must be that $\x_i^T \x_j$. Therefore $x_i \perp x_j$. This proof again only relies on the symmetry of $A$. 
+ 	which is the product of the diagonal elements of the matrix (the eigenvalues). 
+	\item This follows from the fact that the determinant of $A$ is equal to the product of its eigenvalues. Or, we can write $A$ in terms of its eigenvalue decomposition. Thus
+	\begin{equation}
+		A = X \Lambda X^{-1}
+	\end{equation}
+	Therefore
+	\begin{equation}
+		\det(A) = \det(X) \det(\Lambda) \det(X)^{-1} = \det(\Lambda) 
+ 	\end{equation}Or, we can write $A$ in terms of its eigenvalue decomposition. Thus
+	\begin{equation}
+		A = X \Lambda X^{-1}
+	\end{equation}
+	Therefore
+	\begin{equation}
+		\det(A) = \det(X) \det(\Lambda) \det(X)^{-1} = \det(\Lambda) 
+ 	\end{equation}
+	\item Let $I \subset \{1,2,\ldots, n\}$ be a subset of indices and let $B = A_{II}$. $A$ is symmetric, so that $A_{II} = A_{II}^T$. Therefore $B$ is symmetric. Let $x \in \R^n$ and define a vector $y$ that is $0$ for the indices not included in $I$ and follows the value of $x$ for the indices included in $I$. Therefore, $x^TBx = y^TAy > 0$ since $A$ is pd. 
+\end{enumerate}
+\end{proof}
+
+\subsection{Cholesky Factorization}
+
+\begin{theorem}[Cholesky]
+If $A$ is spd, then there exists a lower diagonal matrix $L$ such that $A = L L^T$. This is called the Cholesky decomposition. 
+\end{theorem}
+
+\begin{algorithm}
+  \caption{Cholesky Factorization}
+  \begin{algorithmic}[ht]
+    \Require{$A \in \R^{n \times n}$, SPD}
+    \Let{$L_1$}{$\sqrt{a_{11}}$}
+    \For{$k \gets 2, 3, \ldots, n$}
+    	\State Solve $L_{k-1} l_k = a_k$ for $l_k$
+    	\Let{$l_{kk}$}{$\sqrt{a_{kk} - l_k^T l_k}$}
+    	\Let{$L_k$}{$\begin{pmatrix} L_{k-1} & 0 \\ l_k^T & l_{kk} \end{pmatrix}$}
+    \EndFor
+  \end{algorithmic}
+\end{algorithm}
+Notation:
+\begin{itemize}
+	\item $L_{k-1}$: the first $k-1 \times k-1$ upper left corner of $L$
+	\item $a_k$: the first $k-1$ entries in column $k$ of $A$
+	\item $l_k$: the first $k-1$ entries in column $k$ of $L^T$ [[?]]
+	\item $a_{kk}, l_{kk}$: the $kk$ entries of $A$ and $L$, respectively
+\end{itemize}
+
+\subsection{Banded Matrices and Differential Equations}
+Consider the two-point boundary value problem
+\begin{equation}
+	u'' + 2u' = -1, \quad u(x=0)=0, u(x=1)= 0
+\end{equation}
+where $x\in [0,1]$.
+
+Define a sequence of grid points $\{x_i\}_{i=0}^{N+1}$. We can approximate the derivative of $u$ at each point on the grid as follows
+\begin{align*}
+	u'(x_j) &= \lim_{\delta \to 0} \frac{u(x_j + \delta) - u(x_j - \delta)}{2\delta} \\
+	&\approx \frac{u(x_{j-1}) - u(x_{j+1})}{2\Delta x}
+\end{align*}
+where we use the centered difference quotient of order $2$. Similarly, we can approximate the second derivative of $u$ each each point in the domain as
+\begin{align*}
+	u''(x_j) &= \lim_{\delta \to 0} \frac{u'(x_j + \delta) - u'(x_j - \delta)}{2\delta} \\
+	&\approx \frac{u'(x_{j+1}) - u'(x_{j-1})}{2\Delta x} \\
+	&= \frac{\frac{u(x_{j+2}) - u(x_j)}{2\Delta x} - \frac{u(x_j) - u(x_{j-2})}{2\Delta x}}{2\Delta x} \\
+	&= \frac{u(x_{j+2}) - 2u(x_j) + u(x_{j-2})}{4\Delta x}
+\end{align*}
+Let's instead use the grid points adjacent to $x_j$:
+\begin{equation}
+	u''(x_j) \approx \frac{u(x_{j+1}) - 2u(x_j) + u(x_{j-1})}{\Delta x}
+\end{equation}
+Then, going back to the initial differential equation, for $x_j$, we have
+\begin{equation}
+	\frac{u(x_{j+1}) - 2u(x_j) + u(x_{j-1})}{\Delta x} + 2 \frac{u(x_{j-1}) - u(x_{j+1})}{2\Delta x} = -1
+\end{equation}
+Let
+\begin{equation}
+	U = 
+	\begin{bmatrix}
+	u(x_1) \\ u(x_2) \\ \vdots \\ u(x_N)
+	\end{bmatrix}
+\end{equation}
+and let $u_i = u(x_i)$. In this notation, the differential equation at $x_j$ can be written as
+\begin{equation}
+	\frac{u_{j+1} - 2u_j + u_{j-1}}{\Delta x^2} + \frac{u_{j-1} - u_{j+1}}{\Delta x} = -1
+\end{equation}
+We can put these equations together into a matrix. Each row will only have $3$ non-zero entries at $j-1$, $j$, and $j+1$. Thus the $j$th row is
+\begin{equation}
+	\begin{pmatrix}
+	0 & 0 & \hdots & \frac{1}{\Delta x^2} + \frac{1}{\Delta x} & \frac{-2}{\Delta x^2} & \frac{1}{\Delta x^2} - \frac{1}{\Delta x} & 0 & 0 & \hdots
+	\end{pmatrix}
+\end{equation}
+Thus stacking these rows together will give a tridiagonal matrix. Call this matrix $A$. Then we have that
+\begin{equation}
+	AU = \bm{-1}
+\end{equation}
+
+\section{Simultaneous nonlinear equations}
+
+\subsection{Analysis Preliminaries}
+\begin{definition}[Cauchy Sequence]
+A sequence $(\x^{(k)}) \subset \R^n$ is called a Cauchy sequence in $\R^n$ if for any $\e > 0$ there exists a positive integer $k_0 = k_0(\e)$ such that
+\begin{equation}
+	\norm{\x^{(k)} - \x^{(m)}}_{\infty} < \e \quad \forall k, m \geq k_0(\e)
+\end{equation}
+\end{definition}
+
+\begin{remark}
+$\R^n$ is \textbf{complete} in the sense that every Cauchy sequence $(\x^{(k)})$ converges to some $\xi \in \R^n$. 
+\end{remark}
+
+\begin{definition}[Continuous function]
+Let $D \subset \R^n$ be nonempty and $f: D \to \R^n$. Given $\xib \in D$, $f$ is continuous at $\xib$ if for every $\e > 0$, there exists a $\delta = \delta(\e) > 0$ such that for every $\x \in B(\xib; \delta) \cap D$
+\begin{equation}
+ 	\norm{f(\x) - f(\xib)}_\infty < \e
+ \end{equation} 
+\end{definition}
+
+\begin{lemma}
+Let $D \subset \R^n$ be nonempty and $f: D \to \R^n$ be defined and continuous on $D$. If $(\x^{(k)}) \subset D$ converges in $\R^n$ to $\xib \in D$, then $f(\x^{(k)})$ also converges to $f(\xib)$. 
+\end{lemma}
+
+We want to find a vector $\x\in \R^n$ such that $f(\x) = 0$.
+
+\begin{example}
+Consider the linear system
+\begin{equation}
+	Ax = b
+\end{equation}
+Then $A: \R^n \to \R^m$. Let $f(\bm x) = A\x - b$.
+\end{example}
+
+\begin{example}
+Let 
+\begin{equation}
+	f = 
+	\begin{bmatrix}
+	x_1^2 + x_2^2 - 1 \\
+	5x_1^2 + 21x_2^2 - 9
+	\end{bmatrix}
+\end{equation}
+Note that $x_1^2 + x_2^2 = 1$ is the $0$ level set of $f$, and is the unit circle. $5x_1^2 + 21x_2^2 = 9$ is the $0$ level set of $f$ and is an ellipse. 
+
+This function has four zeros
+\begin{equation}
+	\begin{bmatrix}
+	x_1 \\ x_2
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+	\pm \sqrt{3}/2 \\
+	\pm \frac{1}{2}
+	\end{bmatrix}
+\end{equation}
+\end{example}
+
+\subsection{Simultaneous iteration}
+
+\begin{example}
+
+\end{example}
+
+
+\begin{definition}[Lipschitz condition, constant, and contraction]
+Let $D$ be a closed subset of $\R^n$ and $g: D \to D$. If there exists a positive constant $L$ such that
+\begin{equation}
+	\norm{g(x) - g(y)}_\infty \leq L \norm{x - y}_\infty
+\end{equation}
+for all $x, y \in D$, then $g$ satisfies the Lipschitz condition on $D$ in the $\infty$-norm. $L$ is called the Lipschitz constant. If $L \in (0,1)$, then $g$ is called a contraction on $D$ in the $\infty$-norm. 
+\end{definition}
+
+Observations about this definition:
+\begin{itemize}
+	\item Any function $g$ that satisfies the Lipschitz condition on $D$ is continuous on $D$ (to see this, set $\delta = \frac{\e}{L}$). 
+	\item If $g$ satisfies the Lipschitz condition on $D$ in the $\infty$-norm, then it also does in the $p$-norm for $p \in [1, \infty)$ and vice-versa. However the size of $L$ depends on the choice of norm. 
+\end{itemize}
+
+\begin{theorem}[Contraction Mapping Theorem in $\R^n$]
+Suppose $D$ is a closed subset of $\R^n$ and $g: \R^n \to \R^n$ is defined on $D$, and $g(D) \subset D$. Suppose further that $g$ is a contraction on $D$ in the $\infty$-norm. Then,
+\begin{enumerate}
+	\item $g$ has a unique fixed point $\xib \in D$
+	\item The sequence $(\x^{(k)})$ defined by $\x^{(k+1)} = g(\x^{k})$ converges to $\xib$ for any starting value $x^{(0)} \in D$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The proof has three parts:
+\begin{enumerate}
+	\item First prove uniqueness, assuming existence of a fixed point.
+	\item Prove the iteration generates a Cauchy sequence (then convergence to some $\xib$ follows from the completeness of the space).
+	\item Show $\xib$ is indeed the fixed point.
+\end{enumerate}
+
+Uniqueness: Suppose $\xib, \bm \eta$ are both fixed points of $g$ in $D$. Then,
+\begin{align*}
+	\norm{\xib - \bm \eta}_\infty &= \norm{g(\xib) - g(\bm \eta)} \tag{$\xib, \bm \eta$ are fixed points} \\
+	&\leq L \norm{\xib - \bm \eta}_\infty \tag{$g$ is a contraction on $D$}
+\end{align*}
+We can rearrange this to see that $(1-L)\norm{\xib - \bm \eta}_\infty \leq 0$. By assumption, $L\in (0,1)$, and the norm of a quantity is always weakly positive. Therefore, $\norm{\xib - \bm \eta}_\infty = 0$ which implies $\xib = \bm \eta$. 
+
+Convergence: Assuming $g$ has a fixed point $\xib \in D$, the sequence $\x^{(k+1)} = g(\x^{k})$ will converge to $\xib$ for any $\x^{(0)} \in D$. This follows because
+\begin{equation}
+	\norm{\x^{(k)} - \xib}_\infty \leq L^k \frac{1}{1-L} \norm{\x^{(1)} - \x^{(0)}}_\infty
+\end{equation}
+Since $L \in (0,1)$, $\lim_{k\to\infty} L^k = 0$, and therefore
+\begin{equation}
+	\lim_{k \to \infty} \norm{\x^{(k)} - \xib}_\infty = 0
+\end{equation}
+
+Existence: First observe that if $\x^{(0)}$ belongs to $D$, then $\x^{(k+1)} = g(\x^{k}) \in D$ for all $k \geq 1$ since $g(D) \subset D$ (this is important since the proof relies on $g$ being a contraction on $D$). Next, consider the distance between two adjacent terms on the sequence $\x^{(k+1)} = g(\x^{k})$
+\begin{align*}
+	\norm{\x^{(k)} - \x^{(k-1)}}_\infty &= \norm{g(\x^{(k-1)}) - g(\x^{(k-2)})}_\infty \tag{definition of $g$} \\
+	&\leq L \norm{\x^{(k-1)} - \x^{(k-2)}}_\infty \tag{$g$ is a contraction on $D$} \\
+	&\leq L^{k-1} \norm{\x^{(1)} - \x^{(0)}}_\infty \tag{induction}
+\end{align*}
+
+Now, fix positive integers $m,k$ such that $m > k$. Then
+\begin{align*}
+	\norm{\x^{(m)} - \x^{(k)}}_\infty &= \norm{\x^{(m)} - \x^{(m-1)} + \x^{(m-1)} + \cdots + \x^{(k-1)} - \x^{(k)}}_\infty \\
+	&\leq \norm{\x^{(m)} - \x^{(m-1)}}_\infty + \cdots + \norm{\x^{(k+1)} - \x^{(k)}}_\infty \tag{triangle inequality} \\
+	&\leq (L^{m-1} + \cdots + L^k) \norm{\x^{(1)} - \x^{(0)}}_\infty \tag{$g$ a contraction} \\
+	&= L^k (L^{m-k-1} + \cdots + 1) \norm{\x^{(1)} - \x^{(0)}}_\infty \\
+	&\leq L^k \frac{1}{1-L} \norm{\x^{(1)} - \x^{(0)}}_\infty \tag{geometric series}
+\end{align*}
+
+Since $L \in (0,1)$, $\lim_{k\to\infty} L^k = 0$. Therefore, $\x^{(k)}$ is a Cauchy sequence in $\R^n$, that is for all $\e > 0$, there exists a $k_0$ such that 
+\begin{equation}
+	\norm{\x^{(m)} - \x^{(k)}}_\infty < \e \quad \forall m,k \geq k_0
+\end{equation}
+
+Any Cauchy sequence in $\R^n$ is convergent in $\R^n$. Thus, there exists some $\xib \in \R^n$ such that $\xib = \lim_{k \to \infty} \x^{(k)}$. 
+
+$\xib$ is indeed the fixed point: Since $g$ satisfies the Lipschitz condition on $D$, $g$ is continuous on $D$. Therefore, 
+\begin{equation}
+	\xib = \lim_{k \to \infty} \x^{(k+1)} = \lim_{k \to \infty} g(\x^{(k)}) = g \left( \lim_{k \to \infty} \x^{(k)} \right) = g(\xib)
+\end{equation}
+therefore $\xib$ is a fixed point of $g$, and observe that $\xib \in D$ since $D$ is closed. 
+\end{proof}
+
+\begin{definition}[Jacobian]
+Let $g = (g_1, \ldots, g_n)^T : \R^n \to \R^n$ be a function defined and continuous in an (open) neighborhood of $\xib \in \R^n$. Suppose the first partial derivatives of each $g_i$ exist at $\xib$. The Jacobian matrix $J_g(\xib)$ of $g$ at $\xib$ is the $n \times n$ matrix with elements
+\begin{equation}
+	J_g(\xib)_{ij} = \frac{\partial g_i}{\partial x_j} (\xib) 
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Jacobian and Fixed Point Stability]
+Let $g = (g_1, \ldots, g_n)^T : \R^n \to \R^n$ be a function defined and continuous on a closed set $D \subset \R^n$. Let $\xib \in D$ be a fixed point of $g$. Suppose the first partial derivatives of each $g_i$ are defined and continuous in some (open) neighborhood $N(\xib) \in D$ of $\xib$, with 
+\begin{equation}
+	\norm{J_g(\xib)}_\infty < 1  	
+\end{equation}
+Then there exists $\e > 0$ such that $g (\bar B_\e(\xib)) \subset \bar B_\e(\xib)$, and the sequence $\x^{(k+1)} = g(\x^{k})$ converges to $\xib$ for all $\x^{(0)} \in \bar B_\e(\xib)$ (in other words, the sequence converges to $\xib$ as long as $\x^{(0)}$ is close enough to $\xib$).
+\end{theorem}
+
+\begin{example}
+
+\end{example}
+
+\subsection*{Newton's Method}
+\begin{definition}[Newton's Method]
+	The sequence defined by
+	\begin{equation}
+		\x^{(k+1)} = \x^{(k)} - [J_f(\x^{(k)})]^{-1} f(\x^{(k)})
+	\end{equation}
+	where $\x^{(0)} \in \R^n$, is called Newton's method. 
+\end{definition}
+
+\begin{theorem}
+Suppose $f(\xib) = 0$, that in some (open) neighborhood $N(\xib)$ of $\xib$, where $f$ is defined and continuous, all the second-order partial derivatives of $f$ are defined and continuous, and that the Jacobian matrix $J_f(\x^{(k)})$ of $f$ at the point $\xib$ is nonsingular. Then the sequence defined by Newton's method converges to $\xib$ provided that $\x^{(0)}$ is sufficiently close to $\xib$. 
+\end{theorem}
+
+
+\section{Eigenvalues of Eigenvectors of a symmetric matrix}
+
+Another matrix decomposition is
+\begin{equation}
+	A = X \Lambda X^{-1}
+\end{equation}
+where $X$ is a matrix of the eigenvectors and $\Lambda$ is a diagonal matrix with the eigenvalues. 
+
+\subsection{Why we use iteration to calculate eigenvalues/eigenvectors}
+We call $\lambda$ an eigenvalue and $x \neq 0$ an eigenvector of $A$ if $Ax = \lambda x$. Thus, $(Ax - \lambda I) = 0$. Therefore, $x \in Null(A - \lambda I)$. Since $x \neq 0$, $A - \lambda I$ has a non-trivial nullspace, so we must have $\det(A - \lambda I) = 0$. This suggests a way to transform an eigenvalue finding problem to a root finding problem. Define
+\begin{equation}
+	\rho(\lambda) = \det(A - \lambda I)
+\end{equation}
+Recall that the determinant of a matrix is the product of its eigenvalues. If $A$ is a $n \times n$ real, symmetric matrix, then $\rho(\lambda)$ is an $n$-th order polynomial in $\lambda$, whose roots are the eigenvalues of $A$. 
+
+\begin{theorem}[Abel(-Ruffini) Theorem, or ``No-go Theorem'']
+There is no algebraic solution (that is, a solution expressed in terms of radicals) to general polynomial equations of degree five or higher with arbitrary coefficients.  
+\end{theorem}
+
+Therefore, there is no finite-number operation procedure that provides an eigenvalue decomposition. 
+
+\subsection{Power Iteration}
+\textbf{Find the biggest eigenvalue/vector.}
+
+\begin{algorithm}[ht]
+  \caption{Power Iteration}
+  \begin{algorithmic}[1]
+    \Require{$v^{(0)} =$ some vector with $\norm{v^{(0)}} = 1$}
+    \For{$k \gets 1, 2, \ldots$}
+	    \Let{$w$}{$Av^{(k-1)}$} \Comment{Apply $A$}
+	    \Let{$v^{(k)}$}{$w/ \norm{w}$} \Comment{Normalize}
+	    \Let{$\lambda^{(k)}$}{$(v^{(k)})^T Av^{(k)} = \inp{v^{(k)}}{Av^{(k)}}$} \Comment{Rayleigh Quotient}
+    \EndFor
+  \end{algorithmic}
+\end{algorithm}
+
+\begin{theorem}[Convergence of Power Iteration]
+Suppose $|\lambda_1|  > |\lambda_2| \geq \ldots \geq |\lambda_n|$ and $q_1^T v^{(0)} \neq 0$. Then the iterates of power iteration satisfy
+\begin{align}
+	\norm{v^{(k)} - (\pm q_1)} &= \mathcal{O}\left( \left\vert \frac{\lambda_2}{\lambda_1} \right\vert^k \right) \tag{error of eigenvector} \\
+	|\lambda^{(k)} - \lambda_1 | &= \mathcal{O}\left( \left\vert \frac{\lambda_2}{\lambda_1} \right\vert^{2k} \right) \tag{error of eigenvalue}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+
+Convergence of eigenvector: Write $v^{(0)} = v$ as a linear combination of the orthonormal eigenvectors $q_i$:
+\begin{equation}
+	v = c_1 q_1 + \cdots + c_nq_n
+\end{equation}
+
+$v^{(k)}$ is a scalar multiple of $A^k v^{(0)}$. Therefore
+
+\begin{align*}
+	v^{(k)} &= \alpha_k A^k v^{(0)} \tag{$\alpha_k$ a normalization constant} \\
+	&= \alpha_k \left(\sum_{i=1}^n \lambda_i^k a_i q_i \right) \\
+	&= \alpha_k \lambda_1^k \left( c_1q_1 + c_2 \left(\frac{\lambda_2}{\lambda_1} \right)^k q_2 + \ldots + c_n \left(\frac{\lambda_n}{\lambda_1} \right)^k q_n \right) \\
+\end{align*}
+We can choose $\alpha_k$ such that $\alpha_k \lambda_1^k$ is 1. Therefore, $c_1 q_1$ is dominating (as long as $c_1 \neq 0$). The other terms are of order $\mathcal{O}\left( \left\vert \frac{\lambda_2}{\lambda_1} \right\vert^k \right)$.
+
+Convergence of eigenvalue: see proposition below.
+
+\end{proof}
+
+\begin{theorem}[Error of Rayleigh Quotient]
+Let $x_1$ be the eigenvector that corresponds to the largest (in absolute value) eigenvalue. If $\norm{x - x_1} = \mathcal{O}(\e)$, then
+\begin{equation}
+	\left\vert \frac{\inp{x}{Ax}}{\inp{x}{x}}  - \lambda_1 \right\vert = \mathcal{O}(\e^2)
+\end{equation}
+\end{theorem}
+\begin{proof}
+\color{Red}{TODO}. 
+\end{proof}
+
+
+\subsection{Inverse Iteration}
+\textbf{Find the smallest eigenvalue/vector}. 
+
+\subsection{Simultaneous Iteration}
+\textbf{Obtain the full set of eigenvalues/vectors simultaneously.}
+
+\begin{algorithm}[ht]
+  \caption{Simultaneous Iteration}
+  \begin{algorithmic}[1]
+    \Require{$Q^{(0)} = V = I$, a list of vectors $V$, which we choose to be the identity}
+    \For{$k \gets 1, 2, \ldots$}
+	    \Let{$Z$}{$A \underline Q^{(k-1)}$} \Comment{Apply $A$}
+	    \Let{$Z$}{$\underline Q^{(k)} R^{(k)}$} \Comment{$QR$ factorization of $Z$}
+	    \Let{$A^{(k)}$}{$(\underline Q^{(k)})^T A \underline Q^{(k)}$}  \Comment{$A^{(k)}_{ii} = \inp{q_i^{(k)}}{Aq_i^{(k)}}$}
+    \EndFor
+  \end{algorithmic}
+\end{algorithm}
+
+Intuitively, 
+\begin{equation}
+	A^K \cdot V = 
+	\begin{bmatrix}
+	\sum_i \lambda_i^k c_{1i} \tilde{q_i} &\vert & \sum_i \lambda_i^k c_{2i} \tilde{q_i}&\vert & \cdots
+	\end{bmatrix}
+\end{equation}
+The first column vector will converge to $\tilde{q}_1$. The second vector will converge to $\tilde{q}_1 + \mathcal{O}\left( \left\vert \frac{\lambda_2}{\lambda_1} \right\vert^k \right) \tilde{q}_2$. 
+
+$\underline Q^{(k)}$ will converge to the matrix of eigenvectors:
+\begin{equation}
+	X = 
+	\begin{bmatrix}
+	x_1 &|& x_2 &|& \cdots &|&x_n 
+	\end{bmatrix}
+\end{equation}
+
+$\underline A^{(k)}$ will converge to a diagonal matrix containing the eigenvalues.
+
+\subsection{Shifted Power Iteration}
+\textbf{Find the eigenvalue close to a specific number.}
+
+\subsection{QR Algorithm}
+The $QR$ can be viewed as a stable procedure for computing $QR$ factorizations of the matrix powers $A$, $A^2$, $A^3$, $\ldots$
+
+\begin{algorithm}[ht]
+  \caption{QR Algorithm (without shifts)}
+  \begin{algorithmic}[1]
+    \Require{$A^{(0)} = A$}
+    \For{$k \gets 1, 2, \ldots$}
+	    \Let{$Q^{(k)}R^{(k)}$}{$A^{(k-1)}$} \Comment{$QR$ factorization of $A^{(k-1)}$}
+	    \Let{$A^{(k)}$}{$R^{(k)}Q^{(k)}$} \Comment{Recombine factors in reverse order}
+    \EndFor
+  \end{algorithmic}
+\end{algorithm}
+
+\subsection{Simultaneous Iteration equivalent to QR Algorithm}
+The $QR$ algorithm is equivalent to simultaneous iteration applied to a full set of initial vectors, namely, $\hat Q^{(0)} = I$. Summary of each algorithm:
+
+\subsubsection*{Simultaneous Iteration}
+\begin{align}
+	\underline Q^{(0)} &= I \tag{initial condition} \\
+	Z &= A \underline Q^{(k-1)} \tag{apply $A$}\\
+	Z &= \underline Q^{(k)} R^{(k)} \tag{resemblence of normalization, $QR$ factorization of $Z$} \\
+	A^{(k)} &= (\underline Q^{(k)})^T A \underline Q^{(k)} \tag{resemblence of Rayleigh quotient}
+\end{align}
+
+\subsubsection*{QR Algorithm}
+\begin{align}
+	A^{(0)} &= A \tag{initial condition}\\
+	A^{(k-1)} &= Q^{(k)}R^{(k)} \tag{compute $QR$ factorization}\\
+	A^{(k)} &= R^{(k)}Q^{(k)} \tag{reverse order of factors}\\
+	\underline Q^{(k)} &= Q^{(1)} Q^{(2)} \cdots Q^{(k)} \tag{definition of $\underline Q^{(k)}$}
+\end{align} 
+and 
+\begin{equation}
+	\underline R^{(k)} = R^{(k)} R^{(k-1)} \cdots R^{(1)} \tag{definition of $\underline R^{(k)}$}
+\end{equation}
+
+[[WRONG]]
+\begin{theorem}[Equivalence of Simultaneous Iteration and the QR Algorithm]
+Simultaneous Iteration and the QR Algorithm generate identical sequences of matrices $\underline R^{(k)}, \underline Q^{(k)}, A^{(k)}$. Both give
+\begin{align}
+	(a): A^{(k)} &= \underline Q^{(k)} \underline R^{(k)} \tag{$QR$ factorization of the $k$th power of $A$}\\
+	(b): A^{(k)} &= (\underline Q^{(k)})^T A \underline Q^{(k)} \tag{projection}
+\end{align}
+\end{theorem}
+\begin{proof}
+By induction on $k$ (number of iterations). The base case $k=0$ is trivial. 
+\begin{enumerate}
+	\item $QR$ gives $(a)$: Assume $A^{(k-1)} = \underline Q^{(k-1)} \underline R^{(k-1)}$. The inductive hypothesis for $(b)$ gives that $A^{(k-1)} = (\underline Q^{(k-1)})^T A \underline Q^{(k-1)}$ or that $ \underline Q^{(k-1)} A^{(k-1)} = A \underline Q^{(k-1)}$. Then
+	\begin{align*}
+		A^{(k)} &= A A^{(k-1)} \tag{decompose to use inductive hypothesis}\\
+		&= A \underline Q^{(k-1)} \underline R^{(k-1)} \tag{inductive hypothesis}\\
+		&= \underline Q^{(k-1)} A^{(k-1)} \underline R^{(k-1)} \tag{inductive hypothesis from $(b)$}\\
+		&= \underline Q^{(k-1)} R^{(k-1)}Q^{(k-1)} \underline R^{(k-1)} \tag{from algorithm} \\
+		&= \underline Q^{(k)} \underline R^{(k)} \tag{from definitions of $\underline Q^{(k)}, \underline R^{(k)}$}
+	\end{align*}
+	\item $QR$ gives $(b)$: Assume $A^{(k-1)} = (\underline Q^{(k-1)})^T A \underline Q^{(k-1)}$. From the relationship $A^{(k-1)} = Q^{(k)}R^{(k)}$ and the fact that $Q^{(k)}$ is orthogonal, we can apply $(Q^{(k)})^T$ to both sides (on the left) to get that $(Q^{(k)})^T A^{(k-1)} = R^{(k)}$. Then
+	\begin{align*}
+		A^{(k)} &= R^{(k)}Q^{(k)} \\
+		&= (Q^{(k)})^T A^{(k-1)} Q^{(k)} \\
+		&= (Q^{(k)})^T (\underline Q^{(k-1)})^T A \underline Q^{(k-1)} Q^{(k)} \tag{inductive hypothesis} \\
+		&= (\underline Q^{(k)})^T A \underline Q^{(k)} \tag{definition of $\underline Q^{(k)}$}
+	\end{align*}
+\end{enumerate}
+\end{proof}
+
+\section{Polynomial Approximation}
+\subsection{Polynomial Interpolation}
+
+\noindent\textbf{Problem:} Let $n\geq 1$, and suppose that $\{x_i\}_{i=0}^n$ are distinct real numbers and $\{y_i\}_{i=0}^n$ are real numbers. We wish to find $p_n \in \mathbb{P}_n$ such that $p_n(x_i) = y_i$ for $i=0,1,\ldots,n$.
+
+\subsubsection{Vandermonde Matrix}
+
+\noindent We'll consider a slightly more general version of the problem here: \\
+
+\noindent\textbf{Problem:} Let $n\geq 1$, and suppose that $\{x_i\}_{i=0}^n$ are distinct real numbers and $\{f(x_i) = y_i\}_{i=0}^n$ are real numbers. We wish to find $p_k \in \mathbb{P}_k$ such that $p_k(x_i) = y_i$ for $i=0,1,\ldots,n$. \\
+
+Let $\{a_i\}_{i=0}^k$ be the coefficients of the polynomial we're solving for. We place the data $\{x_i\}_{i=0}^n$ in a Vandermonde Matrix $X$ and solve the following system
+\begin{equation}
+	\begin{bmatrix}
+	1 & x_0 & x_0^2 & \ldots & x_0^k \\
+	1 & x_1 & x_1^2 & \ldots & x_1^k \\ \\
+	\vdots & \vdots & \vdots & \ddots & \vdots \\ \\
+	1 & x_n & x_n^2 & \ldots & x_n^k \\
+	\end{bmatrix}
+	\begin{bmatrix}
+	a_0 \\ a_1 \\ \vdots \\ a_k
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+	f(x_0) \\ f(x_1) \\ \\ \vdots \\ \\ f(x_n)
+	\end{bmatrix}
+\end{equation}
+There are three cases:
+\begin{enumerate}
+	\item If $N=K+1$, then we can uniquely determine the coefficients.
+	\item If $N > k+1$, then we use least squares (or a similar method) to approximate a solution.
+	\item If $N < k+1$, then there are infinitely many solutions. 
+\end{enumerate}
+Notes about Vandermonde matrix:
+\begin{enumerate}
+	\item The Vandermonde matrix is non-singular (this is why we get a unique solution when $N=k+1$) (of course the data $\{x_i\}_{i=0}^n$ need to be distinct).
+	\item The Vandermonde matrix has a large condition number. This means errors in the function data $\{f(x_i)\}_{i=0}^n$ will magnify the error in our approximations of the coefficients. This issue motivates the alternative method for interpolation discussed below.
+\end{enumerate}
+
+\subsubsection{Lagrange Interpolation}
+
+\begin{definition}[Lagrange basis polynomial]
+Given the data $\{x_i\}_{i=0}^n$, define
+\begin{equation}
+	l_j(x) = \frac{\prod_{i\neq j} (x-x_i)}{\prod_{i\neq j} (x_j-x_i)}
+\end{equation}
+which satisfies
+\begin{equation}
+	l_j(x_i) = \delta_{ij} =
+	\begin{cases}
+	1 & i=j \\
+	0 & i\neq j
+	\end{cases}
+\end{equation}
+(note that $\prod_{i\neq j} (x-x_i)$ is an $n$th order polynomial (1 less degree than the number of data points) and $\prod_{i\neq j} (x_j-x_i)$ is a constant).
+\end{definition}
+
+\begin{definition}[Lagrange interpolation polynomial]
+	Given the data $\{x_i\}_{i=0}^n$ and corresponding function values $\{f(x_i)\}_{i=0}^n$ the Lagrange interpolation polynomial is 
+	\begin{equation}
+		p(x) = \sum_{i=0}^n f(x_i) l_i(x)
+	\end{equation}
+\end{definition}
+Notice that $p(x)$ does indeed interpolate $f$ at the data:
+\begin{align*}
+	p(x_j) &= \sum_{i=0}^n f(x_i) l_i(x_j) \\
+	&= \sum_{i=0}^n f(x_i) \delta_{ij} \\
+	&= f(x_j)
+\end{align*}
+
+\begin{theorem}[Error of Lagrange interpolation polynomial]
+	Suppose that $n\geq 0$ and the $f$ is a real-valued function, defined and continuous on the closed real interval $[a,b]$, such that derivative of $f$ or order $n+1$ exists and is continuous on $[a,b]$. Then, with $x \in [a,b]$, there exists $\xi = \xi(x)$ in $(a,b)$ such that
+	\begin{equation}
+		f(x) - p(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \prod_{k=0}^n (x-x_k)
+	\end{equation}
+	is the interpolation error, where $p(x)$ is $n$-th order. 
+\end{theorem}
+\begin{proof}
+We denote the error as a function of $x$ as:
+\begin{equation}
+	E(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \prod_{k=0}^n (x-x_k)
+\end{equation}
+Define an auxiliary function $G_t(x)$ (and a fixed $t$) as 
+\begin{equation}
+	G_t(x) = E(x) - \frac{\prod_{k=0}^n (x-x_k)}{\prod_{k=0}^n (t-x_k)}E(t)
+\end{equation}
+Note that at a grid point the auxiliary function is $0$:
+\begin{equation}
+	0 = G_t(x_j) 
+\end{equation}
+which gives $n+1$ zeros of $G$.
+
+Further, evaluated at $t$, we have that
+\begin{equation}
+	G_t(t) = E(t) - E(t) = 0
+\end{equation}
+Thus $G_t(x)$ has $n+2$ zeros.
+
+We then use the following lemma:
+\begin{lemma}[Rolle's Theorem]
+	If a function $f(x)$ has $k$ zeros, then its derivative $f'(x)$ has $k-1$ zeros. Similarly, $f''(x)$ has $k-2$ zeros, an so on.
+\end{lemma}
+\begin{proof}
+	Between every two zeros of the original function, the derivative must have a $0$.
+\end{proof}
+
+Thus, applying this lemma repeatedly, we have that $G^{(n+1)}$ has one zero, call it $\xi$, so that $G^{(n+1)}(\xi) = 0$. Further, by direct calculation,
+\begin{equation}
+	0 = G^{(n+1)}(\xi) = E^{(n+1)}(\xi) - \frac{(n+1)!}{\prod_{k=0}^n (t-x_k)}E(t)
+\end{equation}
+Then notice that 
+\begin{equation}
+	E^{(n+1)}(\xi) = f^{(n+1)}(\xi)
+\end{equation}
+so that
+\begin{equation}
+	f^{(n+1)}(\xi) - \frac{(n+1)!}{\prod_{k=0}^n (t-x_k)}E(t) = 0
+\end{equation}
+rearranging this equation gives the required expression for the error function.
+\end{proof}
+
+Observations:
+\begin{enumerate}
+	\item If $f(x) \in \mathbb{P}_{n}(x)$, then $f^{(n+1)}(\xi) = 0$, so that $E(t) = 0$ for all $t$. In words, we can perfectly interpolate a polynomial of order $n$ with $n+1$ grid points.
+\end{enumerate}
+
+\begin{remark}
+	If we naively sample $x_i \in [a,b]$ evenly, then 
+	\begin{equation}
+		\sup_{t \in [a,b]} \bigg\lvert \prod_{k=0}^n (x-x_k) \bigg\rvert
+	\end{equation}
+	may be large. Further, we can encounter Runge's phenomenon of oscillation at the edges of an interval. This occurs when using polynomial interpolation with polynomials of high degree over a set of equispaced interpolation points. 
+	\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=.4]{runge_phenomenon.png}
+	\end{center}
+	\caption{Runge's phenomenon. Red curve is the Runge function. Blue curve is $5$-th order interpolating polynomial. Green curve is the $9$th-order interpolating polynomial.}
+\end{figure}
+\end{remark}
+
+We can use Chebyshev grid points to minimize error.
+\begin{theorem}[Chebyshev grid to minimize polynomial interpolation error]
+	The solution to 
+	\begin{equation}
+		\min_{\{x_i\}} \sup_{x \in [a,b]} \bigg\lvert \prod_{k=0}^n (x-x_k) \bigg\rvert
+	\end{equation}
+	is given by a Chebyshev grid:
+	\begin{equation}
+		x_i = \cos (\theta_i), \quad \theta_i = \frac{i\pi}{n}
+	\end{equation}
+\end{theorem}
+\subsection{Polynomial Projection}
+
+\begin{definition}[Orthogonal polynomials]
+	Given a domain $[a,b]$ and a weight function $w(x)$ on the domain, a set of orthogonal polynomials is a list of polynomials $\phi_0, \phi_1, \ldots, \phi_N, \ldots$ such that
+	\begin{equation}
+		\inp{\phi_i}{\phi_j} = \int_a^b \phi_i(x)\phi_j(x)w(x)dx = \delta_{ij}
+	\end{equation}
+\end{definition}
+
+\begin{theorem}[Orthogonal polynomials form a basis for the space of polynomials]
+	\begin{equation}
+		\mathbb{P}_k = span(\phi_0,\ldots,\phi_k)
+	\end{equation}
+\end{theorem}
+
+\begin{example}[Examples of Orthogonal Polynomials]
+The following are examples of Orthogonal Polynomials:
+\begin{enumerate}
+	\item Legendre Polynomials
+	\begin{enumerate}
+		\item Domain: $[-1,1]$
+		\item Weight: $w(x) = \frac{1}{2}$
+		\item Recurrence: $\phi_{n+1} = \frac{2n+1}{n+1}x\phi_n - \frac{n}{n+1}\phi_{n-1}$
+	\end{enumerate}
+	\item Chebyshev Polynomials
+	\begin{enumerate}
+		\item Domain: $[-1,1]$
+		\item Weight: $w(x) = \frac{1}{\sqrt{1-x^2}}$
+		\item Recurrence: $T_{n+1} = 2x T_n - T_{n-1}$
+	\end{enumerate}
+	\item Hermite Polynomials
+	\begin{enumerate}
+		\item Domain: $[-\infty,\infty]$
+		\item Weight: $w(x) = e^{-x^2}$
+		\item Recurrence: $H_{n+1} = xH_n - nH_{n-1}$
+	\end{enumerate}
+\end{enumerate}
+\end{example}
+
+\subsubsection{Properties of Orthogonal Polynomials}
+\begin{enumerate}
+	\item Recurrence Relation: $\{\phi\}_{i=0}^N$ satisfies
+	\begin{equation}
+		\phi_{n+1} = (\alpha_n x + \beta_n)\phi_n + \gamma_n \phi_{n-1}
+	\end{equation}
+	And these coefficients are \textbf{uniquely} determined by 
+	\begin{align*}
+		&\inp{\phi_{n+1}}{\phi_{n+1}} = 1 \\
+		&\inp{\phi_{n+1}}{\phi_{n}} = 0 \\
+		&\inp{\phi_{n+1}}{\phi_{n-1}} = 0
+	\end{align*}
+	\item $\phi_n$ has $n$ zeros in the domain $[a,b]$.
+	\item The computation of the zeros $\phi_{n+1}$ follows from using the recurrence relation in matrix form. 
+\end{enumerate}
+
+\begin{theorem}[OP Recurrence Relation]
+	A set of orthogonal polynomials $\{\phi\}_{i=0}^\infty$ satisfies
+	\begin{equation}
+		\phi_{n+1} = (\alpha_n x + \beta_n)\phi_n + \gamma_n \phi_{n-1}
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	Fix $i < n - 1$. Let's first show that $\inp{\phi_{n+1}}{\phi_i} = 0$. Then
+	\begin{align*}
+		\inp{\phi_{n+1}}{\phi_i} &= \alpha_n \inp{x\phi_n}{\phi_i} + \inp{\beta_n}{\phi_i} + \gamma_n \inp{\phi_{n-1}}{\phi_i} \\
+		&= \alpha_n \inp{x\phi_n}{\phi_i} + 0 + 0 \tag{since $\phi_n, \phi_{n-1} \perp \phi_i$, $i < n-1$} \\
+		&= \alpha_n \inp{\phi_n}{x \phi_i} \tag{move $x$ to second argument (from integral)} 
+	\end{align*}
+	Now $\phi_n$ is an $n$th order polynomial, and $x \phi_i$ is an $(i+1)$th order polynomial. Thus
+	\begin{equation}
+		x \phi_i \in span(\phi_0, \ldots, \phi_{i+1}) \in span(\phi_0, \ldots, \phi_{m-1})
+	\end{equation}
+	Therefore 
+	\begin{equation}
+		\inp{\phi_n}{x \phi_i} = 0
+	\end{equation}
+	Therefore the following $m-1$ conditions are automatically satisfied:
+	\begin{equation}
+		\inp{\phi_n}{\phi_i}
+	\end{equation}
+	where $i < m-1$, which leaves $3$ conditions to find $\alpha, \beta, \gamma$:
+	\begin{align*}
+		&\inp{\phi_{n+1}}{\phi_{n+1}} = 1 \\
+		&\inp{\phi_{n+1}}{\phi_{n}} = 0 \\
+		&\inp{\phi_{n+1}}{\phi_{n-1}} = 0
+	\end{align*}
+\end{proof}
+
+\begin{theorem}[Roots of Orthogonal Polynomials]
+	If $\{\phi\}_{i=0}^\infty$, then $\phi_n(x)$ has $n$ real roots, called Gaussian quadratures. 
+\end{theorem}
+\begin{proof}
+	By induction. Clearly $\phi_0 =$ a constant, which has $0$ roots. Next, assume, for the sake of contradiction, that $\phi_1$ has no real roots in $[x_1,x_2]$. We know $\inp{\phi_1}{\phi_0} = 0$. Without loss of generality, assume that $\phi_1$ is completely positive: $\phi_1(x) > 0$ for all $x \in [x_1,x_2]$. Then
+	\begin{equation}
+		\inp{phi_1}{\phi_0} = \int_{x_1}^{x_2} \phi_1 \phi_0 w(x) dx > 0
+	\end{equation}
+	since $\phi_1 > 0$, $\phi_0 > 0$ \textcolor{red}{[[?]]}, $w(x) > 0$ by assumption; but this is a contradiction to orthogonality. Therefore the assumption that $\phi_1$ has no real roots in $[x_1,x_2]$ is invalid, so there must be at least one root. But it can't have more than one, so it has exactly one. 
+
+	Continuing, we can use the same argument to show that $\phi_2$ has at least one root. Assume, for the sake of contradiction, that $\phi_2$ has only one real root, call it $\xi$. Then $(x-\xi)\phi_2$ is either $> 0$ or $< 0$ \textcolor{red}{[[?]]}. Then 
+	\begin{equation}
+		\inp{(x-\xi)\phi_2}{\phi_0} = \int_{x_1}^{x_2} (x-\xi)\phi_2 \phi_0 w(x) dx > 0
+	\end{equation}
+	However, we should have that 
+	\begin{equation}
+		\inp{\phi_2}{(x-\xi)\phi_0} = 0
+	\end{equation}
+	since $(x-\xi)\phi_0 \in span(\phi_0,\phi_1)$. Thus have a reached a contradiction, so $\phi_2$ has to have at least $2$ real roots, and hence exactly $2$ real roots. This argument extends to $\phi_n$.
+\end{proof}
+
+\begin{theorem}[Locations of Gaussian Quadratures from Recurrence Relation]
+Give the recurrence relation 
+\begin{equation}
+	\phi_{n+1} = (\alpha_n x + \beta_n)\phi_n + \gamma_n \phi_{n-1}
+\end{equation}
+we can rewrite this as
+\begin{equation}
+	\alpha_n x \phi_n = \phi_{n+1} - \beta_n \phi_n - \gamma_n \phi_{n-1}
+\end{equation}
+Thus for constants $a_n,b_n,c_n$ we have that
+\begin{equation}
+	x \phi_n = \phi_{n-1} +  b_n \phi_n + c_n \phi_{n+1}
+\end{equation}
+where this equality holds for all $x$ in the domain. We can write this system in matrix form as follows
+\begin{equation}
+	x
+	\begin{pmatrix}
+	\phi_0(x) \\ \phi_1(x) \\ \vdots \\ \vdots \\ \phi_n(x)
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	b_0 & c_0 \\
+	a_1 & b_1 & c_1 \\
+	& a_2 & b_2 & \ddots \\
+	& & \ddots & \ddots \\
+	& & & & & c_{n-1} \\
+	& & & & a_n & b_n
+	\end{pmatrix}
+	\begin{pmatrix}
+	\phi_0(x) \\ \phi_1(x) \\ \vdots \\ \vdots \\ \phi_n(x)
+	\end{pmatrix}
+	+
+	\begin{pmatrix}
+	0 \\ 0 \\ \vdots \\ \vdots \\ c_n \phi_{n+1}
+	\end{pmatrix}
+\end{equation}
+where $A$ is the matrix of coefficients. We want to find the roots $\phi_{n+1}(x_i) = 0$, where $i=1,\ldots,n+1$. Then the eigenvalues of $A$ are the zeros of $\phi_{n+1}$. In sum
+\begin{equation}
+	\text{GQ of } \phi_{n+1} = eig(A)
+\end{equation}
+\end{theorem}
+
+\subsection{Best Approximation in the 2-norm}
+Let $\{\phi_i\}_{i=0}^\infty$ be a set of orthogonal polynomials and $f \in \mathcal{C}^\infty$. Then we can write $f(x)$ as a linear combination of the orthogonal basis polynomials with projection coefficients $\{c_i\}_{i=0}^\infty$:
+\begin{equation}
+	f(x) = \sum_{k=0}^\infty c_k \phi_k(x)
+\end{equation}
+with coefficients
+\begin{equation}
+	c_k = \inp{f}{\phi_k} = \int_a^b f(x)\phi_k(x) w(x) dx
+\end{equation}
+Thus
+\begin{equation}
+	f(x) = \sum_{k=0}^\infty \inp{f(x)}{\phi_k(x)} \phi_k(x)
+\end{equation}
+We define the projection
+\begin{equation}
+	p_N(x) = \sum_{k=0}^N \alpha_k \phi_k(x)
+\end{equation}
+where we approximate the coefficients
+\begin{equation}
+	c_i \to \alpha_i = \sum_{k=0}^N f(x_k)\phi_k(x_k) w(x_k)
+\end{equation}
+
+\begin{theorem}[Exact integration of $f(x) \in \mathbb{P}_{2N+1}$ using $N+1$ grid points]
+	Suppose. $f(x) \in \mathbb{P}_{2N+1}$. Then 
+	\begin{equation}
+		\int_{a}^b f(x)w(x)dx = \sum_{i=0}^N f(x_k) w_k
+	\end{equation}
+	if $\{x_0, \ldots, x_N\}$ are the GQ (roots) of $\phi_{N+1}$, where
+	\begin{equation}
+		w_k = \int_a^b l_k(x)w(x)dx
+	\end{equation}
+	where $l_k(x)$ is a Lagrange polynomial. 
+\end{theorem}
+\begin{proof}
+	We consider two cases. First suppose that $f \in \mathbb{P}_N$. Then
+	\begin{equation}
+		f(x) = \sum_{i=0}^N f(x_i)l_i(x)
+	\end{equation}
+	Then
+	\begin{align*}
+		\int_a^b f(x)w(x)dx &= \int_a^b \sum_{i=0}^N f(x_i)l_i(x) w(x) dx \\
+		&= \sum_{i=0}^N f(x_i) \int_a^b l_i(x)w(x)dx \\
+		&= \sum_{i=0}^N f(x_i) w_i
+	\end{align*}
+	Thus the equality holds for $f \in \mathbb{P}_N$. Now suppose $f(x) \in \mathbb{P}_{2N+1} \setminus \mathbb{P}_N$. Then let
+	\begin{equation}
+		p(x) = \sum_{i=0}^{N} f(x_i)l_i(x) \\
+	\end{equation}
+	and define the residual
+	\begin{equation}
+		r(x) = f(x) - p(x)
+	\end{equation}
+	Notice that $r(x_i) = 0$ for $i=0,1,\ldots,N$, and that $r(x) \in \mathbb{P}_{2N+1}$, since $f(x) \in \mathbb{P}_{2N+1}$. Then, we can decompose $r(x)$ into an $N+1$th order polynomial and an $N$th order polynomial $q(x)$ as follows
+	\begin{equation}
+		r(x) = (x-x_0)(x-x_1)(x-x_2)\cdots(x-x_N) \times q(x)
+	\end{equation}
+	Then
+	\begin{equation}
+		\int_a^b r(x)w(x)dx = \int_a^b \prod_{i=0}^N(x-x_i) q(x) w(x) dx = 0
+ 	\end{equation}
+ 	This follows because $\prod_{i=0}^N(x-x_i)$ is actually just a constant multiple of the orthogonal polynomial $p_{N+1}(x)$ since the $x_i$ are the Gaussian quadrature points. Further, since $q(x)$ has degree $N$, we know that $q(x) \in span\{p_0, \ldots, p_N\}$. Thus since $\{p_i\}$ are orthogonal polynomials, we know that the integral must evaluate to zero, since we are integrating $p_{N+1}$ and a linear combination of lower order orthogonal polynomials. Therefore
+ 	\begin{align*}
+ 		\int_{a}^b f(x) w(x) dx &= \int_a^b (p(x) + r(x))w(x)dx \\
+ 		&= \int_a^b p(x)w(x) dx \tag{since $\int_a^b r(x)w(x)dx=0$} \\
+ 		&= \int_a^b \sum_{i=0}^{N} f(x_i)l_i(x) w(x) dx \\
+ 		&= \sum_{i=0}^{N} f(x_i) \int_a^b l_i(x) w(x) dx \\
+ 		&= \sum_{i=0}^{N} f(x_i) w_i
+ 	\end{align*}
+\end{proof}
+
+\begin{theorem}[Projection Coefficients Equivalent to Numerical Representation]
+	Let $f(x) \in \mathbb{P}_{N+1}$. Then 
+	\begin{equation}
+		\alpha_i = \inp{f}{\phi_i} = \int_a^b f(x)\phi_i(x)w(x)dx = \sum_{k=0}^N f(x_k)\phi_i(x_k)w_k = c_i
+	\end{equation}
+	That is the projection coefficients $c_i$ are equal to the numerical representation $\alpha_i$, where the grid points are the GQ of $\phi_{N+1}$.
+\end{theorem}
+\begin{proof}
+	Notice that $f(x) \in \mathbb{P}_{N+1}$, $\phi_i \in \mathbb{P}_{i} \subsetneq \mathbb{P}_N$ so that $ f(x)\phi_i(x) \in \mathbb{P}_{2N+1}$.
+\end{proof}
+
+\begin{theorem}[Interpolation with Orthogonal Polynomials (Almost Unitary Matrix)]
+We interpolate $f$ as follows:
+\begin{equation}
+	p(x) = \sum_{n=0}^N c_n \phi_n(x)
+\end{equation}
+such that $p(x_i) = f(x_i)$ where the $x_i$ are the GQ of $\phi_{N+1}$. Then
+\begin{equation}
+	\begin{bmatrix}
+	\phi_0(x_0) & \phi_1(x_0) & \hdots & \phi_N(x_0) \\
+	\phi_0(x_1) & \phi_1(x_1) & \hdots & \phi_N(x_1) \\
+	\vdots & \vdots & & \vdots  \\
+	\phi_0(x_N) & \phi_1(x_N) & \hdots & \phi_N(x_N)
+	\end{bmatrix}
+	\begin{bmatrix}
+	c_0 \\ \vdots \\ \vdots \\ c_N
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+	f(x_0) \\ f(x_1) \\ \vdots \\ \vdots  \\ f(x_N)
+	\end{bmatrix}
+\end{equation}
+Then $A$, the matrix above, is almost unitary. In particular,
+\begin{equation}
+	A^T \cdot W \cdot A = I
+\end{equation}
+where $W$ is a diagonal matrix with elements $w_0, w_1, \ldots, w_N$.
+\end{theorem}
+\begin{proof}
+	We'll show that
+	\begin{equation}
+		(A^T W A)_{mm} = \delta_{mn}
+	\end{equation}
+	We can write out the $mn$th entry of the matrix product as follows
+	\begin{align*}
+		(A^T W A)_{mm} &= \sum_{k=0}^N p_m(x_k)p_n(x_k)w_k \\
+		&= \int_a^b p_m(x)p_n(x) w(x) dx \\
+		&= \delta_{mn}
+	\end{align*}
+	where the second line follows from applying the above theorem. We can apply this theorem because $p_m(x) \in \mathbb{P}_{N+1}$ and $p_n \in \mathbb{P}_{N}$. The last line follows from the fact that $p_m$ and $p_n$ are orthogonal polynomials, so their product gives the Kronecker delta by definition. Thus, since  $(A^T W A)_{mm} = \delta_{mn}$, $(A^T W A)_{mm} $ is the identity matrix. 
+
+	Then the condition number of $A$ is approximately $\frac{\max w_i}{\min w_i} \approx \mathcal{O}(1)$.
+\end{proof}
+
+\begin{theorem}[Projection the best approximation in the $L^2$-norm:]
+	$p_N(x)$ is the best approximation in the $L^2$-norm:
+	\begin{equation}
+		\norm{f-p_N(x)}^2_2 \leq \norm{f-q(x)}^2_2
+	\end{equation}
+	for all $q \in \mathbb{P_N}$.
+\end{theorem}
+\begin{proof}
+\begin{align*}
+	\inp{f-q}{f-q} &= \inp{f-p+p-q}{f-p+p-q} \\
+	&= \inp{f-p}{f-p} + 2\inp{f-p}{p-q} + \inp{p-q}{p-q} 
+\end{align*}
+Notice that $f-p \in span(\phi_{N+1}, \phi_{N+2}, \ldots)$. Further, $p-q \in span(\phi_0, \phi_1, \ldots, \phi_N)$. Thus, $\inp{f-p}{p-q} = 0$. Therefore, we have that
+\begin{equation}
+	\norm{f-q}^2_2 = \norm{f-p}^2_2 + \norm{p-q}^2_2
+\end{equation}
+Since $\norm{p-q}^2_2 \geq 0$, we have that 
+\begin{equation}
+	\norm{f-p_N(x)}^2_2 \leq \norm{f-q(x)}^2_2
+\end{equation}
+\end{proof}
+
+\begin{theorem}[Error from Approximation by Projection]
+Suppose $f \in \mathcal{C}^\infty$ and $\{\phi_i\}_{i=0}^{\infty}$ is a set orthogonal polynomials. We can write
+\begin{equation}
+	f(x) = \sum_{k=0}^\infty c_k \phi_k(x)
+\end{equation}
+and define the projection
+\begin{equation}
+	p_N(x) = \sum_{k=0}^N \alpha_k \phi_k(x)
+\end{equation}
+Then the error of this approximation is
+\begin{equation}
+	error = \sum_{k=N+1}^\infty \alpha_k \phi_k(x)
+\end{equation}
+which depends on $\{\alpha_{N+1}, \alpha_{N+2}, \ldots \}$. In particular, if $f(x) \in \mathcal{C}^\gamma$, then 
+\begin{equation}
+	\alpha_n = \mathcal{O}(n^{-\gamma})
+\end{equation}
+for $n > N$ and
+\begin{equation}
+	\alpha_n = \mathcal{O}\left(\frac{1}{N^\gamma}\right) 
+\end{equation}
+for $n < N$.
+\end{theorem}
+\begin{proof}
+\textcolor{red}{Todo}.
+\end{proof}
+
+\section{Numerical Integration}
+
+In general, we take our domain $[a,b]$ and form an evenly spaced grid
+\begin{equation}
+	\{x_0=a, x_1, x_2, \ldots, x_k, \ldots, x_N=b\}
+\end{equation} 
+where
+\begin{equation}
+	x_k = a + \frac{b-a}{N}k
+\end{equation}
+Thus
+\begin{equation}
+	\int_a^b f(x)dx = \sum_{k=0}^{N-1} \int_{x_k}^{x_{k+1}} f(x) dx
+\end{equation}
+Ww will approximate $\int_{x_k}^{x_{k+1}} f(x) dx$ with polynomials we can easily integrate that interpolate $f$ at certain points.
+
+\subsection{Trapezoidal Rule}
+\textbf{Interpolation rule:} We will approximate $f(x)$ on the interval $[x_k,x_{k+1}]$ by a first order polynomial $p_1(x)$ which interpolates $f(x)$ at $x_k, x_{k+1}$:
+\begin{equation}
+	p_1(x) = f(x_k) + \frac{f(x_{k+1}) - f(x_k)}{x_{k+1} - x_k} (x - x_k)
+\end{equation}
+(notice that $p_1(x_k) = f(x_k)$ and $p_1(x_{k+1}) = f(x_{k+1})$).
+
+\textbf{Intergration of section:} Then
+\begin{equation}
+	\int_{x_k}^{x_{k+1}} f(x) dx \to \int_{x_k}^{x_{k+1}} p_1(x)dx = f(x_k) \Delta x + \frac{f(x_{k+1}) - f(x_k)}{\Delta x} \int_{x_k}^{x_{k+1}} (x-x_k) dx
+\end{equation}
+We can evaluate the final integral easily using the change of variable $x \equiv x - x_k$:
+\begin{equation}
+	\int_{x_k}^{x_{k+1}} (x-x_k) dx = \int_{0}^{\Delta x} x dx = \frac{1}{2}x^2 \bigg\rvert_0^{\Delta x} = \frac{1}{2}\Delta x^2
+\end{equation}
+Thus 
+\begin{equation}
+	\int_{x_k}^{x_{k+1}} p_1(x)dx = \frac{\Delta x}{2} (f(x_k) + f(x_{k+1}))
+\end{equation}
+
+\textbf{Sum intervals:} Putting these pieces together:
+\begin{align*}
+	\int_a^b f(x)dx = \sum_{k=0}^{N-1} \int_{x_k}^{x_{k+1}} f(x) dx &\to \sum_{k=0}^{N-1} \int_{x_k}^{x_{k+1}} p_1(x)dx \\
+	&= \sum_{k=0}^{N-1} \left(\frac{\Delta x}{2} (f(x_k) + f(x_{k+1})) \right) \\
+	&= \frac{\Delta x}{2} (f(x_0) + f(x_1) + f(x_1) + f(x_2) + \ldots ) \\
+	&= \frac{\Delta x}{2} (f(x) + 2 \sum_{k=1}^{N-1} f(x_k) + f(b))
+\end{align*}
+Observe that the endpoints have weight $\frac{1}{2}$ and the interior grid points have weight 1.
+
+\textbf{Error analysis:} We now find the error in $[x_k, x_{k+1}]$. We can apply the exact expression found for error in polynomial interpolation in each section (derived using Taylor's theorem). In this context, $n=1$ (we're using two grid points). Thus 
+\begin{equation}
+	f(x) - p_1(x) = f''(\xi_x)(x - x_k)(x - x_{k+1})
+\end{equation}
+for some $\xi_x \in [x_k, x_{k+1}]$ (recall that the error depends on $x$). Then
+\begin{align*}
+	\int_{x_k}^{x_{k+1}} f(x) dx - \int_{x_k}^{x_{k+1}} p_1(x)dx &= \int_{x_k}^{x_{k+1}} ( f(x) - p_1(x)) \\
+	&= \int_{x_k}^{x_{k+1}} (f''(\xi_x)(x - x_k)(x - x_{k+1}))dx \\
+	&= f''(\eta) \int_{x_k}^{x_{k+1}} (x - x_k)(x - x_{k+1}) dx
+\end{align*}
+Where the last inequality follows from an application of the Mean Value Theorem: For completeness we restate this theorem here.
+\begin{theorem}[First mean value theorem for definite integrals]
+	If $f:[a,b] \to \R$ is continuous and $g$ is an integrable function that does not change sign on $[a,b]$, then there exists $c \in [a,b]$ such that
+	\begin{equation}
+		\int_a^b f(x)g(x) dx = f(c)\int_a^b g(x)dx
+	\end{equation}
+\end{theorem}
+In this problem, notice that on the domain $[x_k, x_{k+1}]$, $(x - x_k)(x - x_{k+1})$ is a quadratic function that is always (weakly) negative and $0$ at $x_k$ and $x_{k+1}$. Next, we claim that
+\begin{equation}
+	f''(\eta) \int_{x_k}^{x_{k+1}} (x - x_k)(x - x_{k+1}) dx = \mathcal{O}(\Delta x^3)
+\end{equation}
+This is because, using a simple change of variables $x \equiv x - x_k$,
+\begin{equation}
+	\int_{x_k}^{x_{k+1}} (x - x_k)(x - x_{k+1}) dx = \int_{0}^{\Delta x} x(x - \Delta x) dx = \mathcal{O}(\Delta x^3)
+\end{equation}
+In sum, when $p(x)$ is the piecewise linear interpolation of $f(x)$ derived above,
+\begin{align*}
+	\int_a^b f(x)dx - \int_a^b p(x) dx &= \sum_{k=0}^{N-1} \mathcal{O}(\Delta x^3) \\
+	&\approx N \Delta x^3 \\
+	&= (b-a) \Delta x^2 \tag{Recall $N\Delta x = b-a$}
+\end{align*}
+
+\subsubsection{Richardson Extrapolation}
+We can define the error on the $i$th interval in the domain as
+\begin{equation}
+	E_i = \int_{x_i}^{x_{i+1}} f(x)dx - \frac{\Delta x}{2}\left(f(x_i) + f(x_{i+1}) \right)
+\end{equation}
+which, by applying the MVT, equals
+\begin{equation}
+	E_i= f''(\eta) \int_{x_i}^{x_{i+1}} (x - x_i)(x - x_{i+1}) dx
+\end{equation}
+for some $\eta \in [x_i, x_{i+1}]$. Then we define the total error $E^{(N)}$ as
+\begin{align*}
+	E^{(N)} &= \int_a^b f(x)dx - Tr(f;N) = \sum_{i=0}^{N-1}E_i \\
+	&= c \sum_{i=0}^{N-1} f''(\eta_i) \Delta x^3 \\
+	&= c\left[\sum_{i=0}^{N-1} f''(\eta_i) \Delta x \right] \Delta x^2 
+\end{align*}
+Then
+\begin{align*}
+	f''(\eta_i) \Delta x &\approx f'(x_{i+1}) - f'(x_i) \\
+	&\approx \int_{x_i}^{x_{i+1}} f''(x) dx \tag{\textcolor{red}{?}}
+\end{align*}
+Continuing,
+\begin{align*}
+	E^{(N)} &= c \Delta x^2 ( f'(x_1) - f'(x_0) + f'(x_2) - f'(x_1) + \cdots) + \mathcal{O}(\Delta x^4)\\
+	&= c \Delta x^2 (f'(x_N) - f'(x_0)) + \mathcal{O}(\Delta x^4)\\
+	&= c \Delta x^2 (f'(b) - f'(a)) + \mathcal{O}(\Delta x^4) 
+\end{align*}
+
+\subsection{Midpoint Rule}
+We will approximate $f(x)$ on the interval $[x_k,x_{k+1}]$ by a $0$th order polynomial (i.e.\ a constant function), which interpolates $f(x)$ at $x_{k + \frac{1}{2}}$. Thus we use
+\begin{equation}
+	f(x) \to p_0(x) = f\left(\frac{x_k + x_{k+1}}{2}\right)
+\end{equation}
+Then
+\begin{equation}
+	\int_{x_k}^{x_{k+1}} f(x) dx \to \int_{x_k}^{x_{k+1}} p_0(x)dx = f\left(\frac{x_k + x_{k+1}}{2}\right) \Delta x
+\end{equation}
+Putting these pieces together gives
+\begin{equation}
+	\int_a^b f(x)dx = \sum_{k=0}^{N-1} \int_{x_k}^{x_{k+1}} f(x)dx \to \Delta x \left( f(x_{\frac{1}{2}}) + f(x_{\frac{3}{2}}) + \ldots + f(x_{N - \frac{1}{2}})\right)
+\end{equation}
+Using our exact expression for the error of polynomial interpolation gives that
+\begin{equation}
+	f(x) - p_0(x) = f'(\xi_x)(x - x_{k + \frac{1}{2}})
+\end{equation}
+However, we \emph{cannot} use the MVT theorem here (as before), since $(x - x_{k + \frac{1}{2}})$ is not necessarily always either strictly positive or strictly negative (i.e.\ does not change sign). Thus we will instead preform a Taylor expansion of $f(x)$ around the point $x_{k + \frac{1}{2}}$:
+\begin{equation}
+	f(x) = f(x_{k + \frac{1}{2}}) + f'(x_{k + \frac{1}{2}})(x - x_{k + \frac{1}{2}}) + \frac{1}{2}f''(x_{k + \frac{1}{2}})(x - x_{k + \frac{1}{2}})^2 + \ldots
+\end{equation}
+Then (using that $p_0(x) = f(x_{k + \frac{1}{2}})$)
+\begin{align*}
+	\int_{x_k}^{x_{k+1}}f(x)dx - \int_{x_k}^{x_{k+1}}p_0(x)dx &=
+	\int_{x_k}^{x_{k+1}} f'(x_{k + \frac{1}{2}})(x - x_{k + \frac{1}{2}}) dx \\
+	&\quad + \int_{x_k}^{x_{k+1}} \frac{1}{2}f''(x_{k + \frac{1}{2}})(x - x_{k + \frac{1}{2}})^2 dx \\
+	&\quad + \ldots \\
+	&= \mathcal{O}(\Delta x^3)
+\end{align*}
+since 
+\begin{equation}
+	\int_{x_k}^{x_{k+1}} f'(x_{k + \frac{1}{2}})(x - x_{k + \frac{1}{2}}) dx = f'(x_{k + \frac{1}{2}}) \int_{x_k}^{x_{k+1}} (x - x_{k + \frac{1}{2}}) dx=0
+\end{equation}
+
+\subsection{Simpson's Rule}
+We will approximate $f(x)$ on the interval $[x_{2i},x_{2i+2}]$ by a second order polynomial $p_2(x)$ which interpolates $f(x)$ at $x_{2i}, x_{2i+1}, x_{2i+2}$. Then
+\begin{equation}
+	\int_{x_{2i}}^{x_{2i+2}}  f(x)dx \to \int_{x_{2i}}^{x_{2i+2}}p_2(x) dx = \frac{\Delta x}{3}(f(x_{2i}) + 4f(x_{2i+1}) + f(x_{2i+2}))
+\end{equation}
+
+\subsection{Method of Undetermined Coefficients}
+
+
+\section{Numerical ODE}
+
+\subsection{Preliminaries}
+
+\section{Initial Value Problems}
+Our model equation is
+\begin{equation}
+	\bm u' = \bm f (\bm u)
+\end{equation}
+where
+\begin{equation}
+	\bm u' 
+	= 
+	\begin{pmatrix}
+	u_1 \\ \vdots \\ u_n
+	\end{pmatrix}, \quad
+	\bm f (\bm u) = 
+	\begin{pmatrix}
+	f_1(u_1, \ldots, u_n) \\ \vdots \\ f_n(u_1, \ldots, u_n)
+	\end{pmatrix}
+\end{equation}
+
+\subsection{Preparation}
+\begin{theorem}[ODE reduction]
+	Any high order, non-autonomous ODE can be reduced to a 1st order, autonomous ODE (system).
+\end{theorem}
+
+\begin{example}[Reduction of ODE]
+	Consider the 3rd order ODE
+	\begin{equation}
+		u''' = u'u - 2t(u')^2
+	\end{equation}
+	with the initial conditions
+	\begin{align*}
+	&u(t=0) = u_0 \\
+	&u'(t=0) = u_1 \\
+	&u''(t=0) = u_2
+	\end{align*}
+	We can reduce this ODE to a 1st order system. Define the change of variables
+	\begin{align*}
+	&y_0(t) = u(t) \\
+	&y_1(t) = u'(t) \\
+	&y_2(t) = u''(t)
+	\end{align*} 
+	which also gives that
+	\begin{align*}
+	&y'_0(t) = y_1(t) \\
+	&y'_1(t) = y_2(t)
+	\end{align*}
+	We substitute these terms into the original ODE to get
+	\begin{equation}
+		y_2' =y1y_0 - 2t(y_1)^2
+	\end{equation}
+	with the initial condition
+	\begin{align*}
+	&y_0(t=0) = u_0 \\
+	&y_1(t=0) = u_1 \\
+	&y_2(t=0) = u_2
+	\end{align*}
+	Now we have a 1st order ODE system
+	\begin{equation}
+		\bm y = \bm f(\bm y, t)
+	\end{equation}
+\end{example}
+
+\begin{definition}[Autonomous]
+	If the force $\bm f$ has no explicit dependence on $t$, then we call the ODE (system) autonomous.
+\end{definition}
+
+\begin{example}[Autonomous ODE]
+	Continuing the above example. To reduce a non-autonomous ODE to and autonomous ODE, we can introduce another function $y_3(t) = t$. Notice that
+	\begin{align*}
+	&y'_0 = y_1 \\
+	&y'_1 = y_2 \\
+	&y'_2 = y_1y_0 0 2y_3(y_1)^2 \\
+	&y'_3 = 1
+	\end{align*}
+	with the respective initial conditions
+	\begin{equation}
+		\begin{pmatrix}
+		u_0 \\ u_1 \\ u_2 \\ 0
+		\end{pmatrix}
+	\end{equation}
+\end{example}
+
+Thus, numerically, we only study 1st order autonomous ODEs since it's always possible to reduce a given problem to this context. 
+
+\subsection{Well-posedness}
+We study the existence and uniqueness of 1st order ODEs.
+
+\begin{definition}[Lipshitz continuous]
+	If 
+	\begin{equation}
+		|f(u) - f(u^*)| \leq L|u-u^*|
+	\end{equation}
+	for $u$ in a small neighborhood of $u^*$, then $f$ is Lipshitz continuous at $u^*$. Note that if $f'$ exists, then 
+	\begin{equation}
+		L = |f'(u^*)|
+	\end{equation}
+\end{definition}
+
+\begin{definition}[Uniformly Lipshitz continuous]
+	If $L_u$ has an upper bound in the domain of $f$, then $f$ is uniformly Lipshitz continuous.
+\end{definition}
+
+\begin{theorem}[Uniqueness]
+	If the force term $f(u)$ is uniformly Lipshitz, then the equation has a unique solution.
+\end{theorem}
+
+\subsection{Difference Operator}
+Given a differential operator, we need to construct a difference operator to be able to compute numerical solutions to ODEs. 
+
+\subsubsection{Second Order Forward Difference Approximation}
+
+We want to find $a,b,c$ such that
+\begin{equation}
+	f'(x_0) \approx af(x_0) + bf(x_0 + h) + cf(x_0 + 2h)
+\end{equation}
+We will compute the Taylor expansion of $f$ around $x_0 + 0h, x_0+h, x_0+2h$. Thus
+\begin{align*}
+	x_0 &: f(x_0) \\
+	x_0 + h &: f(x_0 + h) = f(x_0) + h f'(x_0) + \frac{h^2}{2}f''(x_0) + \frac{h^3}{6}f'''(x_0) + \ldots \\
+	x_0 + 2h &: f(x_0 + 2h) = f(x_0) + 2h f'(x_0) + \frac{(2h)^2}{2}f''(x_0) + \frac{(2h)^3}{6}f'''(x_0) + \ldots 
+\end{align*}
+We'll ignore the terms above order 2 (these will be our approximation error). Then we compute the following sum
+\begin{equation}
+	f'(x_0) \approx af(x_0) + bf(x_0 + h) + cf(x_0 + 2h)
+\end{equation}
+and match coefficients to determine a systems of equations to solve for $a,b,c$.
+\begin{align*}
+	f(x_0) &: 0 = a + b + c \\
+	f'(x_0) &: 1 = bh + 2hc \\
+	f''(x_0) &: 0 + b\frac{h^2}{2} + c \frac{(2h)^2}{2}
+\end{align*}
+Solving this system gives
+\begin{equation}
+	a = -\frac{3}{2h}, \quad b = \frac{2}{h}, \quad c = \frac{-1}{2h}
+\end{equation}
+In sum, our second order forward difference operator is
+\begin{equation}
+	f'(x_0) \approx -\frac{3}{2h} f(x_0) + \frac{2}{h} f(x_0 + h) - \frac{1}{2h}f(x_0 + 2h)
+\end{equation}
+where the LHS and RHS differ by $\mathcal{O}(h^2)$. 
+
+\subsubsection{First Order Forward Difference Approximation}
+
+Following the method above gives that
+\begin{equation}
+	f'(x_0) \approx -\frac{1}{h} f(x_0) + \frac{1}{h}f(x_0 + h)
+\end{equation}
+where the LHS and RHS differ by $\mathcal{O}(h)$.
+
+\subsubsection{Centered Difference Approximation to Second Derivative}
+
+We want to find $a,b,c$ such that
+\begin{equation}
+	f''(x_0) \approx af(x_0 -h) + bf(x_0) + cf(x_0 + h)
+\end{equation}
+
+Following the method aboves results in the following system of equations:
+\begin{align*}
+	f(x_0) &: 0 = a + b + c \\
+	f'(x_0) &: 1 = h(a-c) \\
+	f''(x_0) &: h^2\left(\frac{1}{2}a + \frac{1}{2}c\right)
+\end{align*}
+which has solution
+\begin{equation}
+	a = \frac{1}{h^2}, \quad b = -\frac{2}{h^2}, \quad c = \frac{1}{h^2}
+\end{equation}
+However, this solution also satisfies the condition for the third derivative:
+\begin{equation}
+	f'''(x_0) = \frac{h^3}{6}(a-c)
+\end{equation}
+We did not explicitly impose/include 3rd order terms, but if we did, our solution would not change. \textcolor{red}{Check}. Thus, the error of approximation is
+\begin{equation}
+	f'' - Df = \mathcal{O}(h^2)
+\end{equation}
+
+\subsection{Forward Euler (FE)}
+We continue studying the initial value problem 
+\begin{equation}
+	\begin{cases}
+	u' = f(u) \\
+	u(t=0) = u_0
+	\end{cases}
+\end{equation}
+
+Let $u_n = u(t_n)$ be the true solution. Let $\mathcal{U}_n$ be the numerical solution. Then the forward euler method is
+\begin{equation}
+ 	u'(t_n) \to \frac{\mathcal{U}_n - \mathcal{U}_n}{\Delta t}
+\end{equation} 
+Thus at $t_n$, we have
+\begin{equation}
+	\begin{cases}
+		\frac{1}{\Delta t}(\U_{n+1} - \U_n) = f(\U_n) \\
+		\U_0 = u_0
+	\end{cases}
+\end{equation}
+Rearranging gives that 
+\begin{equation}
+	\U_{n+1} = \U_n + \Delta t f(\U_n)
+\end{equation}
+
+\begin{example}[Linear ODE]
+\begin{equation}
+	\begin{cases}
+		u' = \lambda u \\
+		u(t=0) = u_0
+	\end{cases}
+\end{equation}
+We know that the analytical solution to this IVP is
+\begin{equation}
+	u(t) = u_0 e^{\lambda t}
+\end{equation}
+FE is
+\begin{equation}
+	\frac{1}{\Delta t}(\U_{n+1} - \U_n) = \lambda \U_n
+\end{equation}
+Gathering terms gives that
+\begin{equation}
+	\frac{1}{\Delta t}\U_{n+1} - \left(\lambda + \frac{1}{\Delta t} \right)\U_n = 0
+\end{equation}
+Define
+\begin{equation}
+	\bm \U = 
+	\begin{pmatrix}
+	\U_1 \\ \U_2 \\ \vdots \\ \U_n
+	\end{pmatrix}
+\end{equation}
+We can combine these equations into matrix form
+\begin{equation}
+	\frac{1}{\Delta t}
+	\begin{pmatrix}
+	1 & 0 \\
+	- \left(1 + \lambda \Delta t \right) & 1 \\
+	0 & - \left(1 + \lambda \Delta t \right) & 1 \\
+	& & \ddots & \ddots \\
+	& & & - \left(1 + \lambda \Delta t \right) & 1
+	\end{pmatrix}
+	\begin{pmatrix}
+	\U_1 \\ \U_2 \\ \vdots \\ \\\vdots \\ \U_n
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	\left(\lambda + \frac{1}{\Delta t} \right) u_0 \\ \vdots \\ \\\vdots \\ 0
+	\end{pmatrix}
+\end{equation}
+(notice this is a subdiagonal matrix, call it $A$). Then we have a linear system $AU = S$, $U = A^{-1}S$. For this particular example, we have an explicit formula for $A^{-1}$. Let $\mu = \left(1 + \lambda \Delta t \right)$.
+\begin{equation}
+	A^{-1} = 
+	\Delta t
+	\begin{pmatrix}
+	1 \\
+	\mu & 1 \\
+	\mu^2 & \mu & 1 \\
+	\vdots & \mu^2 & \mu & 1 \\
+	\vdots & & \ddots & \ddots &\ddots \\
+	\mu^{n-1} &\hdots & &\mu^2 & \mu & 1
+	\end{pmatrix}
+\end{equation}
+At the final time, $n$, we have that
+\begin{equation}
+	\U_n = (A^{-1} \cdot S)_n = \Delta t \left(1 + \lambda \Delta t \right)^{n-1} \cdot \left(\lambda + \frac{1}{\Delta t} \right) u_0
+\end{equation}
+which simplifies to
+\begin{equation}
+	\U_n = \left(1 + \lambda \Delta t \right)^{n} \cdot u_0
+\end{equation}
+Now assume that
+\begin{equation}
+	T = n \Delta t
+\end{equation}
+which means that
+\begin{equation}
+	\U_n = \left(1 + \frac{\lambda T}{n} \right)^{n} \cdot u_0 \to e^{\lambda T}, \quad n \to \infty
+\end{equation}
+
+\end{example}
+
+\begin{definition}[Local Truncation Error (LTE)]
+	The local truncation error is by how much the true solution fails to satisfy the approximation scheme, which can be written as
+	\begin{equation}
+		\tau_n = \frac{u_{n+1} - u_n}{\Delta t} - f(u_n)
+	\end{equation}
+\end{definition}
+
+\begin{definition}[Consistency]
+	We say a method is consistent is the LTE goes to 0 as $\Delta \to 0$.
+\end{definition}
+
+\begin{theorem}[Forward Euler (one-step) is consistent]
+\end{theorem}
+\begin{proof}
+	We take the equation for LTE 
+	\begin{equation}
+		\tau_n = \frac{u_{n+1} - u_n}{\Delta t} - f(u_n)
+	\end{equation}
+	and substitute in the Taylor expansion of $u_{n+1} = u(t_{n+1})$ around $u_n = u(t_n)$. This Taylor expansion is
+	\begin{equation}
+		u_{n+1} = u_n + 
+	\end{equation}
+	\textcolor{red}{Incomplete}
+\end{proof}
+
+\subsection{Trapezoidal Rule}
+The scheme for the trapezoidal rule is
+\begin{equation}
+	\frac{\U_{n+1}-\U_n}{h} = \frac{1}{2}\left(f(\U_n) + f(\U_{n+1})\right)
+\end{equation}
+
+\begin{remark}
+	This scheme is implicit. In general, we cannot solve for $\U_{n+1}$. 
+\end{remark}
+
+\begin{example}[Trapezoidal Rule for IVP]
+	Suppose $f(u) = u^2$. Then for this forcing term, the scheme of the trapezoidal rule is
+	\begin{equation}
+		\frac{\U_{n+1}-\U_n}{h} = \frac{1}{2}\left(\U_n^2 + \U_{n+1}^2\right)
+	\end{equation}
+	which gives
+	\begin{equation}
+		\U_{n+1} + \frac{1}{2}h\U_{n+1}^2 = \U_{n} + \frac{1}{2}h\U_{n}^2
+	\end{equation}
+	which we could then solve using a method like Newton's method etc. 
+\end{example}
+
+\subsubsection{Consistency of Trapezoidal Rule}
+The LTE is
+\begin{equation}
+	\tau_n = \frac{u_{n+1}-u_n}{h} - \frac{1}{2}\left(f(u_n) + f(u_{n+1})\right)
+\end{equation}
+We need to compute the Taylor expansion of $u_{n+1}$ and $f(u_{n+1})$:
+\begin{align*}
+	u_{n+1} &= u(t_{n+1}) = u(t_n + h) \\
+	&=  u_n + hu'_n + \frac{h^2}{2}u''_n + \mathcal{O}(h^3)
+\end{align*}
+and (computing a Taylor expansion of a Taylor expansion!)
+\begin{align*}
+	f(u_{n+1}) &= f(u_n + hu'_n + \frac{h}{2}u''_n + \mathcal{O}(h^3)) \tag{Taylor expansion of $u_{n+1}$} \\
+	&= f(u_n) + f'(u_n)\left(hu'_n + \frac{h^2}{2}u''_n + \mathcal{O}(h^3)\right) \\
+	& \quad + \frac{1}{2}f''(u_n)\left(hu'_n + \frac{h^2}{2}u''_n + \mathcal{O}(h^3)\right)^2 + \cdots 
+\end{align*}
+Substituting these terms in $\tau_n$ gives
+\begin{align*}
+	\tau_n &= \frac{1}{h}\left(u_n + {\color{red}hu'_n} + {\color{blue}\frac{h^2}{2}u''_n} + \mathcal{O}(h^3) - u_n\right) \\
+	&\quad - {\color{red}\frac{1}{2}f(u_n)} \\
+	&\quad - \frac{1}{2}\Bigg({\color{red}f(u_n)} + {\color{blue}f'(u_n)}\left({\color{blue}hu'_n} + \frac{h^2}{2}u''_n + \mathcal{O}(h^3)\right) \\
+	&\quad\quad\quad\quad + \frac{1}{2}f''(u_n)\left(hu'_n + \frac{h^2}{2}u''_n + \mathcal{O}(h^3)\right)^2 + \cdots \Bigg)
+\end{align*}
+the red terms cancel and the blue terms cancel, using the facts that $u'_n = f(u_n)$ and $u''_n = f'(u_n)f(u_n)$. Thus we are left with LTE of
+\begin{equation}
+	\tau_n = \mathcal{O}(h^2)
+\end{equation}
+
+\subsubsection{Convergence of Trapezoidal Rule}
+\begin{theorem}[Trapezoidal method 2nd-order convergent]
+	If $f(u)$ is Lipschitz (with constant $\lambda$), then the trapezoidal method is 2nd-order convergent. 
+\end{theorem}
+\begin{proof}
+	We use the following two pieces in the proof:
+	\begin{enumerate}
+		\item Numerical Scheme: $\U_{n+1} = \U_n + \frac{h}{2}\left(f(\U_n) + f(\U_{n+1})\right)$
+		\item True solution: $u_{n+1} = u_n + \frac{h}{2}\left(f(u_n) + f(u_{n+1})\right) + \mathcal{O}(h^3)$. This follows from the fact that the LTE is $\mathcal{O}(h^2)$. The result follows from solving for $u_{n+1}$ in the LTE expression. 
+	\end{enumerate}
+	Subtracting the expression in $(1)$ and $(2)$ gives
+	\begin{align*}
+		E_{n+1} &= E_n + \frac{h}{2}\left( f(\U_n) - f(u_n) + f(\U_{n+1}) - f_(u_{n+1})\right) + \mathcal{O}(h^3) \\
+		&\leq E_n + \frac{h}{2}(\lambda E_n + \lambda E_{n+1}) + \mathcal{O}(h^3) \tag{$f$ Lipschitz} \\
+		&= \frac{1 + \frac{\lambda h}{2}}{1 - \frac{\lambda h}{2}}E_n + \mathcal{O}(h^3)
+	\end{align*}
+	Thus we have that
+	\begin{align*}
+		E_n &\leq \left(\frac{1 + \frac{\lambda h}{2}}{1 - \frac{\lambda h}{2}}\right)^{n-1}E_1 + \mathcal{O}(nh^3) \\
+		&= \mathcal{O}(h^2)
+	\end{align*}
+\end{proof}
+
+\subsection{Convergence}
+\begin{definition}[Convergent Method]
+	Let $E_n = |\U_n - u_n|$ be the difference between the numerical solution and the analytical solution at time $n$. If $E_n \to 0$ (for all $n$) as $\Delta t \to 0$, then the method is called a convergent method. 
+\end{definition}
+
+\begin{theorem}[Forward Euler convergent if forcing term Lipschitz]
+	If $f(u)$ is Lipschitz in $u$ (with Lipschitz constant $\lambda$), then the Forward Euler method is a 1st-order convergent method.
+\end{theorem}
+\begin{proof}
+	For ease of notation let $h = \Delta t$. By the forward Euler method
+	\begin{equation}
+		\U_{n+1} = \U + hf(\U_n)
+	\end{equation}
+	and the analytical solution is
+	\begin{equation}
+		u_{n+1} = u(t_{n+1}) = u(t_n + h)
+	\end{equation}
+	The Taylor expansion of $u(t_n + h)$ around $t_n$ is
+	\begin{align*}
+		u_{n+1} = u(t_n + h) &= u(t_n) + u'(t_n)h + \frac{1}{2}u''(t_n)h^2 + \frac{1}{6}u'''(t_n)h^3 + \cdots \\
+		&= u(t_n) + f(u(t_n)) h + \mathcal{O}(h^2) \tag{since $u'(t_n) = f(u(t_n))$}
+	\end{align*}
+	Now
+	\begin{align*}
+		E_{n+1} &= \U_{n+1} - u_{n+1} \\
+		&= E_n +h (f(\U_n) - f(u(t_n))) + \mathcal{O}(h^2) \\
+		&\leq E_n + h\lambda |\U_n - u(t_n)| + \mathcal{O}(h^2) \tag{$f$ Lipshitz}\\ 
+		&= E_n + h \lambda E_n + \mathcal{O}(h^2) \\
+	\end{align*}
+	Thus
+	\begin{align*}
+		E_{n} &\leq (1 + h \lambda)E_{n-1} + \mathcal{O}(h^2) \\
+		&\leq (1 + h \lambda)((1 + h \lambda)E_{n-2} + \mathcal{O}(h^2)) + \mathcal{O}(h^2) \\
+		&\leq (1 + \lambda h)^{n-1} E_{1} + \mathcal{O}(n h^2)  
+	\end{align*}
+	Then $\mathcal{O}(n h^2) = \mathcal{O}(n h h)  = \mathcal{O}(Th) = \mathcal{O}(h)$.
+\end{proof}
+
+\subsection{Stability}
+
+\begin{example}[Stability of Linear ODE]
+	Using the Forward Euler method, our approximation to the solution of the linear ODE is $A \bm \U = \bm S$.
+	\textcolor{red}{Incomplete}
+\end{example}
+
+\subsection{Runge-Kutta Methods}
+The forward Euler method has first-order accuracy. To calculate $\U_{n+1}$ from $\U_n$, we only evaluate the forcing term $f$ at one point. We can achieve higher-order accuracy by evaluating $f$ at points between $\U_{n+1}$ from $\U_n$.
+
+We will summarize Runge-Kutta Methods with a Butcher Tableau.
+
+\subsubsection{RK2: Midpoint Method}
+Consider to time steps $t_n$ and $t_{n+1}$. Suppose we also evaluate the forcing term halfway between these two time steps (call this $t_{n+\frac{1}{2}}$). The scheme is
+\begin{equation}
+	\U_{n+1} = \U_n + h f\left(\U_n + \frac{h}{2}f(\U_n)\right)
+\end{equation}
+
+We can also describe this method through a Butcher Tableau:
+\begin{equation}
+	\renewcommand\arraystretch{1.2}
+	\begin{array}
+	{c|cc}
+	0\\
+	\frac{1}{2} & \frac{1}{2}\\
+	\hline
+	& 0 & 1
+	\end{array}
+\end{equation}
+
+\begin{align*}
+	y_1 &= \U_n \\
+	y_2 &= \U_n + \frac{h}{2}f(y_1) 
+\end{align*}
+Then summing 
+\begin{equation}
+	\U_{n+1} = \U_n + h f(y_2)
+\end{equation}
+and substituting in $y_2$ and $y_1$ gives the method derived above:
+\begin{equation}
+	\U_{n+1} = \U_n + h f\left(\U_n + \frac{h}{2}f(\U_n)\right)
+\end{equation}
+
+This method is $\mathcal{O}(h^2)$. 
+
+\subsubsection{RK2: Heun's Method}
+\begin{equation}
+	\renewcommand\arraystretch{1.2}
+	\begin{array}
+	{c|cc}
+	0\\
+	1 & 1\\
+	\hline
+	& \frac{1}{2} & \frac{1}{2}
+	\end{array}
+\end{equation}
+
+\begin{align*}
+	y_1 &= \U_n \\
+	y_2 &= \U_n + hf(y_1) 
+\end{align*}
+
+\begin{equation}
+	\U_{n+1} = \U_n + \frac{1}{2}f(y_1) + \frac{1}{2}f(y_2)
+\end{equation}
+
+\subsubsection{RK2: Ralston Method}
+\begin{equation}
+	\renewcommand\arraystretch{1.2}
+	\begin{array}
+	{c|cc}
+	0\\
+	\frac{2}{3} & \frac{2}{3}\\
+	\hline
+	& \frac{1}{4} & \frac{3}{4}
+	\end{array}
+\end{equation}
+
+
+\subsubsection{RK2: General Form}
+We can write the general form of an RK2 method as follows
+\begin{equation}
+	\renewcommand\arraystretch{1.2}
+	\begin{array}
+	{c|cc}
+	0\\
+	\alpha & \alpha\\
+	\hline
+	& \beta & 1-\beta
+	\end{array}
+\end{equation}
+and the translation into a scheme is
+\begin{align*}
+	y_1 &= \U_n \\
+	y_2 &= \U_n + \alpha h f(\U_n) \\
+	\U_{n+1} &= \U_n + h[\beta f(y_1) + (1-\beta)f(y_2)]\\
+	&= \U_n + h[\beta f(\U_n) + (1-\beta)f(\U_n + \alpha h f(\U_n))]
+\end{align*}
+thus
+\begin{equation}
+	\frac{\U_{n+1}-\U_n}{h} = \beta f(\U_n) + (1-\beta)f(\U_n + \alpha h f(\U_n))
+\end{equation}
+
+\textbf{Local Truncation Error:} We analyze the LTE as follows
+\begin{equation}
+	\tau_n = \frac{u_{n+1}-u_n}{h} - \beta f(u_n) + (1-\beta)f(u_n + \alpha h f(u_n))
+\end{equation}
+We need to compute the Taylor expansion of $u_{n+1}$ and $f(u_n + \alpha h f(u_n))$:
+\begin{align*}
+	u_{n+1} &= u(t_{n+1}) = u(t_n + h) \\
+	&=  u_n + hu'_n + \frac{h}{2}u''_n + \mathcal{O}(h^3)
+\end{align*}
+and
+\begin{align*}
+	f(u_n + \alpha h f(u_n)) &= f(u_n) + h\alpha f(u_n)f'(u_n) + \frac{(\alpha f(u_n))^2}{2}f''(u_n) + \ldots 
+\end{align*}
+Substituting these expressions into $\tau_n$ gives
+\begin{align*}
+	\tau_n &= \frac{1}{h}\left(u_n + {\color{red}{hu'_n}} +  {\color{blue}\frac{h}{2}u''_n} + \mathcal{O}(h^3) - u_n \right) \\
+	&\quad -\beta{\color{red}f(u_n)} \\
+	&\quad - (1-\beta)\left({\color{red}f(u_n)} + {\color{blue}h\alpha f(u_n)f'(u_n)} + \frac{(h\alpha f(u_n))^2}{2}f''(u_n) + \ldots \right)
+\end{align*}
+We get the following cancellations:
+\begin{equation}
+	{\color{red}\frac{1}{h} h u'_n - \beta f(u_n) - (1-\beta)f(u_n) = 0}
+\end{equation}
+since $u'_n=f(u_n)$ and
+\begin{equation}
+	 {\color{blue}\frac{1}{h}\frac{h}{2}u''_n - (1-\beta)h\alpha f(u_n)f'(u_n) = 0}
+\end{equation}
+since $u''_n=f'(u_n)f(u_n)$, using the \textbf{assumption that} $\bm{\alpha(1-\beta) = \frac{1}{2}}$. 
+
+These cancellations leave
+\begin{equation}
+	\tau_n = \mathcal{O}(h^2)
+\end{equation}
+\subsubsection{RK4}
+
+\[
+\renewcommand\arraystretch{1.2}
+\begin{array}
+{c|cccc}
+0\\
+\frac{1}{2} & \frac{1}{2}\\
+\frac{1}{2} &0 &\frac{1}{2} \\
+1& 0& 0& 1\\
+\hline
+& \frac{1}{6} &\frac{1}{3} &\frac{1}{3} &\frac{1}{6} 
+\end{array}
+\]
+
+\begin{align*}
+	y_1 &= \U_n \\
+	y_2 &= \U_n + \frac{h}{2}f(y_1) \\
+	y_3 &= \U_n + \frac{h}{2}f(y_2) \\
+	y_4 &= \U_n + hf(y_3)
+\end{align*}
+
+\begin{remark}
+	RK4 is the highest order RK method where the stage number = order of accuracy.
+\end{remark}
+
+\subsection{Linear Multi-Step Method (LMM)}
+
+\begin{definition}[LMM]
+	Given a grid of points $\{x_n\}$ with step size $h$, the general linear $r$-step method is
+	\begin{equation}
+		\frac{1}{n}\sum_{j=0}^r \alpha_i \U_{n+j} = \sum_{j=0}^r \beta_j f(\U_{n+j})
+	\end{equation}
+	If $\beta_r = 0$, then the method is explicit (i.e., in we can write $\U_{n+r}$ explicitly in terms of the previous values). If $\beta_r \neq 0$, then the method is implicit. 
+\end{definition}
+
+\begin{definition}[Characteristic Polynomials of LMM]
+\begin{equation}
+	\rho(\xi) = \sum_{j=0}^r \alpha_j \xi^j
+\end{equation}
+(thus $\rho(1) = \sum_{j=0}^r \alpha_j$)
+\begin{equation}
+	\sigma(\xi) = \sum_{j=0}^r \beta_j \xi^j
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Consistency of LMM]
+For consistency, we require that
+\begin{enumerate}
+	\item $\rho(1) = 0$
+	\item $\rho'(1) = \sigma(1)$
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+	The LTE is 
+	\begin{equation}
+		\tau_n = \frac{1}{n}\sum_{j=0}^r \alpha_i u_{n+j} - \sum_{j=0}^r \beta_j f(u_{n+j})
+	\end{equation}
+	We next compute Taylor expansions of the terms in $\tau_n$. For the terms in the first sum, notice that
+	\begin{equation}
+		u_{n+j} = u(t_{n+j}) = u(t_n + jh)
+	\end{equation}
+	Thus we compute that Taylor expansion of $u(t_n + jh)$ around $u(t_n)$ with perturbation $jh$:
+	\begin{equation}
+		u_{n+j} = u_n + (jh)u_n' + \frac{(jh)^2}{2}u''_n + \ldots 
+	\end{equation}
+	Next recall that
+	\begin{equation}
+		u'_{n+j} = f(u_{n+j})
+	\end{equation}
+	We define the change of variables
+	\begin{equation}
+		v_{n+j} = u'_{n+j} = f(u_{n+j})
+	\end{equation}
+	Then to compute the Taylor expansions of the forcing terms we can simply compute the expansion of $v_{n+j}$ around $v_n$ using perturbation $jh$:
+	\begin{equation}
+		v_{n+j} = v_n + (jh)v'_n + \frac{(jh)^2}{2}v''_n + \ldots 
+	\end{equation}
+	Then using the change of variables, 
+	\begin{equation}
+		u'_{n+j} = u'_n + (jh)u''_n(jh) + \frac{(jh)^2}{2}u'''_n + \ldots
+	\end{equation}
+	Substituting these expansions into our expression for LTE gives
+	\begin{align*}
+	\tau_n &= 
+	\end{align*}
+\end{proof}
+
+\begin{theorem}[Zero-Stability of LMM]
+If $\xi_i$ is a single root, then $|\xi_i| \leq 1$. If $\xi_i$ is a double root, then $|\xi_i| < 1$. 
+\end{theorem}
+
+
+\section{Practice Problems}
+\begin{exercise}[Hermite Polynomials]
+	Hermite polynomials are a set of polynomials that are orthonormal with respect to a Gaussian weight function $w(x) = \frac{1}{\sqrt{\pi}} e^{-x^2}$ on the domain $(-\infty, \infty)$. Thus, if $H_m$ is the $m$-th order polynomials, then
+	\begin{equation}
+		\int_{-\infty}^\infty H_m(x)H_n(x)\frac{1}{\sqrt{\pi}} e^{-x^2} dx = \delta_{mn}
+	\end{equation}
+	The first three Hermite polynomials are
+	\begin{equation*}
+		H_0 = 1, \quad H_1 = \frac{2x}{\sqrt{2}}, \quad H_2 = \frac{4x^2 - 2}{\sqrt{8}}
+	\end{equation*}
+	Compute:
+	\begin{enumerate}
+		\item $\int_{-\infty}^\infty 2x^2 e^{-x^2}dx$
+		\item $\int_{-\infty}^\infty (4x^2 - 2x - 2) e^{-x^2}dx$
+	\end{enumerate}
+\end{exercise}
+\begin{solution}
+	For the first integral, notice that
+	\begin{align*}
+		\int_{-\infty}^\infty 2x^2 e^{-x^2}dx &= \sqrt{\pi} \int_{-\infty}^\infty \frac{1}{\sqrt{\pi}} \frac{2x}{\sqrt{2}} \frac{2x}{\sqrt{2}} e^{-x^2}dx \\
+		&= \sqrt{\pi} \delta_{11} \\
+		&= \sqrt{\pi}
+	\end{align*}
+	For the second integral, notice that
+	\begin{align*}
+		\int_{-\infty}^\infty (4x^2 - 2x - 2) e^{-x^2}dx &= \sqrt{8\pi} \int_{-\infty}^\infty \left(\frac{4x^2 - 2}{\sqrt{8}} - \frac{2x}{\sqrt{8}}\right) \frac{1}{\sqrt{\pi}}e^{-x^2}dx \\
+		&= \sqrt{8\pi}\int_{-\infty}^\infty H_2H_0 w(x)dx -  \sqrt{2\pi}\int_{-\infty}^\infty H_1 H_0 w(x) dx \\
+		&= 0
+	\end{align*}
+	Notice how for the second integral, the key observation is that we can separate the integral into two, and then make use of $H_0 = 1$. 
+\end{solution}
+
+\begin{exercise}[Legendre Polynomials]
+	Legendre polynomials $\{p_n(x)\}$ are a set of orthogonal polynomials supported on $[-1,1]$ with weight $w(x) = 1$. It can be shown that 
+	\begin{equation}
+		Q[p_n] = \lambda_np_n
+	\end{equation}
+	where $Q = \frac{d}{dx}\left((1-x^2)\frac{d}{dx}\right)$ is a second order differential operator, and $\lambda_n = -n(n+1)$. Show that
+	\begin{enumerate}
+		\item $\inp{f}{p_n} = \frac{1}{\lambda_n} \inp{Q[f]}{p_n}$
+		\item Prove by induction, that if $f \in \mathcal{C}^{2\gamma}$, then $\inp{f}{p_n} = \frac{1}{\lambda_n^\gamma} \inp{Q^\gamma[f]}{p_n}$.
+		\item Show that if $f \in \mathcal{C}^{2\gamma}$, then $\inp{f}{p_n} = \mathcal{O}\left(\frac{1}{n^{2\gamma}}\right)$.
+	\end{enumerate}
+\end{exercise}
+\begin{solution}
+	We show each item in turn. Beginning with (1): first notice that $p_n = \frac{Q[p_n]}{\lambda_n}$, so that we equivalently want to show that
+	\begin{equation}
+		\frac{1}{\lambda_n} \inp{f}{Q[p_n]} = \frac{1}{\lambda_n}\inp{Q[f]}{p_n}
+	\end{equation}
+	so we want to show that the two inner products are equal. We compute each inner product in turn to show equality:
+	\begin{align*}
+		\inp{f}{Q[p_n]} &= \int_{-1}^1 f [(1-x^2)p_n']' dx \\
+		&= \left(f(1-x^2)p_n'\right)\bigg\vert_{-1}^1 - \int_{-1}^1 f' (1-x^2)p_n' dx \\
+		&= \int_{-1}^1 f' (1-x^2)p_n dx \tag{the first term above evaluates to $0$}
+	\end{align*}
+	\begin{align*}
+		\inp{Q[f]}{p_n} &= \int_{-1}^1 p_n ((1-x^2)f')' dx \\
+		&= \left(p_n(1-x^2)f')\right)\bigg\vert_{-1}^1 - \int_{-1}^1 f' (1-x^2)p_n' dx \\
+		&= \int_{-1}^1 f' (1-x^2)p_n dx \tag{the first term above evaluates to $0$}
+	\end{align*}
+	
+	Now, for (2), we have just proven the base case. Now assume that $f \in \mathcal{C}^{2\gamma}$ and $\inp{f}{p_n} = \frac{1}{\lambda_n^{\gamma-1}} \inp{Q^{\gamma-1}[f]}{p_n}$. Then
+	\begin{align*}
+		 \frac{1}{\lambda_n^{\gamma}} \inp{Q^{\gamma}[f]}{p_n} &= \frac{1}{\lambda_n^{\gamma -1 }} \frac{1}{\lambda_n} \inp{Q[Q^{\gamma-1}[f]]}{p_n} \\
+		 &= \frac{1}{\lambda_n^{\gamma-1}} \inp{Q^{\gamma-1}[f]}{p_n} \tag{apply (1)} \\
+		 &= \inp{f}{p_n} \tag{inductive hypothesis}
+	\end{align*}
+	which proves (2). 
+
+	Now, for (3), we know that
+	\begin{equation}
+		\inp{f}{p_n} = \frac{1}{\lambda_n^\gamma} \inp{Q^\gamma[f]}{p_n}
+	\end{equation}
+	further
+	\begin{equation}
+		\frac{1}{\lambda_n^\gamma} = \frac{1}{(-n(n+1))^\gamma} = \mathcal{O}\left(\frac{1}{n^{2\gamma}}\right)
+	\end{equation}
+\end{solution}
+
+\begin{exercise}[Runge-Kutta Method]
+
+\end{exercise}
+\begin{solution}
+
+\end{solution}
+
+\begin{exercise}[LMM]
+
+\end{exercise}
+\begin{solution}
+Answering each question in turn: 
+\subsubsection*{Part (a)}
+The method is explicit since $\beta_{3} = 0$. 
+
+\subsubsection*{Part (b)}
+First note that
+\begin{equation}
+	\alpha_0 = 0, \quad \alpha_1 = 0, \quad \alpha_2 = -1, \quad \alpha_3 = 1
+\end{equation}
+and
+\begin{equation}
+	\beta_0 = \frac{5}{12}, \quad \beta_1 = \frac{-4}{3}, \quad \beta_2 = \frac{23}{12}, \quad \beta_3 = 0
+\end{equation}
+The characteristic functions are
+\begin{equation}
+	\rho(\epsilon) = \e^3 - \e^2
+\end{equation}
+and
+\begin{equation}
+	\sigma(\e) = \frac{23}{12} \e^2 - \frac{4}{3}\e + \frac{5}{12}
+\end{equation}
+
+\subsubsection*{Part (c)}
+Observe that
+\begin{equation}
+	\rho(1) = 0
+\end{equation}
+Next 
+\begin{equation}
+	\rho'(1) = 1 = \frac{23}{12} - \frac{4}{3} + \frac{5}{12} = \sigma(1)
+\end{equation}
+Thus the method is consistent. 
+
+\subsubsection*{Part (d)}
+Recall that
+\begin{equation}
+	\rho(\xi) = \xi^3 - \xi^2
+\end{equation}
+$\rho$ has single root of $1$ (which is $\leq 1$) and a double root of $0$ (which is $< 1$). Thus the method is zero-stable. 
+
+\end{solution}
+
+\end{document}
