@@ -18,8 +18,9 @@ while True:
     elif n < 0 or k < 0:
         print("請再輸入一次")
         continue
+    else:
+        up = math.factorial(n)
+        down = math.factorial(n - k)
 
-    up = math.factorial(n)
-    down = math.factorial(n - k)
-
-    print(f"P(n, k) = {up / down}")
+        print(f"P(n, k) = {up / down}")
+        break
