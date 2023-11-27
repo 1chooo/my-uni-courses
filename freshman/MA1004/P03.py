@@ -1,7 +1,7 @@
 import pylab
 import numpy as np
 
-a, b, n = 0, 100*np.pi, 10000
+a, b, n = 0, 100 * np.pi, 10000
 angs = np.linspace(a, b, n)
 rs = (np.cos(np.pi * angs))
 
