@@ -31,3 +31,19 @@ solution = np.linalg.solve(coefficients, constants)
 
 print("Solution:")
 print(f"x = {round(solution[0])}, y = {round(solution[1])}, z = {round(solution[2])}, w = {round(solution[3])}")
+
+from scipy.integrate import quad
+import numpy as np
+
+# 定义被积函数
+def integrand(u):
+    return np.sqrt(1 + np.cos(2 *u))
+
+# 定义区间
+lower_limit = np.cos(0)
+upper_limit = np.cos(np.pi/4)
+
+# 进行数值积分
+result, _ = quad(integrand, lower_limit, upper_limit)
+
+print("数值积分的结果为:", result)
