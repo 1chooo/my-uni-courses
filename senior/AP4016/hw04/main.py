@@ -1,7 +1,15 @@
+# -*- coding: utf-8 -*-
+'''
+Created Date: 2023/12/19
+Author: @1chooo (Hugo ChunHo Lin)
+Version: v0.0.1
+'''
+
+import os
+import math
 import numpy as np
 import matplotlib.pyplot as plt
-import math
-import os
+
 
 def read_file(file_path):
     data = []
@@ -12,6 +20,7 @@ def read_file(file_path):
             data.append(number)
 
     return data
+
 
 def count_fourier_trapezoidal(data):
     n = 243
@@ -45,7 +54,12 @@ def count_fourier_trapezoidal(data):
             )
         bn.append(value)
     
-    return a0, an, bn
+    return (
+        a0, 
+        an, 
+        bn,
+    )
+
 
 def count_fourier_simpson(data):
     n = 243
@@ -76,7 +90,12 @@ def count_fourier_simpson(data):
         bn.append(value)
     
     
-    return a0, an, bn
+    return (
+        a0, 
+        an, 
+        bn,
+    )
+
 
 def count_fourier_leoticks(data):
     n = 243
@@ -106,7 +125,12 @@ def count_fourier_leoticks(data):
             value += (1.0752*data[j] * np.sin((i+1)*x[j]) + 3.8496*data[j+1] * np.sin((i+1)*x[j+1])+1.0752*data[j+2] * np.sin((i+1)*x[j+2]))/3*h/pi
         bn.append(value)
     
-    return a0, an, bn
+    return (
+        a0, 
+        an, 
+        bn,
+    )
+
 
 def calculate_power_spectrum_and_plot(
         an, 
@@ -139,6 +163,7 @@ def calculate_power_spectrum_and_plot(
     # plt.show()
 
     return fx
+
 
 def plot_fourier_analysis_with_half_year(
         a0,
@@ -193,6 +218,7 @@ def plot_fourier_analysis_with_half_year(
     plt.grid('--')
     plt.savefig(file_name, dpi=300)
     # plt.show()
+
 
 def calculate_extreme_values_and_properties(
         fx,
@@ -254,6 +280,7 @@ def calculate_extreme_values_and_properties(
 
     print("Date")
     print(date)
+
 
 def reconstruct_from_fourier_analysis(
         a0,
