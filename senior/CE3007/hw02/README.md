@@ -34,9 +34,9 @@ True or False
 
 ### Q3 [^2], [^3]
 
-UDP and TCP use 1s complement for their checksums. Suppose you have the following three 8-bit bytes: 01010011, 01100110, 01110100. 
-1. What is the 1s complement of the sum of these 8-bit bytes? (Note that although UDP and TCP use 16-bit words in computing the checksum, for this problem you are being asked to consider 8-bit sums.) Show all work. 
-2. Why is it that UDP takes the 1s complement of the sum; that is, why not just use the sum? 
+UDP and TCP use 1's complement for their checksums. Suppose you have the following three 8-bit bytes: 01010011, 01100110, 01110100. 
+1. What is the 1's complement of the sum of these 8-bit bytes? (Note that although UDP and TCP use 16-bit words in computing the checksum, for this problem you are being asked to consider 8-bit sums.) Show all work. 
+2. Why is it that UDP takes the 1's complement of the sum; that is, why not just use the sum? 
 3. With the 1s complement scheme, how does the receiver detect errors? 
 4. Is it possible that a 1-bit error will go undetected? 
 5. How about a 2-bit error?
@@ -46,18 +46,19 @@ UDP and TCP use 1s complement for their checksums. Suppose you have the followin
 1. Note, wrap around if overflow
     ```
     0 1 0 1 0 0 1 1
-    + 0 1 1 0 0 1 1 0
+  + 0 1 1 0 0 1 1 0
     -----------------
     1 0 1 1 1 0 0 1
 
     and then
 
     1 0 1 1 1 0 0 1
-    + 0 1 1 1 0 1 0 0
+  + 0 1 1 1 0 1 0 0
     -----------------
     0 0 1 0 1 1 1 0
 
-    One's complement = 1 1 0 1 0 0 0 1.
+    One's complement = 
+    1 1 0 1 0 0 0 1.
     ```
 2. To detect errors, the receiver adds the four words (the three original words and the checksum).
 3. If the sum contains a zero, the receiver knows there has been an error.
