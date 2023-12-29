@@ -1,3 +1,3 @@
-# [MA1003] Calculus
+# [PH1032] General Physics A
 
 Programming Language: `Python`
