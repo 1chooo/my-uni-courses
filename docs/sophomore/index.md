@@ -14,7 +14,6 @@
 
 > AWS Educate Cloud Ambassador, Technical Support 
 > <br>
-> <br>
 > **Hugo ChunHo Lin**
 > 
 > <aside>
