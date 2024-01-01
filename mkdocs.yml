@@ -32,10 +32,9 @@ theme:
         - navigation.instant
         - navigation.top
         - navigation.tabs
-        - navigation.sections
-        - navigation.indexes
         - search.highlight
-        - navigation.expand
+        # - navigation.expand
+        # - navigation.tabs
     icon:
         logo: material/library-outline
 
