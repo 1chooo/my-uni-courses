@@ -12,20 +12,8 @@ copyright: Copyright &copy; 2023-24 Hugo H. Lin
 
 theme:
     palette:
-        - scheme: default
-          primary: blue grey
-          accent: indigo
-          toggle:
-              icon: material/weather-sunny
-              name: Switch to dark mode
-        - scheme: slate
-          primary: grey
-          accent: indigo
-          toggle:
-              icon: material/weather-night
-              name: Switch to light mode
+        scheme: preference
     name: material
-    
     icon:
         repo: fontawesome/brands/github
     features:
@@ -35,6 +23,7 @@ theme:
         - search.highlight
         # - navigation.expand
         # - navigation.tabs
+    favicon: assets/favicon.ico
     icon:
         logo: material/library-outline
 
@@ -42,11 +31,9 @@ plugins:
     - search
     - mkdocstrings
     - git-revision-date
-    # - blog
     - mkdocs-jupyter:
         include_source: True
-        execute: False
-        # ignore: [""]
+        execute: True
         # validate_nb: True
         #   ignore_h1_titles: True
         #   execute_ignore: "*.ipynb"
@@ -61,11 +48,21 @@ markdown_extensions:
 
 
 extra:
-    social:
-        - icon: fontawesome/brands/github
-          link: https://github.com/1chooo
-        - icon: fontawesome/brands/twitter
-          link: https://twitter.com/1chooo___
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/1chooo
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/1chooo___
+    # - icon: fas fa-rss
+    #   link: https://sites.google.com/g.ncu.edu.tw/1chooo/portfolio?authuser=0
+    # - icon: fab fa-linkedin
+    #   link: https://www.linkedin.com/in/1chooo/
+    # conda_env: py38
+#     analytics:
+#         provider: google
+#         property: UA-XXXXXXXXX-X
+
+
 
 nav:
     - Overview: index.md
