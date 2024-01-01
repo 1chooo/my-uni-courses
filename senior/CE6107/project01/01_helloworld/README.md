@@ -10,3 +10,16 @@ helloworld: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically lin
 ```
 
 Buffer 長度 32 
+
+```c
+int __fastcall main(int argc, const char **argv, const char **envp) {
+
+    char v4[32]; // [rsp+0h] [rbp-20h] BYREF
+
+    init(argc, argv, envp);
+    puts("Are you new to ctf?");
+    buts("Try to say helloworld in hacker's way!");
+    gets(v4);
+    return 0;
+}
+```
