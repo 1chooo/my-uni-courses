@@ -82,7 +82,7 @@ extra:
 nav:
     - Overview: index.md
     - Freshman:
-        - Home: freshman/index.md
+        - freshman/index.md
         - AP2049: freshman/ap2049/index.md
         - AP2050: freshman/ap2050/index.md
         - MA1003: freshman/ma1003/index.md
