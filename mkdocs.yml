@@ -6,7 +6,7 @@ site_author: 1chooo(Hugo ChunHo Lin)
 
 site_url: https://1chooo.github.io/my-uni-courses/
 
-repo_url: https://1chooo.github.io/my-uni-courses/
+repo_url: https://github.com/1chooo/my-uni-courses
 
 copyright: Copyright &copy; 2023-24 Hugo H. Lin
 
@@ -71,6 +71,7 @@ extra:
 nav:
     - Overview: index.md
     - Freshman: freshman/index.md
+      - AP2049: freshman/ap2049/index.md
     - Sophomore: sophomore/index.md
     - Junior: junior/index.md
     - Senior: senior/index.md
