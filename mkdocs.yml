@@ -71,7 +71,7 @@ extra:
 nav:
     - Overview: index.md
     - Freshman: freshman/index.md
-      - AP2049: freshman/ap2049/index.md
+        - AP2049: freshman/ap2049/index.md
     - Sophomore: sophomore/index.md
     - Junior: junior/index.md
     - Senior: senior/index.md
