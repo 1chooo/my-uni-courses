@@ -8,7 +8,7 @@ The code come from the courses in my university or the internet that learned by 
 
 | Course Number | Course Number | Language | Project |
 | :-------------: | :-------------: | :-------: | :-: |
-| [AP2049](/freshman/AP2049/) | Computer Programming and Graphics Ⅰ | `Fortran` | |
+| [AP2049](/freshman/ap2049/) | Computer Programming and Graphics Ⅰ | `Fortran` | |
 | [AP2050](/freshman/AP2050/) | Computer Programming and Graphics ⅠI| `Fortran`, `Python` | [Snake Game](freshman/AP2050/SnakeGame), [Plot Taiwan](https://github.com/1chooo/atmo-lab/tree/main/draw_TAIWAN) |
 | [MA1003](/freshman/MA1003/) | Calculus | `Python` | |
 | [MA1004](/freshman/MA1004/) | Calculus | `Python` | |
@@ -25,7 +25,7 @@ The code come from the courses in my university or the internet that learned by 
 | [CE1003](/sophomore/CE1003/) | Introduction to Computer Science Lab Ⅰ | `Python`, `C++` | [Uncle Wet's Get Moving!](https://github.com/1chooo/gym-route) |
 | [CE1004](/sophomore/CE1004/) | Introduction to Computer Science Lab ⅠI | `C++`, `JAVA` | [Uncle Wet's Get Moving!](https://github.com/1chooo/gym-route) |
 | [CE2004](/sophomore/CE2004/) | Principles of Programming Languages | `C++` | |
-| [CE2008](/sophomore/CE2008/) | Digital Design | `VHDL`, `C++` | [Microprogram Controller](sophomore/CE2008/HW_109601003_林群賀.pdf)|
+| [CE2008](/sophomore/CE2008/) | Digital Design | `VHDL`, `C++` | [Microprogram Controller](sophomore/CE2008/HW_109601003_林群賀.pdf) |
 | [CE2010](/sophomore/CE2010/) | Experiment of Digital Design | `VHDL`, `C++` | |
 | [CE3005](/sophomore/CE3005/) | Algorithmics | `JAVA`, `Python`, `C++`, `C` | [Quantum Oracle](https://github.com/1chooo/Quantum-Oracle), [CNN-based Handwriting Detection and Classification](https://github.com/1chooo/CNN-handwriting-detection)|
 | [GS3073](/sophomore/GS3073/) | Introduction to Artificial Intelligence | `Python` | [BearBear You](https://github.com/1chooo/bear-bear) |
