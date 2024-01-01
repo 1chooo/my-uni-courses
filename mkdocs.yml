@@ -1,0 +1,78 @@
+site_name: My UNI Courses
+
+site_description: Here, I will document all the code that I have acquired during my time in school.
+
+site_author: 1chooo(Hugo ChunHo Lin)
+
+site_url: https://1chooo.github.io/my-uni-courses/
+
+repo_url: https://1chooo.github.io/my-uni-courses/
+
+copyright: Copyright &copy; 2023-24 Hugo H. Lin
+
+theme:
+    palette:
+        - scheme: default
+          primary: blue grey
+          accent: indigo
+          toggle:
+              icon: material/weather-sunny
+              name: Switch to dark mode
+        - scheme: slate
+          primary: grey
+          accent: indigo
+          toggle:
+              icon: material/weather-night
+              name: Switch to light mode
+    name: material
+    
+    icon:
+        repo: fontawesome/brands/github
+    features:
+        - navigation.instant
+        - navigation.top
+        - navigation.tabs
+        - navigation.sections
+        - navigation.indexes
+        - search.highlight
+        - navigation.expand
+    icon:
+        logo: material/library-outline
+
+plugins:
+    - search
+    - mkdocstrings
+    - git-revision-date
+    # - blog
+    - mkdocs-jupyter:
+        include_source: True
+        execute: False
+        # ignore: [""]
+        # validate_nb: True
+        #   ignore_h1_titles: True
+        #   execute_ignore: "*.ipynb"
+
+markdown_extensions:
+    - attr_list
+    - pymdownx.superfences
+    - pymdownx.highlight:
+        linenums: true
+    - toc:
+        permalink: true
+
+
+extra:
+    social:
+        - icon: fontawesome/brands/github
+          link: https://github.com/1chooo
+        - icon: fontawesome/brands/twitter
+          link: https://twitter.com/1chooo___
+
+nav:
+    - Overview: index.md
+    - Freshman: freshman/index.md
+    - Sophomore: sophomore/index.md
+    - Junior: junior/index.md
+    - Senior: senior/index.md
+    - LICENSE: LICENSE/index.md
+    - Report Issues: https://github.com/1chooo/my-uni-courses/issues
