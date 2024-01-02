@@ -1,4 +1,4 @@
-# NCU ADL CTF 2023
+# 2023 NCU ADL CTF Writeup
 
 - link: [ctf.adl](http://ctf.adl.tw/)
 - useful tool: [IDA](https://hex-rays.com/IDA-pro/)
