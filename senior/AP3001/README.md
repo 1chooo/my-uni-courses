@@ -58,6 +58,42 @@ The phase dispersion relationship (相位色散關係) of $\phi = kx + mz - vt$ 
 - 冷平流 (cold advection): $v_{g} < 0$
 - 暖平流 (warm advection): $v_{g} > 0$
 
+### (5 marks) Briefly explain geostropic adjustion in relation to interia-gravity waves
+
+中緯度大尺度大氣運動是接近地轉平衡的狀態，若離開此平衡，則會激發慣性重力波，趨於非地轉平衡，因此需要進行地轉調整來使質量場和動量場重新分配，以恢復地轉平衡。
+
+**也就是因為激發慣性重力波，所以需要地轉調整來重新分配質量場和動量場，以恢復地轉平衡。**
+
+```mermaid
+graph LR;
+    A[中緯度大尺度大氣運動是否接近地轉平衡?] -->|是| B[維持地轉平衡狀態]
+    A -->|否| C[激發慣性重力波]
+    C --> D[趨向非地轉平衡]
+    D --> E[進行地轉調整]
+    E --> F[重新分配質量場和動量場]
+    F --> G[恢復地轉平衡]
+```
+
+### (5 marks) Describe the formation mechanism of free Rossby waves based on PV conservation.
+
+- $\eta$: 絕對渦度
+- $\zeta$: 渦度
+- $f$: 科氏力參數表行星渦度
+
+$\eta = \zeta + f$ 又 $\frac{\zeta + f}{h} = const.$
+
+以北半球為例，討論氣塊向北以及向南的情況
+
+- **向北:** $\zeta$ 增加，$f$ 減少，生成反氣旋環流，氣塊的西邊也為這個環流而有向北的速度分量，形成負的 $\zeta$，因此往北的氣塊西邊為負的 $\zeta$ 最強處，東側邊緣為向南運動，使氣塊往南。
+- **向南:** $\zeta$ 減少，$f$ 增加，生成氣旋環流，氣塊的西邊也為這個環流而有向南的速度分量，形成正的 $\zeta$，因此往南的氣塊西邊為正的 $\zeta$ 最強處，東側邊緣為向北運動，使氣塊往北。
+
+### (5 marks) Linearize the non-divergent barotropic vorticity equation expressed by the stream function $\psi'$ by assuming small perturbations with uniform zonal mean flow, 
+
+### (5 marks) Derive the zonal phase speed of Rossby waves that will propagate upstream relative to the mean flow.
+
+### (5 marks) Estimate the zonal phase speed of Rossby wave with $6,000 km$ wavelength relative to the mean flow.
+
+### (5 marks) Estimate the zonal phase speed of Rossby wave with $10,000 km$ wavelength.
 
 ## 符號
 [Basic-LaTeX-Commands](https://hackmd.io/@CynthiaChuang/Basic-LaTeX-Commands)
