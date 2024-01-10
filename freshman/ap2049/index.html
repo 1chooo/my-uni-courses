@@ -491,6 +491,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    [AP2049] Computer Programming and Graphics Ⅰ
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -500,6 +511,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#20201126" class="md-nav__link">
+    <span class="md-ellipsis">
+      20201126
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20201203" class="md-nav__link">
+    <span class="md-ellipsis">
+      20201203
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20201210" class="md-nav__link">
+    <span class="md-ellipsis">
+      20201210
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20201217" class="md-nav__link">
+    <span class="md-ellipsis">
+      20201217
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -675,6 +741,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#20201126" class="md-nav__link">
+    <span class="md-ellipsis">
+      20201126
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20201203" class="md-nav__link">
+    <span class="md-ellipsis">
+      20201203
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20201210" class="md-nav__link">
+    <span class="md-ellipsis">
+      20201210
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20201217" class="md-nav__link">
+    <span class="md-ellipsis">
+      20201217
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -693,6 +803,554 @@
 
 <h1 id="ap2049-computer-programming-and-graphics-i">[AP2049] Computer Programming and Graphics Ⅰ<a class="headerlink" href="#ap2049-computer-programming-and-graphics-i" title="Permanent link">&para;</a></h1>
 <p>Programming Language: <code>Fortran</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">program </span><span class="n">HelloWorld</span>
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Hello world&quot;</span>
+<span class="k">end program </span><span class="n">HelloWorld</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="20201126">20201126<a class="headerlink" href="#20201126" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">! tt-1.f90</span>
+<span class="k">implicit none</span>
+
+<span class="kt">real </span><span class="n">x</span>
+<span class="kt">integer </span><span class="n">n</span>
+<span class="kt">real </span><span class="n">p</span><span class="w">    </span><span class="c">! right</span>
+<span class="kt">real </span><span class="n">q</span><span class="w">    </span><span class="c">! left</span>
+<span class="kt">real </span><span class="n">n1</span><span class="w">   </span><span class="c">!</span>
+<span class="kt">integer </span><span class="n">j</span><span class="w"> </span><span class="c">! </span>
+
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span>
+<span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span>
+
+<span class="k">do </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span>
+<span class="w">    </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="n">n</span>
+<span class="w">        </span><span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="k">    </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="o">/</span><span class="n">n1</span>
+<span class="k">enddo</span>
+
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.</span>
+<span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span><span class="n">x</span><span class="w"> </span>
+<span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;p = &#39;</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="s1">&#39;q = &#39;</span><span class="p">,</span><span class="n">q</span>
+
+<span class="k">stop </span>
+<span class="k">end</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">! tt-2.f90</span>
+<span class="k">implicit none</span>
+
+<span class="kt">real </span><span class="n">x</span>
+<span class="kt">integer </span><span class="n">n</span>
+<span class="kt">real </span><span class="n">p</span><span class="w">    </span><span class="c">! right</span>
+<span class="kt">real </span><span class="n">q</span><span class="w">    </span><span class="c">! left</span>
+<span class="kt">real </span><span class="n">n1</span><span class="w">   </span><span class="c">!</span>
+<span class="kt">integer </span><span class="n">j</span><span class="w"> </span><span class="c">! </span>
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span>
+<span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span>
+
+<span class="k">do </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span>
+<span class="w">    </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+<span class="w">        </span><span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="k">    </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span><span class="o">/</span><span class="n">n1</span>
+<span class="k">enddo</span>
+
+<span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span><span class="n">x</span><span class="w"> </span>
+<span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;p = &#39;</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="s1">&#39;q = &#39;</span><span class="p">,</span><span class="n">q</span>
+
+<span class="k">stop </span>
+<span class="k">end</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">! tt-3.f90</span>
+<span class="k">implicit none</span>
+
+<span class="kt">real </span><span class="n">x</span>
+
+<span class="kt">integer </span><span class="n">n</span>
+<span class="kt">real </span><span class="n">p</span><span class="w">    </span><span class="c">! right</span>
+<span class="kt">real </span><span class="n">q</span><span class="w">    </span><span class="c">! left</span>
+<span class="kt">real </span><span class="n">n1</span><span class="w">   </span><span class="c">!    </span>
+<span class="kt">integer </span><span class="n">j</span><span class="w"> </span><span class="c">! </span>
+
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span>
+<span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span>
+
+<span class="k">do </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span>
+<span class="w">    </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">        </span><span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="k">    </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">)))</span><span class="o">/</span><span class="n">n1</span>
+<span class="k">enddo</span>
+
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.</span>
+<span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span><span class="n">x</span><span class="w"> </span>
+<span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;p = &#39;</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="s1">&#39;q = &#39;</span><span class="p">,</span><span class="n">q</span>
+
+<span class="k">stop </span>
+<span class="k">end</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="20201203">20201203<a class="headerlink" href="#20201203" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">implicit none</span>
+
+<span class="kt">real </span><span class="n">x</span>
+<span class="kt">integer </span><span class="n">n</span>
+<span class="kt">real </span><span class="n">p</span><span class="w">    </span><span class="c">! right</span>
+<span class="kt">real </span><span class="n">q</span><span class="w">    </span><span class="c">! left</span>
+<span class="kt">real </span><span class="n">n1</span><span class="w">   </span><span class="c">!</span>
+<span class="kt">integer </span><span class="n">j</span><span class="w"> </span><span class="c">! </span>
+
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span>
+<span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span>
+
+<span class="k">do </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span>
+<span class="w">    </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="n">n</span>
+<span class="w">        </span><span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="k">    </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="o">/</span><span class="n">n1</span>
+<span class="k">enddo</span>
+
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.</span>
+<span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span><span class="n">x</span><span class="w"> </span>
+<span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;p = &#39;</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="s1">&#39;q = &#39;</span><span class="p">,</span><span class="n">q</span>
+
+<span class="k">stop </span>
+<span class="k">end</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">implicit none</span>
+
+<span class="kt">real </span><span class="n">x</span>
+<span class="kt">integer </span><span class="n">n</span>
+<span class="kt">real </span><span class="n">p</span><span class="w">    </span><span class="c">! right</span>
+<span class="kt">real </span><span class="n">q</span><span class="w">    </span><span class="c">! left</span>
+<span class="kt">real </span><span class="n">n1</span><span class="w">   </span><span class="c">!</span>
+<span class="kt">integer </span><span class="n">j</span><span class="w"> </span><span class="c">! </span>
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span>
+<span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span>
+
+<span class="k">do </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span>
+<span class="w">    </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+<span class="w">        </span><span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="k">    </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span><span class="o">/</span><span class="n">n1</span>
+<span class="k">enddo</span>
+
+<span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span><span class="n">x</span><span class="w"> </span>
+<span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;p = &#39;</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="s1">&#39;q = &#39;</span><span class="p">,</span><span class="n">q</span>
+
+<span class="k">stop </span>
+<span class="k">end</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">implicit none</span>
+
+<span class="kt">real </span><span class="n">x</span>
+
+<span class="kt">integer </span><span class="n">n</span>
+<span class="kt">real </span><span class="n">p</span><span class="w">    </span><span class="c">! right</span>
+<span class="kt">real </span><span class="n">q</span><span class="w">    </span><span class="c">! left</span>
+<span class="kt">real </span><span class="n">n1</span><span class="w">   </span><span class="c">!    </span>
+<span class="kt">integer </span><span class="n">j</span><span class="w"> </span><span class="c">! </span>
+
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span>
+<span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span>
+
+<span class="k">do </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span>
+<span class="w">    </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">        </span><span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="k">    </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">)))</span><span class="o">/</span><span class="n">n1</span>
+<span class="k">enddo</span>
+
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.</span>
+<span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span><span class="n">x</span><span class="w"> </span>
+<span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;p = &#39;</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="s1">&#39;q = &#39;</span><span class="p">,</span><span class="n">q</span>
+
+<span class="k">stop </span>
+<span class="k">end</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="20201210">20201210<a class="headerlink" href="#20201210" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">implicit none</span>
+<span class="c">!------------------------------------------</span>
+<span class="c">!20201210: To process sounding data;</span>
+<span class="c">!------------------------------------------</span>
+
+<span class="c">! integer i</span>
+<span class="c">! integer j</span>
+<span class="c">! integer k</span>
+<span class="c">! integer hght ! height;</span>
+<span class="c">! integer relh ! relative humidity;</span>
+<span class="c">! integer drct ! wind direction;</span>
+<span class="c">! integer sknt ! wind speed in knot;</span>
+<span class="kt">integer </span><span class="n">ilinein</span>
+<span class="kt">integer </span><span class="nb">len_trim</span>
+<span class="c">! real pres ! pressure;</span>
+<span class="c">! real temp ! temperature;</span>
+<span class="c">! real dwdt ! dew point temperature;</span>
+<span class="c">! real mixr ! mixing ratio for water vapor;</span>
+<span class="c">! real thta ! potential temperature;</span>
+<span class="c">! real thte ! equivalent potential temperature;</span>
+<span class="c">! real thtr ! virtual equivalent temperature;</span>
+<span class="kt">character</span><span class="o">*</span><span class="mi">100</span><span class="w"> </span><span class="n">linein</span><span class="c">! name string long 100 -&gt; linein</span>
+
+<span class="c">!-------------------------------------------</span>
+
+<span class="k">open</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;47918.txt&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">form</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;formatted&#39;</span><span class="p">)</span><span class="w"> </span><span class="c">! open, name 47918.txt -&gt; 1 by formatted form;</span>
+<span class="mi">10</span><span class="w"> </span><span class="k">continue</span>
+<span class="k">read</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(a)&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="n">linein</span><span class="w"> </span><span class="c">! read 1 by form(a) -&gt; linein;</span>
+<span class="n">ilinein</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len_trim</span><span class="p">(</span><span class="n">linein</span><span class="p">)</span><span class="w"> </span><span class="c">! </span>
+<span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ilinein=&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">ilinein</span>
+<span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">linein</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">ilinein</span><span class="p">)</span>
+<span class="k">goto</span><span class="w"> </span><span class="mi">10</span>
+<span class="mi">20</span><span class="w"> </span><span class="k">continue</span>
+<span class="k">close</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">stop</span>
+<span class="k">end</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="20201217">20201217<a class="headerlink" href="#20201217" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">implicit none</span>
+
+<span class="c">!-------------------------------------------------------</span>
+
+<span class="c">! integer i</span>
+<span class="kt">integer </span><span class="n">j</span>
+<span class="c">! integer k</span>
+<span class="kt">integer </span><span class="nb">len_trim</span><span class="w">   </span><span class="c">! find line length;</span>
+<span class="kt">integer </span><span class="n">ilinein</span><span class="w">    </span><span class="c">! line length;</span>
+<span class="kt">integer </span><span class="n">ifilein</span><span class="w">    </span><span class="c">! filein length</span>
+<span class="kt">character</span><span class="o">*</span><span class="mi">200</span><span class="w"> </span><span class="n">linein</span><span class="w"> </span><span class="c">! readin character data;</span>
+<span class="kt">character</span><span class="o">*</span><span class="mi">200</span><span class="w"> </span><span class="n">filein</span><span class="w"> </span><span class="c">! file to be processewd;</span>
+<span class="c">!</span>
+<span class="c">!Arguments for data;</span>
+<span class="c">!</span>
+<span class="kt">integer </span><span class="n">hght</span>
+<span class="kt">integer </span><span class="n">relh</span>
+<span class="kt">integer </span><span class="n">drct</span>
+<span class="kt">integer </span><span class="n">sknt</span>
+<span class="kt">real </span><span class="n">pres</span>
+<span class="kt">real </span><span class="n">temp</span>
+<span class="kt">real </span><span class="n">dwpt</span>
+<span class="kt">real </span><span class="n">mixr</span>
+<span class="kt">real </span><span class="n">thta</span>
+<span class="kt">real </span><span class="n">thte</span>
+<span class="kt">real </span><span class="n">thtv</span>
+<span class="c">!-------------------------------------------------------------</span>
+<span class="k">open</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;file_list&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">form</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;formatted&quot;</span><span class="p">)</span><span class="w"> </span>
+
+<span class="mi">10</span><span class="w"> </span><span class="k">continue</span>
+<span class="k">read</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;(a)&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="n">filein</span>
+<span class="n">ifilein</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len_trim</span><span class="p">(</span><span class="n">filein</span><span class="p">)</span>
+
+<span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;processing&#39;</span><span class="o">//</span><span class="n">filein</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">ifilein</span><span class="p">)</span>
+
+<span class="k">open</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">filein</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">ifilein</span><span class="p">)</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">form</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;formatted&quot;</span><span class="p">)</span>
+
+<span class="c">! skip data header</span>
+
+<span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span>
+<span class="w">     </span><span class="k">read</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;(a)&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">40</span><span class="p">)</span><span class="n">linein</span>
+<span class="w">     </span><span class="n">ilinein</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len_trim</span><span class="p">(</span><span class="n">linein</span><span class="p">)</span>
+<span class="w">     </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="n">linein</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">ilinein</span><span class="p">)</span>
+<span class="k">enddo</span>
+
+<span class="c">! read data;</span>
+<span class="k">read</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">pres</span><span class="p">,</span><span class="w"> </span><span class="n">hght</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">dwpt</span><span class="p">,</span><span class="w"> </span><span class="n">relh</span><span class="p">,</span><span class="w"> </span><span class="n">mixr</span><span class="p">,</span><span class="w"> </span><span class="n">drct</span><span class="p">,</span><span class="w"> </span><span class="n">sknt</span><span class="p">,</span><span class="w"> </span><span class="n">thta</span><span class="p">,</span><span class="w"> </span><span class="n">thte</span><span class="p">,</span><span class="w"> </span><span class="n">thtv</span>
+<span class="k">print </span><span class="mi">2020</span><span class="p">,</span><span class="w"> </span><span class="n">pres</span><span class="p">,</span><span class="w"> </span><span class="n">hght</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">dwpt</span><span class="p">,</span><span class="w"> </span><span class="n">relh</span><span class="p">,</span><span class="w"> </span><span class="n">mixr</span><span class="p">,</span><span class="w"> </span><span class="n">drct</span><span class="p">,</span><span class="w"> </span><span class="n">sknt</span><span class="p">,</span><span class="w"> </span><span class="n">thta</span><span class="p">,</span><span class="w"> </span><span class="n">thte</span><span class="p">,</span><span class="w"> </span><span class="n">thtv</span>
+<span class="mi">2020</span><span class="w"> </span><span class="k">format</span><span class="p">(</span><span class="n">f6</span><span class="p">.</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">i5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">f5</span><span class="p">.</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">f5</span><span class="p">.</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">i2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">f4</span><span class="p">.</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">i3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">i2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">(</span><span class="mi">2</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">f5</span><span class="p">.</span><span class="mi">1</span><span class="p">))</span>
+<span class="c">! stop</span>
+
+<span class="mi">40</span><span class="w"> </span><span class="k">continue</span>
+
+<span class="k">close</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">goto</span><span class="w"> </span><span class="mi">10</span>
+<span class="mi">20</span><span class="w"> </span><span class="k">continue</span>
+<span class="k">close</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">stop</span>
+<span class="k">end</span>
+</code></pre></div></td></tr></table></div>
 
 
 
