@@ -3,8 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
-
+        - main
+    paths:
+        - 'docs/**'
 jobs:
   deploy:
     runs-on: ubuntu-latest
