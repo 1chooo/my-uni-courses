@@ -1,32 +1,30 @@
-import pylab
+import numpy as np
+import matplotlib.pyplot as plt
 
-lower = -pylab.pi
-upper = pylab.pi
-n = 1001
-dx = (upper - lower) / (n - 1)
+# 定義函數 f(x)
+def f(x):
+    return np.sqrt((2 * (np.sin(x) + np.cos(2 * x) + 3)) / (x + 1))
 
-xs = [lower + i * dx for i in range(n)]
-ys = [
-    1.2732  * pylab.sin(2  * x) +
-    0.4244  * pylab.sin(6  * x) +
-    0.25465 * pylab.sin(10 * x) +
-    0.18189 * pylab.sin(14 * x) +
-    0.14147 * pylab.sin(18 * x) for x in xs]
-pylab.plot(xs, ys, label = "h(t)", color = "blue")
+# 定義導數估算函數
+def estimate_derivative(f, x, h=1e-6):
+    return (f(x + h) - f(x)) / h
 
-ys = [
-    1.2732  * pylab.cos(2  * x) * 2  +
-    0.4244  * pylab.cos(6  * x) * 6  +
-    0.25465 * pylab.cos(10 * x) * 10 +
-    0.18189 * pylab.cos(14 * x) * 14 +
-    0.14147 * pylab.cos(18 * x) * 18 for x in xs]
-pylab.plot(xs, ys, label = "h\'(t)", color = "green")
+# 定義 x 範圍
+x = np.linspace(1.0, 20, 100)
 
-pylab.title("sawtooth function approximation and derivative")
-pylab.xlabel("t")
-pylab.ylabel("y")
-pylab.legend()
-# pylab.xlim(lower, upper)
-# pylab.ylim(-15, 15)
-pylab.grid(axis='both')
-pylab.show()
+# 計算 f(x) 和其導數
+y = f(x)
+y_prime = [estimate_derivative(f, xi) for xi in x]
+
+# 繪製 f(x) 和其導數
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, label='f(x) = sqrt((2 * (sin(x) + cos(2 * x) + 3)) / (x + 1))', color='blue', linewidth=2.0)
+plt.plot(x, y_prime, label="f'(x) (Estimated)", color='green', linewidth=2.0)
+plt.xlabel('x')
+plt.ylabel('f(x) / f\'(x)')
+plt.ylim(-1.0, 2.0)
+plt.xlim(0, 20)
+plt.legend()
+plt.grid(True)
+plt.title('f(x) = sqrt((2 * (sin(x) + cos(2 * x) + 3)) / (x + 1)) and computed derivative')
+plt.show()

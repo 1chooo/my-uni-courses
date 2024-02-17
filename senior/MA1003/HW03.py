@@ -12,7 +12,7 @@ def simpson(a, b):
 
 def result(s):
     global res, ans
-    print(s, "%.9f" % res, "　誤差:", "%.9f" % abs(ans - res))
+    print(s, "%.10f" % res, "　誤差:", "%.10f" % abs(ans - res))
 
 lower = 0.0
 upper = numpy.pi / 2
@@ -20,7 +20,7 @@ n = 100
 dx = (upper - lower) / n
 xs = numpy.linspace(lower, upper, n + 1)
 ans = f_ig(upper) - f_ig(lower)
-print("數學積分　:", "%.9f" % ans)
+print("數學積分　:", "%.10f" % ans)
 
 # %%
 print("\n迴圈求積　:")
