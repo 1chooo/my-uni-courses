@@ -48,13 +48,14 @@ The code come from the courses in my university or the internet that learned by 
 | [CE2012](/junior/CE2012/) | Assembly Language and System Programming | `Assembly` | [Hua Tank](https://github.com/1chooo/Tank) |
 | [GS4514](/junior/GS4514/) | Data visualization | `Javascripts` | [Video Game Analysis](https://github.com/1chooo/video-game-visualization) |
 
-## Senior
+## [Senior](./senior/)
 
 | Course Number | Course Number | Language | Project |
 | :-------------: | :-------------: | :-------: | :-: |
-| [GS4524-B](/junior/GS4524-B/) | Special topic for interdisciplinary artificial intelligence | `Python` |  |
-| [GS4522](/junior/GS4522/) | Enterprise Application of pattern recognition | `Python` |  |
-| [GS4719](/junior/GS4719/) | Programming-Python | `Python` |  |
+| [GS4524-B](/senior/GS4524-B/) | Special topic for interdisciplinary artificial intelligence | `Python` |  |
+| [GS4522](/senior/GS4522/) | Enterprise Application of pattern recognition | `Python` |  |
+| [GS4719](/senior/GS4719/) | Programming-Python | `Python` |  |
+| [MT1051](/senior/MT1051/) | An Introduction to Computing: Python | `Python` |  |
 
 ## License
 
