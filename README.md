@@ -52,6 +52,9 @@ The code come from the courses in my university or the internet that learned by 
 
 | Course Number | Course Number | Language | Project |
 | :-------------: | :-------------: | :-------: | :-: |
+| [AP3001](/senior/AP3001/) | Atmospheric Dynamics |  |  |
+| [AP4016](/senior/AP4016/) | Atmospheric Dynamics |  |  |
+| [CE3007](/senior/CE3007/) | Computer Network | `Go` |  |
 | [GS4524-B](/senior/GS4524-B/) | Special topic for interdisciplinary artificial intelligence | `Python` |  |
 | [GS4522](/senior/GS4522/) | Enterprise Application of pattern recognition | `Python` |  |
 | [GS4719](/senior/GS4719/) | Programming-Python | `Python` |  |
