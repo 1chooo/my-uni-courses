@@ -88,6 +88,8 @@ nav:
         - freshman/ma1003/index.md
     - Sophomore: sophomore/index.md
     - Junior: junior/index.md
-    - Senior: senior/index.md
+    - Senior: 
+        - senior/index.md
+        - senior/503/index.md
     - LICENSE: LICENSE/index.md
     - Report Issues: https://github.com/1chooo/my-uni-courses/issues
