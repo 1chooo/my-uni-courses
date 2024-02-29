@@ -1,5 +1,4 @@
-# [SE6029] Object Oriented Programming Writeups
-
+# Object Oriented Analysis and Design Writeups
 
 > 2024-Spring-OOAD  
 >
@@ -45,10 +44,12 @@ private:
 }
 ```
 
-- 搞笑題目 (例如，前10名搶答者有分)
-- 名詞解釋 (前30%滿分，中間30%60分，尾巴40% 30分)
+- 搞笑題目 (例如，前 10 名搶答者有分)
+- 名詞解釋 (前 30% 滿分，中間 30% 60 分，尾巴 40% 30 分)
 - 嚴重思考題 (對比較重要，不搶答，給你滿滿的時間)
-喔! 你抄襲就0分，你給別人抄襲你就變成50%分數
+
+> [!WARNING]
+> 喔! 你抄襲就 0 分，你給別人抄襲你就變成 50% 分數
 
 
 每一題公告之前會告知哪一種類型
@@ -58,5 +59,25 @@ private:
 
 | Week | Topic  | Code |
 | ---- | ------ | ---- |
-| 1    | [Software Engineering Basics](./00_software_engineering_basics/), [Classes and Object]((./01_classes_and_object/README.md)) | [`Point`](./01_classes_and_object/01_Point/), [`Dog`](./01_classes_and_object/02_Dog/), [`Dog` in `C`](./01_classes_and_object/03_DogC/), [`Constructor` and `Deconstructor`](./01_classes_and_object/04_ConstructorDeconstructor/), [`Car`](./01_classes_and_object/05_CarStack/), [`Car` in `Heap`](./01_classes_and_object/06_CarHeap/) |
+| 1    | [Software Engineering Basics](./00_software_engineering_basics/), [Classes and Object]((./01_classes_and_object/README.md)) | [`Point`](./01_classes_and_object/01_Point/), [`Dog`](./01_classes_and_object/02_Dog/), [`Dog` in `C`](./01_classes_and_object/03_DogC/), [`Constructor` and `Deconstructor`](./01_classes_and_object/04_ConstructorDeconstructor/), [`Car`](./01_classes_and_object/05_CarStack/), [`Car` in `Heap`](./01_classes_and_object/06_CarHeap/), [`Cat`](./01_classes_and_object/07_Cat/), [`Employee`](./01_classes_and_object/08_Employee/), [`Table`](./01_classes_and_object/09_Table/) |
 
+
+> eCloudValley Cloud Developer Intern </br>
+> **Hugo ChunHo Lin**
+> 
+> <aside>
+>   📩 E-mail: <a href="mailto:hugo970217@gmail.com">hugo970217@gmail.com</a>
+> <br>
+>   🧳 Linkedin: <a href="https://www.linkedin.com/in/1chooo/">Hugo ChunHo Lin</a>
+> <br>
+>   👨🏻‍💻 GitHub: <a href="https://github.com/1chooo">1chooo</a>
+>    
+> </aside>
+
+
+## License
+Released under [MIT](./LICENSE) by [Hugo ChunHo Lin](https://github.com/1chooo).
+
+This software can be modified and reused without restriction.
+The original license must be included with any copies of this software.
+If a significant portion of the source code is used, please provide a link back to this repository.

@@ -1,4 +1,4 @@
-# Material01 - Classes and Object
+# Material 01 - Classes and Object
 
 ### What is a class ?
 
@@ -12,7 +12,7 @@
 - When you use a class to create a variable, the variable (along with its allocated memory) is called an object
 - A class can have many objects
 - Each object has its own memory
-- Object is simply memory+behaviors (code)
+- Object is simply memory + behaviors (code)
 
 ```cpp
 class Point {
@@ -158,6 +158,54 @@ delete[] pt;
 delete[] myBills;   // chapter11() will also release the memory :-)  
 ```
 
+
+### (UNKNOWN) Copy constructor and `=` operator [LAB 03](../../lab/01_classes_and_object/README.md#lab-03)
+
+```cpp
+#include <iostream>
+using namespace std;
+class Table
+{
+    char *p;
+    int sz;
+
+public:
+    Table(int s = 15)
+    {
+        p = new char[100];
+        cout << "constructor" << endl;
+    }
+    ~Table()
+    {
+        delete[] p;
+        cout << "destructor" << endl;
+    }
+};
+void h()
+{
+    Table t1;
+    Table t2 = t1;
+    Table t3;
+    t3 = t2;
+}
+int main()
+{
+    h();
+
+    return 0;
+}
+```
+
+- How many times the default constructor is called? 請問Table預設的建構式被呼叫了幾次？
+
+- How many times the default destructor is called ? (Table 的解構式被呼叫了幾次？)
+
+- What is the final output?
+
+
+#### 絕大部分的情況下「`copy`」 operator 與「`=`」 operator 有很大的不同
+
+根本的原因: `copy` operator 會初始化一塊未經初始化的記憶體，而 `=` operator 必須妥善處理一個已經建構好的的物件
 
 
 

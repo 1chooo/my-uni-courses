@@ -1,3 +1,6 @@
+# Copy constructor and `=` operator
+
+```cpp
 #include <iostream>
 using namespace std;
 class Table
@@ -30,3 +33,12 @@ int main()
 
     return 0;
 }
+```
+
+- How many times the default constructor is called? 請問Table預設的建構式被呼叫了幾次？
+
+- How many times the default destructor is called ? (Table 的解構式被呼叫了幾次？)
+
+- What is the final output?
+
+
