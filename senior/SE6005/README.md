@@ -28,16 +28,20 @@
 ## Course Materials
 
 ### Course Videos
-- [x] Week 1 (Syllabus)
-- [ ] Week 2 (CH1 Intro to Software Engineering)
-  - [ ] SE 1-1
-  - [ ] SE 1-2
-  - [ ] SE 1-3
-  - [ ] On-the-job classes
-  - [ ] HW01
-- [ ] Week 3 (CH2 Software Engineering History)
-- [ ] Week 4 (CH3 Traditional Software Processes)
-- [ ] Week 5 (CH4 Contemporary Software Processes)
+- Week 1 (Syllabus)
+- Week 2 (CH1 Intro to Software Engineering)
+  - [x] SE 1-1
+  - [x] SE 1-2
+  - [x] SE 1-3
+  - [x] On-the-job classes
+  - [x] HW01
+- Week 3 (CH2 Software Engineering History)
+  - [x] SE 2-1
+  - [x] SE 2-2
+  - [x] On-the-job classes
+  - [x] HW02
+- Week 4 (CH3 Traditional Software Processes)
+- Week 5 (CH4 Contemporary Software Processes)
 
 
 - CH6 Project Scheduling and Risk Management
