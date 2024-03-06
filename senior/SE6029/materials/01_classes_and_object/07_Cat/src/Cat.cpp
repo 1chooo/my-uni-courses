@@ -2,15 +2,14 @@
 #include <iostream>
 
 Cat::Cat(
-    std::string name, 
-    std::string color
-) : _name(name), _color(color) {}
+    std::string name,
+    std::string color) : _name(name), _color(color) {}
 
 /*
- * We can also announce the Cat Constructor in 
+ * We can also announce the Cat Constructor in
  * this way without using the `NameList`
  * Cat::Cat(
- *  std::string name, 
+ *  std::string name,
  *  std::string color) {
  *    _name = name;
  *   _color = color;

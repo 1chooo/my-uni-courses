@@ -1,8 +1,7 @@
-class Point
-{
+class Point {
     int z;
 
-public:
+  public:
     int x;
     int y;
 };

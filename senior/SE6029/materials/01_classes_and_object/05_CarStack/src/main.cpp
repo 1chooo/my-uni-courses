@@ -4,8 +4,7 @@
 
 Car honda;
 
-int main()
-{
+int main() {
     Car camery;
     honda.color = 1;
     camery.color = 100;

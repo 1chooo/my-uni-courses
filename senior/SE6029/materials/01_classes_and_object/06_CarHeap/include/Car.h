@@ -4,9 +4,9 @@
 #define CAR_H
 
 class Car {
-public:
+  public:
     int color;
-    Car(); // Constructor
+    Car();  // Constructor
     ~Car(); // Destructor
 };
 

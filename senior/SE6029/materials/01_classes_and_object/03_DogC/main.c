@@ -2,8 +2,7 @@
 // 有時候你還得自己動手做一些初始化的動作
 // 例如
 
-typedef struct dog_body
-{
+typedef struct dog_body {
     int age;
     int weight;
     char *name;

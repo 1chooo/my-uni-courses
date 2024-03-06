@@ -2,29 +2,27 @@
 
 using namespace std;
 
-class Dog
-{
-public:
-    Dog();                      // Constructor
-    ~Dog();                     // Destructor
+class Dog {
+  public:
+    Dog();  // Constructor
+    ~Dog(); // Destructor
     void setAge(int age);
     int getAge();
     void setWeight(int weight);
     int getWeight();
     void speak();
 
-private:
+  private:
     int age;
     int weight;
 };
 
-Dog::Dog()
-{
+Dog::Dog() {
     age = 0;
     weight = 0;
     cout << "Dog Constructor Called" << endl;
 }
-Dog::~Dog()
-{
+
+Dog::~Dog() {
     cout << "Dog Destructor Called" << endl;
 }

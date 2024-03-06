@@ -1,8 +1,7 @@
 #include "Employee.h"
 #include <cstring>
 
-Employee::Employee(char *name, int id)
-{
+Employee::Employee(char *name, int id) {
     _id = id;
     _name = new char[strlen(name) + 1]; // add 1 for '\0' to end of string
     // Allocates an character array object
@@ -17,17 +16,14 @@ Employee::Employee(Employee &rhs) {
     strcpy(_name, rhs._name);
 }
 
-Employee::~Employee()
-{
+Employee::~Employee() {
     delete[] _name;
 }
 
-char *Employee::getName()
-{
+char *Employee::getName() {
     return _name;
 }
 
-int Employee::getId()
-{
+int Employee::getId() {
     return _id;
 }

@@ -4,7 +4,7 @@
 #include <string>
 
 class Cat {
-public:
+  public:
     Cat(std::string name = "tom", std::string color = "black_and_white");
     ~Cat();
     void setName(std::string name);
@@ -12,7 +12,8 @@ public:
     void setColor(std::string color);
     std::string getColor();
     void speak();
-private:
+
+  private:
     std::string _name;
     std::string _color;
 };

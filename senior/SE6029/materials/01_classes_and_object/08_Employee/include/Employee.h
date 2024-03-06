@@ -2,17 +2,17 @@
 #define EMPLOYEE_H
 
 class Employee {
-public:
+  public:
     Employee(char *name, int id);
     // 為避免 dangling pointer，我們需要在 Employee 建立 copy constructor
-    Employee(Employee &rhs);        // right hand side
+    Employee(Employee &rhs); // right hand side
     ~Employee();
-    char* getName();
+    char *getName();
     int getId();
     // Other Accessor methods
-private:
+  private:
     int _id;
-    char* _name;
+    char *_name;
 };
 
 #endif /* EMPLOYEE_H */
