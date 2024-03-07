@@ -28,7 +28,7 @@ g++ -Iinclude -o src/*.cpp -o bin/main.out && ./bin/main.out
 ## Genuine Understanding V.S. Superficial Knowledge.
 
 ```cpp
-class EmployeeCensus: public Listcontainer {
+class EmployeeCensus: public ListContainer {
 
 public:
     ...

@@ -306,3 +306,166 @@ fluffy.speak("Hello", 10);
 Generally, if you override an overloaded base class method you should either override every one of the overloads, or carefully consider why you are not.It is a safety protocol enforced by compiler to prevent you from doing such error
 
 
+## The Principle of Inheritance
+
+
+```cpp
+class EmployeeCensus: public ListContainer {
+
+public:
+    ...
+    // public routines
+    void AddEmployee ( Employee employee ); 
+    void RemoveEmployee ( Employee employee );
+    Employee NextItemInList();
+    Employee FirstItem;
+    Employee LastItem;
+    ...
+private:
+    ...
+}
+```
+
+> [!TIP]
+> Is EmployeeCensus a ListContainer?
+
+The below is horror code, in this situation, we don't need to use inheritance, we should use composition instead.
+
+
+C++ Example of a Class interface with Consistent Levels of Abstraction
+```cpp
+class EmployeeCensus {
+
+public:
+    ...
+    // public routines
+    // The abstraction of all these routines is now at `Employee` Level.
+    void AddEmployee ( Employee employee ); 
+    void RemoveEmployee ( Employee employee );
+    Employee NextItemInList();
+    Employee FirstItem;
+    Employee LastItem;
+    ...
+private:
+    // That the class uses the ListContainer library is now hidden.
+    ListContainer m_EmployeeList;   // composition
+    ...
+}
+```
+
+This class is representing two ADTs: an employee and a ListContainer.
+
+### To subclass or not to subclass
+
+Consider you are a UN(United Nation) staff:
+
+| Figure | Explanation |
+| --- | --- |
+| ![](./imgs/01.png) | <ul><li>Is citizen a human?</li><li>Is refugee a human?</li></ul> |
+| ![](./imgs/02.png) | ![](./imgs/code.png) No. <br> The country code is already capable of distinguishing citizenships of country. This subclassing is meaningless until |
+| ![](./imgs/03.png) | Until object’s behaviors must be specialized and distinguished  |
+
+> [!TIP]
+> #### Thumb Rule
+> - A citizen is a human?
+> - An American is a citizen?
+>   - An american is a human?
+>   - Inheritance relation is transitive
+> - A Chinese is a citizen?
+> - A citizen is a human?
+> - A Chinese is a human?
+
+
+The UN staff wants to follow one-China policy
+
+
+| Figure | Explanation |
+| --- | --- |
+| ![](./imgs/04.png) | <ul><li>Taiwanese all inherit <code>CID</code></li><li>Taiwanese overrides the <code>tax()</code> and <code>vote()</code> method</li><li>Taiwanese has a specialized attributes called <code>TID</code></li><li>Taiwanese has a new method to validate if a <code>TID</code> is valid.</li></ul> |
+
+By so inheritance, the UN staff means:
+
+- Taiwanese is a Chinese, is a citizen, and is a human
+- Chinese is not necessary a Taiwanese
+- Taiwanese has an attribute called CID, but is never used **(this is something wrong)**
+
+
+OK..This is very heavy
+
+| Figure | Explanation |
+| --- | --- |
+| ![](./imgs/05.png) | <ul><li>Taiwanese is not a Chinese</li><li>But Taiwanese and Chinese are both citizens and human.</li><li>Taiwanese does not inherit CID attributes</li></ul> |
+
+
+### More Example of Overriding
+
+```cpp
+class pet {
+
+  public:
+    pet() { cout << "pet constructor" << endl; }
+    ~pet() { cout << "pet destructor" << endl; }
+    void speak() { cout << "Growl " << endl; }
+};
+
+class cat : public pet {
+
+  public:
+    cat() { cout << "cat constructor" << endl; }
+    ~cat() { cout << "cat destructor" << endl; }
+    void speak() { cout << "meow" << endl; }
+};
+
+
+main() {
+    pet insect;
+    cat pussy;
+    pet *nose = (pet *)new cat();   // polymorphism
+
+    insect.speak();
+    pussy.speak();
+    ((pet)pussy).speak();  // no feature of polymorphism
+    nose->speak();
+}
+```
+
+(UNKNOWN) Output:
+```cpp
+pet constructor     // insect
+pet constructor     // pussy
+cat constructor     // pussy
+pet constructor     // nose
+cat constructor     // nose
+Growl               // insect
+meow                // pussy
+Growl               // (pet)pussy (troncated)
+pet destructor      // (UNKNOW)
+Growl               // (UNKNOW)
+cat destructor      // (UNKNOW)
+pet destructor      // (UNKNOW)
+pet destructor      // (UNKNOW)
+```
+
+
+`((pet)pussy).speak();   // change pussy to pet`
+
+```
+        -> +--------------+
+       |   |      Pet     | 
+ pussy |   +--------------+  
+       |   | Cat (remove) |  <- (cast) 
+        -> +--------------+ 
+```
+
+> [!CAUTION]
+> When you use a subclass to override a base class’s method, C++ will use the current type to determine the method
+> 
+> This is not the polymorphism you expect.
+
+> [!NOTE]
+> 在運用多型的時候，你會不想要讓這樣的事情發生，要怎麼辦？
+
+
+
+
+

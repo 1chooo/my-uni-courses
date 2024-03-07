@@ -1,6 +1,9 @@
 # Visual Studio Code workspace settings
 .vscode/ 
 
+
+.DS_Store
+
 # Prerequisites
 *.d
 
