@@ -1,5 +1,10 @@
 # [AP3001] Atmospheric Dynamics
 
+> AP3001 Atmospheric Dynamics
+> 
+> Year: 2023 Fall    
+> Lecturer: 黃清勇
+
 - $\zeta$: Vorticity (渦度)
 - $\psi$: Stream function (流函數)
 
