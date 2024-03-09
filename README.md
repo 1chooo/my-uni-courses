@@ -53,7 +53,7 @@ The code come from the courses in my university or the internet that learned by 
 | Course Number | Course Number | Language | Project |
 | :-------------: | :-------------: | :-------: | :-: |
 | [AP3001](/senior/AP3001/) | Atmospheric Dynamics |  |  |
-| [AP4016](/senior/AP4016/) | Atmospheric Dynamics |  |  |
+| [AP4016](/senior/AP4016/) | Synoptic Meteorology and Weather Analysis | `python` |  |
 | [CE3007](/senior/CE3007/) | Computer Network | `Go` |  |
 | [GS4524-B](/senior/GS4524-B/) | Special topic for interdisciplinary artificial intelligence | `Python` |  |
 | [GS4522](/senior/GS4522/) | Enterprise Application of pattern recognition | `Python` |  |
@@ -61,8 +61,20 @@ The code come from the courses in my university or the internet that learned by 
 | [MIT_6.824](/senior/MIT_6.824/) | Distributed System | `Go` |  |
 | [MT1051](/senior/MT1051/) | An Introduction to Computing: Python | `Python` |  |
 
-## License
+> eCloudValley Cloud Developer Intern </br>
+> **Hugo ChunHo Lin**
+> 
+> <aside>
+>   📩 E-mail: <a href="mailto:hugo970217@gmail.com">hugo970217@gmail.com</a>
+> <br>
+>   🧳 Linkedin: <a href="https://www.linkedin.com/in/1chooo/">Hugo ChunHo Lin</a>
+> <br>
+>   👨🏻‍💻 GitHub: <a href="https://github.com/1chooo">1chooo</a>
+>    
+> </aside>
 
+
+## License
 Released under [MIT](./LICENSE) by [Hugo ChunHo Lin](https://github.com/1chooo).
 
 This software can be modified and reused without restriction.
