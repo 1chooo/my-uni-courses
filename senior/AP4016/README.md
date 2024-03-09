@@ -1,4 +1,9 @@
-# 23 Fall
+# [AP4016] Synoptic Meteorology and Weather Analysis
+
+> AP4016 - Synoptic Meteorology and Weather Analysis
+> 
+> Year: 2023 Fall  
+> Lecturer: 林沛練
 
 ## Analysis
 
