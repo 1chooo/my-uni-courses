@@ -1,0 +1,144 @@
+site_name: Numerical Analysis ATM
+
+site_description: The Numerical Analysis Method I have learned in "Numerical Analysis" 2022 Fall | Prof. Shu-chih Yang (楊 舒芝)
+
+site_author: 1chooo(Hugo ChunHo Lin)
+
+site_url: https://1chooo.github.io/ATM-Numerical-Analysis/
+
+repo_url: https://github.com/1chooo/ATM-Numerical-Analysis
+
+copyright: Copyright &copy; 2023 1chooo (Hugo ChunHo Lin)
+
+theme:
+    palette:
+        scheme: preference
+    name: material
+    icon:
+        repo: fontawesome/brands/github
+    features:
+        - navigation.instant
+        - navigation.top
+        - navigation.tabs
+        - search.highlight
+        # - navigation.expand
+        # - navigation.tabs
+    favicon: assets/icon.png
+    icon:
+        logo: logo
+
+plugins:
+    - search
+    - mkdocstrings
+    - git-revision-date
+    - mkdocs-jupyter:
+        include_source: True
+        execute: True
+        # validate_nb: True
+        #   ignore_h1_titles: True
+        #   execute_ignore: "*.ipynb"
+
+markdown_extensions:
+    - attr_list
+    - pymdownx.superfences
+    - pymdownx.highlight:
+        linenums: true
+    - toc:
+        permalink: true
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/1chooo
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/1chooo___
+
+
+nav:
+    - Home: index.md
+    - Installation: environment_usage.md
+    # - Usage: usage.md
+    - Course Note:
+      - course_note/Week01.md
+      - course_note/Week02.md
+      - course_note/Week03.md
+      - course_note/Week04.md
+      - course_note/Week05.md
+      - course_note/Week06.md
+      - course_note/Week07.md
+      - course_note/Week08.md
+      - course_note/Week09.md
+      - course_note/Week10.md
+      - course_note/Week11.md
+      - course_note/Week12.md
+    - Assignment:
+      - A1:
+        - assignment/a1/22_fall_a1.py
+      - A2:
+        - assignment/a2/22_fall_a2_q1.ipynb
+        - assignment/a2/22_fall_a2_q2.ipynb
+        - assignment/a2/22_fall_a2_q3.ipynb
+        - assignment/a2/22_fall_a2_q4.ipynb
+        - assignment/a2/22_fall_a2_q5.ipynb
+        - assignment/a2/22_fall_a2_q6.ipynb
+        - assignment/a2/22_fall_a2_q7.ipynb
+      - A3:
+        - assignment/a3/22_fall_a3.py
+      - A4:
+        - assignment/a4/22_fall_a4_q1.ipynb
+        - assignment/a4/22_fall_a4_q2.ipynb
+        - assignment/a4/22_fall_a4_q3.ipynb
+        - assignment/a4/22_fall_a4_q4.ipynb
+        - assignment/a4/22_fall_a4_q5.ipynb
+        - assignment/a4/22_fall_a4_q6.ipynb
+        - assignment/a4/22_fall_a4_q7.ipynb
+        - assignment/a4/22_fall_a4_q8.ipynb
+        - assignment/a4/22_fall_a4_q9.ipynb
+      - A5:
+        - assignment/a5/22_fall_a5_q1.ipynb
+        - assignment/a5/22_fall_a5_q2.ipynb
+        - assignment/a5/22_fall_a5_q3.ipynb
+        - assignment/a5/22_fall_a5_q4.ipynb
+        - assignment/a5/22_fall_a5_q5.ipynb
+      - A6:
+        - assignment/a6/22_fall_a6_q1.ipynb
+        - assignment/a6/22_fall_a6_q2.ipynb
+        - assignment/a6/22_fall_a6_q3.ipynb
+        - assignment/a6/22_fall_a6_q4.ipynb
+        - assignment/a6/22_fall_a6_q5.ipynb
+        - assignment/a6/22_fall_a6_q6.ipynb
+        - assignment/a6/22_fall_a6_q7.ipynb
+        - assignment/a6/22_fall_a6_q8.ipynb
+        - assignment/a6/22_fall_a6_q9.ipynb
+      - A7:
+        - assignment/a7/22_fall_a7_q1.py
+        - assignment/a7/22_fall_a7_q2.py
+        - assignment/a7/22_fall_a7_q3.py
+        - assignment/a7/22_fall_a7_q4.py
+        - assignment/a7/22_fall_a7_q5.py
+        - assignment/a7/22_fall_a7_q6.py
+      - Power Spectrum:
+        - assignment/power_spectrum/22_fall_FFT.py
+        - assignment/power_spectrum/fftnino3ls.ipynb
+    - Past Exam:
+      - 2022 Fall:
+        - past_exam/2022_fall/example.ipynb
+        - past_exam/2022_fall/read_file.ipynb
+        - past_exam/2022_fall/22_fall_q1.ipynb
+        - past_exam/2022_fall/22_fall_q2.ipynb
+        - past_exam/2022_fall/22_fall_q3.ipynb
+        - past_exam/2022_fall/22_fall_q4.ipynb
+      - 2021 Fall:
+        - past_exam/2021_fall/index.ipynb
+        - past_exam/2021_fall/read_file.ipynb
+        - past_exam/2021_fall/21_fall_q1.ipynb
+        - past_exam/2021_fall/21_fall_q2.ipynb
+        - past_exam/2021_fall/21_fall_q3.ipynb
+        - past_exam/2021_fall/21_fall_q4.ipynb
+
+
+    - Contributing: contributing.md
+
+    - Reference: reference.md
+    - Report Issues: https://github.com/1chooo/ATM-Numerical-Analysis/issues

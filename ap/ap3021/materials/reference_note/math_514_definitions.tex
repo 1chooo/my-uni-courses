@@ -1,0 +1,277 @@
+%% 
+%% This is file, `math_514_definitions.tex',
+%% generated with the extract package.
+%% 
+%% Generated on :  2018/11/23,11:03
+%% From source  :  "Math 514 Lecture Notes".tex
+%% Using options:  active,generate=Math_514_Definitions,extract-env={definition,algorithm}
+%% 
+\documentclass[12pt]{article}
+  \usepackage{amsthm}
+  \usepackage{amsfonts, amsmath}
+  \usepackage[dvipsnames]{xcolor}
+  %\newtheorem{theorem}{Theorem}
+  \theoremstyle{definition}
+  \definecolor{Tm}{rgb}{0,0,0.80}
+  %\newtheorem{definition}{Definition}
+  \newtheorem{definition}{\color{NavyBlue}{\textbf{Definition}}}
+  \newtheorem{theorem}{\color{ForestGreen}{\textbf{Theorem}}}
+  \newtheorem{corollary}{Corollary}
+  %\newtheorem{example}{Example}
+   \usepackage{bm}
+\newcommand{\e}{\epsilon}
+%\newcommand{\d}{\delta}
+\newcommand{\D}{\Delta}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\U}{\mathcal{U}}
+\usepackage{mathtools}
+\DeclarePairedDelimiterX{\inp}[2]{\langle}{\rangle}{#1, #2}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\x}{\bm{x}}
+\newcommand{\xib}{\bm{\xi}}
+\usepackage{mathrsfs}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+\algnewcommand\algorithmicforeach{\textbf{for each}}
+\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+
+\begin{document}
+
+\begin{definition}[Simple Iteration]
+Suppose that $g$ is a real-valued function, defined and continuous on a bounded closed interval $[a,b]$ of the real line, and let $g(x) \in [a,b]$ for all $x \in [a,b]$. Given that $x_0 \in [a,b]$, the recursion defined by
+\begin{equation}
+x_{k+1} = g(x_k)
+\end{equation}
+is called simple iteration; the numbers $x_k$, $k \geq 0$, are referred to as iterates.
+\end{definition}
+
+\begin{definition}[Contraction]
+Let $g$ be a real-valued function, defined and continuous on a bounded closed interval $[a,b]$ of the real line. Then, $g$ is said to be a contraction on $[a,b]$ if there exists a constant $L$ such that $0<L<1$ and
+\begin{equation}
+|g(x)-g(y)| \leq L|x-y| \quad \forall x,y \in [a,b]
+\end{equation}
+\end{definition}
+
+\begin{definition}[Stable, Unstable Fixed Point]
+Suppose that $g$ is a real-valued function, defined and continuous on a bounded closed interval $[a,b]$ of the real line, and let $g(x) \in [a,b]$ for all $x \in [a,b]$, and let $\xi$ denote a fixed point of $g$. $\xi$ is a stable fixed point of $g$ if the sequence $(x_k)$ defined by the iteration $x_{k+1} = g(x_k)$, $k\geq 0$, converges to $\xi$ whenever the starting value $x_0$ is sufficiently close to $\xi$. Conversely, if no sequence $(x_k)$ defined by this iteration converges to $\xi$ for any starting value $x_0$ close to $\xi$, except for $x_0 = \xi$, then we say that $\xi$ is an unstable fixed point of $g$.
+\end{definition}
+
+\begin{definition}[Rate of Convergence]
+Suppose $\xi = \lim_{k \to \infty} x_k$. Define $E_k = |x_k - \xi|$.
+\end{definition}
+
+\begin{definition}[Newton's Method]
+Newton's method for the solution of $f(x) = 0$ is defined by
+\begin{equation}
+x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}
+\end{equation}
+\end{definition}
+
+\begin{definition}[Secant Method]
+The secant method is defined by
+\begin{equation}
+x_{k+1} = x_k - f(x_k) \frac{x_k - x_{k-1}}{f(x_k) - f(x_{k-1})}
+\end{equation}
+\end{definition}
+
+\begin{definition}(Unitary Matrix)
+A matrix $Q = [q_1 \ldots q_n] \in \R^{m\times n}$ is unitary if and only if $\inp{q_i}{q_j} = \delta_{ij}$.
+\end{definition}
+
+\begin{definition}(Norm)\label{norm}
+Suppose that $\mathcal{V}$ is a linear space over the field $\R$. The \textit{nonnegative} real-valued function $\norm{\cdot}$ is a norm on $\mathcal{V}$ if the following axioms are satisfied: Fix $v \in \mathcal{V}$
+\begin{enumerate}
+\item Positivity: $\norm{v} = 0$ if and only if $v = 0$
+\item Scale Preservation: $\norm{\alpha v} = |\alpha| \norm{v}$ for all $\alpha \in \R$
+\item Triangle Inequality: $\norm{v + w} \leq \norm{v} + \norm{w}$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Operator Norm]
+Let $A$ be an $m \times n$ matrix. That is, $A$ is a linear transformation form $\R^n$ to $\R^m$. Then the operator norm (or subordinate matrix norm) of $A$ is
+\begin{equation}
+\norm{A}_{p,q} = \sup_{x \in \R^n, x\neq 0} \frac{\norm{Ax}_q}{\norm{x}_p}.
+\end{equation}
+\end{definition}
+
+\begin{definition}[Absolute Condition Number]
+\begin{equation}
+Cond(f) = \sup_{x,y \in D, x\neq y} \frac{\norm{f(x) - f(y)}}{\norm{x - y}}
+\end{equation}
+\end{definition}
+
+\begin{definition}[Absolute Local Condition Number]
+\begin{equation}
+Cond_x(f) = \sup_{x + \delta x \in D, \delta x \neq 0} \frac{\norm{f(x + \delta x) - f(x)}}{\norm{\delta x}}
+\end{equation}
+\end{definition}
+
+\begin{definition}[Relative Local Condition Number]
+\begin{equation}
+cond_x(f) = \sup_{x + \delta x \in D, \delta x \neq 0} \frac{\norm{f(x + \delta x) - f(x)} / \norm{f(x)}}{\norm{\delta x} / \norm{x}}
+\end{equation}
+\end{definition}
+
+\begin{definition}[Condition Number of a Nonsingular Matrix]
+The condition number of a nonsingular matrix $A$ is defined by
+\begin{equation}
+\kappa(A) = \norm{A} \Vert A^{-1} \Vert
+\end{equation}
+If $\kappa(A) \gg 1$, the matrix is said to be ill-conditioned.
+\end{definition}
+
+\begin{definition}[Symmetric, Positive Definite, spd]
+The real matrix $A$ is said to be symmetric if $A = A^T$. A square $n \times n$ matrix is called positive definite if
+\begin{equation}
+  \x^T A \x > 0
+\end{equation}
+for all $\x \in \R^n$, $\x \neq 0$.
+\end{definition}
+
+\begin{algorithm}
+  \caption{Cholesky Factorization}
+  \begin{algorithmic}[ht]
+    \Require{$A \in \R^{n \times n}$, SPD}
+    \Let{$L_1$}{$\sqrt{a_{11}}$}
+    \For{$k \gets 2, 3, \ldots, n$}
+     \State Solve $L_{k-1} l_k = a_k$ for $l_k$
+     \Let{$l_{kk}$}{$\sqrt{a_{kk} - l_k^T l_k}$}
+     \Let{$L_k$}{$\begin{pmatrix} L_{k-1} & 0 \\ l_k^T & l_{kk} \end{pmatrix}$}
+    \EndFor
+  \end{algorithmic}
+\end{algorithm}
+
+\begin{definition}[Cauchy Sequence]
+A sequence $(\x^{(k)}) \subset \R^n$ is called a Cauchy sequence in $\R^n$ if for any $\e > 0$ there exists a positive integer $k_0 = k_0(\e)$ such that
+\begin{equation}
+\norm{\x^{(k)} - \x^{(m)}}_{\infty} < \e \quad \forall k, m \geq k_0(\e)
+\end{equation}
+\end{definition}
+
+\begin{definition}[Continuous function]
+Let $D \subset \R^n$ be nonempty and $f: D \to \R^n$. Given $\xib \in D$, $f$ is continuous at $\xib$ if for every $\e > 0$, there exists a $\delta = \delta(\e) > 0$ such that for every $\x \in B(\xib; \delta) \cap D$
+\begin{equation}
+  \norm{f(\x) - f(\xib)}_\infty < \e
+ \end{equation}
+\end{definition}
+
+\begin{definition}[Lipschitz condition, constant, and contraction]
+Let $D$ be a closed subset of $\R^n$ and $g: D \to D$. If there exists a positive constant $L$ such that
+\begin{equation}
+\norm{g(x) - g(y)}_\infty \leq L \norm{x - y}_\infty
+\end{equation}
+for all $x, y \in D$, then $g$ satisfies the Lipschitz condition on $D$ in the $\infty$-norm. $L$ is called the Lipschitz constant. If $L \in (0,1)$, then $g$ is called a contraction on $D$ in the $\infty$-norm.
+\end{definition}
+
+\begin{definition}[Jacobian]
+Let $g = (g_1, \ldots, g_n)^T : \R^n \to \R^n$ be a function defined and continuous in an (open) neighborhood of $\xib \in \R^n$. Suppose the first partial derivatives of each $g_i$ exist at $\xib$. The Jacobian matrix $J_g(\xib)$ of $g$ at $\xib$ is the $n \times n$ matrix with elements
+\begin{equation}
+J_g(\xib)_{ij} = \frac{\partial g_i}{\partial x_j} (\xib)
+\end{equation}
+\end{definition}
+
+\begin{definition}[Newton's Method]
+The sequence defined by
+\begin{equation}
+\x^{(k+1)} = \x^{(k)} - [J_f(\x^{(k)})]^{-1} f(\x^{(k)})
+\end{equation}
+where $\x^{(0)} \in \R^n$, is called Newton's method.
+\end{definition}
+
+\begin{algorithm}[ht]
+  \caption{Power Iteration}
+  \begin{algorithmic}[1]
+    \Require{$v^{(0)} =$ some vector with $\norm{v^{(0)}} = 1$}
+    \For{$k \gets 1, 2, \ldots$}
+    \Let{$w$}{$Av^{(k-1)}$} \Comment{Apply $A$}
+    \Let{$v^{(k)}$}{$w/ \norm{w}$} \Comment{Normalize}
+    \Let{$\lambda^{(k)}$}{$(v^{(k)})^T Av^{(k)} = \inp{v^{(k)}}{Av^{(k)}}$} \Comment{Rayleigh Quotient}
+    \EndFor
+  \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[ht]
+  \caption{Simultaneous Iteration}
+  \begin{algorithmic}[1]
+    \Require{$Q^{(0)} = V = I$, a list of vectors $V$, which we choose to be the identity}
+    \For{$k \gets 1, 2, \ldots$}
+    \Let{$Z$}{$A \underline Q^{(k-1)}$} \Comment{Apply $A$}
+    \Let{$Z$}{$\underline Q^{(k)} R^{(k)}$} \Comment{$QR$ factorization of $Z$}
+    \Let{$A^{(k)}$}{$(\underline Q^{(k)})^T A \underline Q^{(k)}$}  \Comment{$A^{(k)}_{ii} = \inp{q_i^{(k)}}{Aq_i^{(k)}}$}
+    \EndFor
+  \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[ht]
+  \caption{QR Algorithm (without shifts)}
+  \begin{algorithmic}[1]
+    \Require{$A^{(0)} = A$}
+    \For{$k \gets 1, 2, \ldots$}
+    \Let{$Q^{(k)}R^{(k)}$}{$A^{(k-1)}$} \Comment{$QR$ factorization of $A^{(k-1)}$}
+    \Let{$A^{(k)}$}{$R^{(k)}Q^{(k)}$} \Comment{Recombine factors in reverse order}
+    \EndFor
+  \end{algorithmic}
+\end{algorithm}
+
+\begin{definition}[Lagrange basis polynomial]
+Given the data $\{x_i\}_{i=0}^n$, define
+\begin{equation}
+l_j(x) = \frac{\prod_{i\neq j} (x-x_i)}{\prod_{i\neq j} (x_j-x_i)}
+\end{equation}
+which satisfies
+\begin{equation}
+l_j(x_i) = \delta_{ij} =
+\begin{cases}
+1 & i=j \\
+0 & i\neq j
+\end{cases}
+\end{equation}
+(note that $\prod_{i\neq j} (x-x_i)$ is an $n$th order polynomial (1 less degree than the number of data points) and $\prod_{i\neq j} (x_j-x_i)$ is a constant).
+\end{definition}
+
+\begin{definition}[Lagrange interpolation polynomial]
+Given the data $\{x_i\}_{i=0}^n$ and corresponding function values $\{f(x_i)\}_{i=0}^n$ the Lagrange interpolation polynomial is
+\begin{equation}
+p(x) = \sum_{i=0}^n f(x_i) l_i(x)
+\end{equation}
+\end{definition}
+
+\begin{definition}[Orthogonal polynomials]
+Given a domain $[a,b]$ and a weight function $w(x)$ on the domain, a set of orthogonal polynomials is a list of polynomials $\phi_0, \phi_1, \ldots, \phi_N, \ldots$ such that
+\begin{equation}
+\inp{\phi_i}{\phi_j} = \int_a^b \phi_i(x)\phi_j(x)w(x)dx = \delta_{ij}
+\end{equation}
+\end{definition}
+
+\begin{definition}[Autonomous]
+If the force $\bm f$ has no explicit dependence on $t$, then we call the ODE (system) autonomous.
+\end{definition}
+
+\begin{definition}[Lipshitz continuous]
+If
+\begin{equation}
+|f(u) - f(u^*)| \leq L|u-u^*|
+\end{equation}
+for $u$ in a small neighborhood of $u^*$, then $f$ is Lipshitz continuous at $u^*$. Note that if $f'$ exists, then
+\begin{equation}
+L = |f'(u^*)|
+\end{equation}
+\end{definition}
+
+\begin{definition}[Uniformly Lipshitz continuous]
+If $L_u$ has an upper bound in the domain of $f$, then $f$ is uniformly Lipshitz continuous.
+\end{definition}
+
+\begin{definition}[Local Truncation Error (LTE)]
+The local truncation error is by how much the true solution fails to satisfy the approximation scheme, which can be written as
+\begin{equation}
+\tau_n = \frac{u_{n+1} - u_n}{\Delta t} - f(u_n)
+\end{equation}
+\end{definition}
+
+\begin{definition}[Consistency]
+We say a method is consistent is the LTE goes to 0 as $\Delta \to 0$.
+\end{definition}
+
+\end{document}
