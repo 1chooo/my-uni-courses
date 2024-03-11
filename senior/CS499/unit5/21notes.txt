@@ -1,3 +1,0 @@
-structures are copied when assigned or passed
-structs can be turned into/from json
-Fields are exported when they begin with a capital letter
