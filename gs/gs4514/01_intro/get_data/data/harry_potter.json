@@ -1,0 +1,74 @@
+[
+    {
+        "id": "671",
+        "title": "Harry Potter and the Philosopher's Stone",
+        "release_year": "2001",
+        "genre": "Adventure",
+        "runtime": "152",
+        "budget": "152162486",
+        "revenue": "1188663577"
+    },
+    {
+        "id": "672",
+        "title": "Harry Potter and the Chamber of Secrets",
+        "release_year": "2002",
+        "genre": "Adventure",
+        "runtime": "161",
+        "budget": "119111418",
+        "revenue": "1044236078"
+    },
+    {
+        "id": "673",
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "release_year": "2004",
+        "genre": "Adventure",
+        "runtime": "141",
+        "budget": "148457800",
+        "revenue": "901943435"
+    },
+    {
+        "id": "674",
+        "title": "Harry Potter and the Goblet of Fire",
+        "release_year": "2005",
+        "genre": "Adventure",
+        "runtime": "157",
+        "budget": "163928897",
+        "revenue": "979115647"
+    },
+    {
+        "id": "675",
+        "title": "Harry Potter and the Order of the Phoenix",
+        "release_year": "2007",
+        "genre": "Adventure",
+        "runtime": "138",
+        "budget": "155469350",
+        "revenue": "972422163"
+    },
+    {
+        "id": "767",
+        "title": "Harry Potter and the Half-Blood Prince",
+        "release_year": "2009",
+        "genre": "Adventure",
+        "runtime": "153",
+        "budget": "250694215",
+        "revenue": "936552673"
+    },
+    {
+        "id": "12444",
+        "title": "Harry Potter and the Deathly Hallows: Part 1",
+        "release_year": "2010",
+        "genre": "Adventure",
+        "runtime": "146",
+        "budget": "246842866",
+        "revenue": "942254381"
+    },
+    {
+        "id": "12445",
+        "title": "Harry Potter and the Deathly Hallows: Part 2",
+        "release_year": "2011",
+        "genre": "Family",
+        "runtime": "130",
+        "budget": "119482056",
+        "revenue": "1282759351"
+    }
+]

@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<!--
+	Strongly Typed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+	<title>Bar Chart Race</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="shortcut icon" href="32officeicons-20_89419.ico" type="image/x-icon">
+	<link rel="stylesheet" href="barChartRace/inspector.css" />
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+
+<body class="no-sidebar is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<section id="header">
+			<div class="container">
+
+				<!-- Logo -->
+				<h1 id="logo">Bar Chart Race</h1>
+				<P>Observation for the Profit of Platform Every Year</P>
+
+			</div>
+		</section>
+
+		<section id="main">
+			<div class="container">
+				<div id="content">
+
+					<!-- Post -->
+					<article class="box post">
+						<header>
+							<h2>
+								Motivation
+							</h2>
+						</header>
+						<p style="text-align: center;">
+							When I first started this class and learned that we would be using d3 for development, I
+							became interested in Bar Chart Race and started exploring it on the official website.
+							<br><br>
+							I was already fascinated by this visualization technique, so I searched for online resources and
+							applied it to the existing dataset to see what exciting results would emerge.
+						</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- Main -->
+		<section id="main">
+			<div class="container">
+				<div id="content">
+
+					<!-- Post -->
+					<article class="box post">
+						<header>
+							<h2>
+								Bar Chart Race
+							</h2>
+						</header>
+						<div>
+							<p>
+								This bar chart race is designed to showcase the total revenue for each platform on a
+								yearly basis. Therefore, it
+								displays information for one year at a time, and the monetary unit is US dollars (US$).
+							</p>
+						</div>
+
+						<div id="bar-chart-race" style="text-align: left;"></div>
+
+						<br>
+						<hr color="#FFF" style="align-items: center; margin-bottom: 0.2%;">
+						<hr color="#FFF" style="align-items: center; margin-bottom: 4em;">
+						<div class="Observation">
+							<h2>My Observation</h2>
+							<p>
+								In this bar chart race, it is possible to observe that initially, there
+								may be only one game company(2600) dominating the entire gaming industry,
+								with competitors gradually emerging later on. However, as the bar chart
+								race progresses into the middle to later stages, several platforms suddenly
+								emerge, and their revenue surpasses that of all their competitors, establishing
+								a significant lead.
+							</p>
+						</div>
+
+						<hr color="#FFF" style="align-items: center; margin-bottom: 0.2%;">
+						<hr color="#FFF" style="align-items: center; margin-bottom: 4em;">
+
+						<div class="Improvements">
+							<h2>Some Improvements</h2>
+							<p>
+								Since the main modification is based on the official D3 example, the flexibility
+								is limited. It means that it's not possible to make specific modifications to
+								individual functionalities. If needed, the only option is to rewrite all the
+								functionalities. Therefore, this can serve as a starting point for exploring
+								more D3 functionalities through the bar chart race.
+							</p>
+						</div>
+
+					</article>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer>
+			<p>
+				© 2023 '23 Spring Data-Viz G4. All rights reserved.
+				<a href="https://github.com/hapiwangy/final_project_datavisualization">
+					<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub"
+						class="github-icon">GitHub Repo
+				</a>
+			</p>
+		</footer>
+
+		<section id="navBar">
+			<div class="container">
+				<nav id="nav">
+					<ul>
+						<li><a class="icon solid fa-home" href="index.html"><span>Introduction</span></a></li>
+						<li><a class="icon solid fa-bar-chart" href="publisherAnalysis.html"><span>Publisher
+									Analysis</span></a></li>
+						<li><a class="icon solid fa-bar-chart" href="averageSales.html"><span>Average Sales</span></a>
+						</li>
+						<li><a class="icon solid fa-bar-chart" href="barChartRace.html"><span>Bar Chart Race</span></a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+
+	</div>
+
+	<div id="bar-chart-race">
+		<script type="module">
+			import define from "./barChartRace/index.js";
+			import { Runtime, Library, Inspector } from "./barChartRace/runtime.js";
+			const runtime = new Runtime();
+			const main = runtime.module(define, Inspector.into(document.getElementById('bar-chart-race')));
+		</script>
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

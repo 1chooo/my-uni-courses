@@ -1,0 +1,1 @@
+input('give me a number:')

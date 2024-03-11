@@ -1,0 +1,100 @@
+svg {
+    height: 50%;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.axis .domain {
+  stroke: none;
+}
+
+.x line {
+  stroke: white;
+}
+
+.tooltip,
+.tooltip1,
+.erictooltip {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  background: #eee;
+  max-width: 200px;
+}
+
+.tip-header,
+.tip-header1,
+.eric-tip-header {
+  font-size: 0.8em;
+  border-bottom: 2px solid white;
+  padding: 0.9rem 1rem;
+}
+
+.tip-body,
+.tip-body1 {
+  padding: 0.2rem 0;
+
+}
+
+.tip-info {
+  margin: 0;
+  padding: 0.3rem 1rem;
+  font-size: 0.8rem;
+}
+
+.tip-info:nth-of-type(even) {
+  background: #e0e0e0;
+}
+
+.selector {
+    margin: 1em 0em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;    
+}
+
+select {
+  width: 30em;
+  padding: 0.5em;
+  text-align: center;
+  border: 0;
+  font-size: 1em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select {
+    border:2px solid #e3e3e3;    
+    border-radius:3px;
+    color:#616263;
+    overflow: hidden;     
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    display: block;
+    margin: 0em 1em;
+}
+
+.select:after {
+    content:"▼";    
+    padding: 0.5em 1em;
+    position: absolute; right: 10px; top: 0;    
+    z-index: 1;
+    text-align: center;
+    height: 100%;      
+    pointer-events: none;
+    box-sizing: border-box;   
+}
+
+@media screen and (max-width: 736px) {
+    .select {
+      width: 10em;;
+    }
+}
+
+li {
+  text-align: left;
+}
