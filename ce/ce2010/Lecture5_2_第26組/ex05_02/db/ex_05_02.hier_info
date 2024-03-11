@@ -1,0 +1,19 @@
+|ex_05_02
+Q0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A1 => inst.IN0
+A5 => inst.IN1
+A5 => inst2.IN3
+A7 => inst.IN2
+A7 => inst1.IN2
+A7 => inst2.IN2
+A3 => inst.IN3
+A3 => inst1.IN3
+Q1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A2 => inst1.IN0
+A6 => inst1.IN1
+A6 => inst2.IN1
+Q2 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+A4 => inst2.IN0
+A0 => ~NO_FANOUT~
+
+

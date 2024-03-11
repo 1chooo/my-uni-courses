@@ -1,0 +1,53 @@
+/* Existing CSS for the Footer */
+.Footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #232f3e;
+    color: #f2f2f2;
+    position: absolute;
+    padding: 5px;
+    width: 100%;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+.icon a {
+    margin-right: 20px; /* Increase right margin of icons */
+}
+
+.icon a img {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease;
+}
+
+.icon a:hover img {
+    transform: scale(1.2); /* Scale down the icons */
+}
+
+.copyright {
+    margin-left: 50px; /* Increase left margin of copyright text */
+}
+
+.copyright a {
+    color: #FEBD69;
+}
+
+/* Centering content for mobile responsiveness */
+@media (max-width: 768px) {
+    .Footer {
+        flex-direction: column;
+        align-items: center; /* Center all content horizontally */
+        text-align: center; /* Center text within each row */
+        padding: 10px; /* Adjust padding for better spacing */
+    }
+
+    .icon,
+    .copyright {
+        margin-bottom: 10px; /* Add space between rows */
+    }
+}

@@ -1,0 +1,174 @@
+$comment
+	File created using the following command:
+		vcd file ex_05_02.msim.vcd -direction
+$end
+$date
+	Wed Mar 30 16:43:44 2022
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module ex_05_02_vlg_vec_tst $end
+$var reg 1 ! A0 $end
+$var reg 1 " A1 $end
+$var reg 1 # A2 $end
+$var reg 1 $ A3 $end
+$var reg 1 % A4 $end
+$var reg 1 & A5 $end
+$var reg 1 ' A6 $end
+$var reg 1 ( A7 $end
+$var wire 1 ) Q0 $end
+$var wire 1 * Q1 $end
+$var wire 1 + Q2 $end
+
+$scope module i1 $end
+$var wire 1 , gnd $end
+$var wire 1 - vcc $end
+$var wire 1 . unknown $end
+$var tri1 1 / devclrn $end
+$var tri1 1 0 devpor $end
+$var tri1 1 1 devoe $end
+$var wire 1 2 A0~input_o $end
+$var wire 1 3 ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 4 ~QUARTUS_CREATED_UNVM~~busy $end
+$var wire 1 5 ~QUARTUS_CREATED_ADC1~~eoc $end
+$var wire 1 6 ~QUARTUS_CREATED_ADC2~~eoc $end
+$var wire 1 7 Q0~output_o $end
+$var wire 1 8 Q1~output_o $end
+$var wire 1 9 Q2~output_o $end
+$var wire 1 : A1~input_o $end
+$var wire 1 ; A3~input_o $end
+$var wire 1 < A5~input_o $end
+$var wire 1 = A7~input_o $end
+$var wire 1 > inst~0_combout $end
+$var wire 1 ? A6~input_o $end
+$var wire 1 @ A2~input_o $end
+$var wire 1 A inst1~0_combout $end
+$var wire 1 B A4~input_o $end
+$var wire 1 C inst2~0_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1!
+0"
+0#
+0$
+0%
+0&
+0'
+0(
+0)
+0*
+0+
+0,
+1-
+x.
+1/
+10
+11
+12
+03
+z4
+z5
+z6
+07
+08
+09
+0:
+0;
+0<
+0=
+0>
+0?
+0@
+0A
+0B
+0C
+$end
+#10000
+0!
+1"
+1:
+02
+1>
+17
+1)
+#20000
+1#
+0"
+0:
+1@
+0>
+1A
+18
+07
+0)
+1*
+#30000
+1$
+0#
+0@
+1;
+1>
+17
+1)
+#40000
+1%
+0$
+0;
+1B
+0A
+0>
+1C
+19
+07
+08
+0*
+0)
+1+
+#50000
+1&
+0%
+0B
+1<
+1>
+17
+1)
+#60000
+1'
+0&
+0<
+1?
+0>
+1A
+18
+07
+0)
+1*
+#70000
+1(
+0'
+0?
+1=
+1>
+17
+1)
+#80000
+0(
+0=
+0C
+0A
+0>
+07
+08
+09
+0+
+0*
+0)
+#1000000
