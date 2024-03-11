@@ -1,0 +1,27 @@
+// Develop exam2-p13-2.go such that it connects to the server running on port 12000, sends “play\n” and then closes the connection.
+
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"net"
+	"os"
+)
+
+func main() {
+	// Connect to the server running on port 12000
+	conn, err := net.Dial("tcp", ":12000")
+	if err != nil {
+		fmt.Println("Error connecting:", err)
+		os.Exit(1)
+	}
+
+	// Send the string "play\n" to the server
+	writer := bufio.NewWriter(conn)
+	writer.WriteString("play\n")
+	writer.Flush()
+
+	// Close the connection
+	conn.Close()
+}

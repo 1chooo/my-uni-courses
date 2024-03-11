@@ -1,0 +1,30 @@
+1 package main
+2 
+3 import "fmt"
+4 import "bufio"
+5 import "net"
+6 
+7 func check(e error) {
+8    if e != nil {
+9       panic(e)
+10    }
+11 }
+12 
+13 
+14 func main() {
+15    conn, errc := net.Dial("tcp", "127.0.0.1:12003") 
+16    check(errc)
+17    defer conn.Close()
+18 
+19    writer := bufio.NewWriter(conn)
+20    len, errw := writer.WriteString("Hello World!\n") 
+21    check(errw)
+22    fmt.Printf("Send a string of %d bytes\n", len) 
+23    writer.Flush()
+24 
+25    scanner := bufio.NewScanner(conn)
+26    if scanner.Scan() {
+27       fmt.Printf("Server replies: %s\n", scanner.Text())
+28    }
+29 }
+30 
