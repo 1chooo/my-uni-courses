@@ -1,6 +1,6 @@
 # Week 3 (CH2 Software Engineering History)
 
-### Week 2 作業說明：
+### Week 3 作業說明：
 
 以下是 Week3 的四個討論題目(topics for Week 3)：
 | Chapter | Topic | Content |
