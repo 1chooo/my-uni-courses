@@ -327,7 +327,7 @@ private:
 ```
 
 > [!TIP]
-> Is EmployeeCensus a ListContainer?
+> Is `EmployeeCensus` a `ListContainer`?
 
 The below is horror code, in this situation, we don't need to use inheritance, we should use composition instead.
 
