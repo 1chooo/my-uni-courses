@@ -25,6 +25,7 @@ Polymorphism in C++ is exhibited by the ability of a pointer or reference to a b
       - [Virtual Function Table of Derived Classes](#virtual-function-table-of-derived-classes)
       - [Virtual Base Class (Abstract class)](#virtual-base-class-abstract-class)
       - [Questions](#questions)
+  - [One Critical Point to Determine if you OO program is really doing right](#one-critical-point-to-determine-if-you-oo-program-is-really-doing-right)
 
 ## Using a graphics application
 
@@ -82,7 +83,6 @@ Why not declare all methods as virtual?
 - But, by declaring all methods virtual, redesign may be avoided if the classes need to change. 
 
 Some C++ programmers declare all methods virtual if any need be. Some don't. In some programming languages, such as Java, **all methods are virtual by default**. I don't have a definitive answer on this one.
-
 
 ```cpp
 #include <iostream>
@@ -619,7 +619,6 @@ p->draw();      // (p0<vptr[1])();  Circle object
 > 
 > It is a process not a programming task! It's goal: to make **the system highly reusable and maintainable**
 
-
 ```cpp
 class Circle : Public Shape{
     public:
@@ -635,7 +634,7 @@ void main () {
     if (initial()) {
         while (cont) {
             E = GetEvent();
-            ShapePool[E]->Draw();
+            ShapePool[E]->Draw();   // How can this be achieved?
         }
     }
 }
@@ -647,6 +646,7 @@ Take the following examples again. When you want to extend the system to another
 #### Virtual Base Class (Abstract class)
 
 In C++, class that has member functions are pure virtual function, such as 
+
 ```cpp
 virtual void p() = 0;
 ```
@@ -678,10 +678,36 @@ class Human {
 };
 ```
 
+> [!IMPORTANT]
+> In the context of polymorphism, the concept must be placed at a core part of the code. Regardless of how the system is expanded, the main code does not need to be modified. This allows the centralized part to be independent of the specific concept.
 
 
+## One Critical Point to Determine if you OO program is really doing right
 
+```cpp
+class base {
+    int a ;
+    int b ;
+}
+class something : base {
+    int c ;
+    int d ;
+}
 
+class somethingNew : base {
+    int e;
+}
+
+Somewhere in the code
+...
+...
+...
+something s = new something();   // When add somethingNew, you need to change the code
+...
+s.
+```
+
+In an object-oriented system, the core part should be written independent of **subtypes** or changes. This can be achieved by using Polymorphism.
 
 
 [^1]: [Difference between direct and indirect function() calls](https://softwareengineering.stackexchange.com/questions/401110/difference-between-direct-and-indirect-function-calls)
