@@ -1,13 +1,24 @@
-# Material 01 - Classes and Object
+# Material 01 - Classes and Object  <!-- omit from toc --> 
 
-### What is a class ?
+**Table of Contents**
+- [What is a class ?](#what-is-a-class-)
+- [What is an object?](#what-is-an-object)
+- [執行檔案載入記憶體中的位置](#執行檔案載入記憶體中的位置)
+  - [What's Heap?](#whats-heap)
+- [Exercise](#exercise)
+- [Dynamic Memory Allocation](#dynamic-memory-allocation)
+- [Dynamic allocated array](#dynamic-allocated-array)
+- [(UNKNOWN) Copy constructor and `=` operator LAB 03](#unknown-copy-constructor-and--operator-lab-03)
+  - [絕大部分的情況下「`copy`」 operator 與「`=`」 operator 有很大的不同](#絕大部分的情況下copy-operator-與-operator-有很大的不同)
+
+## What is a class ?
 
 - class is just a type
 - When you define a class X，you pass another X.h to be included by others.
 - Without X.obj, it is still possible for others to compile his module.
 - In C++, a class is just like a primitive type INT, CHAR
 
-### What is an object?
+## What is an object?
 
 - When you use a class to create a variable, the variable (along with its allocated memory) is called an object
 - A class can have many objects
@@ -34,7 +45,7 @@ main() {
 - 規格 class
 - 定義 code (behavior)
 
-### 執行檔案載入記憶體中的位置
+## 執行檔案載入記憶體中的位置
 
 `sbrk()`: use to find the initial address of the heap [^1]
 
@@ -55,7 +66,7 @@ main() {
 +----------------------+
 ```
 
-#### What's Heap?
+### What's Heap?
 
 - Heap in a process’s image (let’s rock)
 - In `C`
@@ -70,7 +81,7 @@ Just like C, you have 3 places to place your object
 - stack (life time goes with functions)
 - heap (life time vary)
 
-### Exercise
+## Exercise
 
 What's wrong with the following code?
 
@@ -131,7 +142,7 @@ delete letter;
 ```
 
 
-### Dynamic allocated array
+## Dynamic allocated array
 
 ```cpp
 int *pt = new int[1024];    //allocates an array of 1024 ints
@@ -159,7 +170,7 @@ delete[] myBills;   // chapter11() will also release the memory :-)
 ```
 
 
-### (UNKNOWN) Copy constructor and `=` operator [LAB 03](../../lab/01_classes_and_object/README.md#lab-03)
+## (UNKNOWN) Copy constructor and `=` operator [LAB 03](../../lab/01_classes_and_object/README.md#lab-03)
 
 ```cpp
 #include <iostream>
@@ -203,7 +214,7 @@ int main()
 - What is the final output?
 
 
-#### 絕大部分的情況下「`copy`」 operator 與「`=`」 operator 有很大的不同
+### 絕大部分的情況下「`copy`」 operator 與「`=`」 operator 有很大的不同
 
 根本的原因: `copy` operator 會初始化一塊未經初始化的記憶體，而 `=` operator 必須妥善處理一個已經建構好的的物件
 

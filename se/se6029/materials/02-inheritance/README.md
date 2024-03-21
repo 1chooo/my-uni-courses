@@ -1,4 +1,15 @@
-# Material 02 - Inheritance
+# Material 02 - Inheritance   <!-- omit from toc --> 
+
+**Table of Contents**
+- [Specialization](#specialization)
+- [Overriding and Overloading](#overriding-and-overloading)
+  - [A complete list of invoked constructors](#a-complete-list-of-invoked-constructors)
+  - [Overriding Method](#overriding-method)
+  - [What is Overriding?](#what-is-overriding)
+  - [What is Overloading?](#what-is-overloading)
+- [The Principle of Inheritance](#the-principle-of-inheritance)
+  - [To subclass or not to subclass](#to-subclass-or-not-to-subclass)
+  - [More Example of Overriding](#more-example-of-overriding)
 
 ```cpp
 class Pet {

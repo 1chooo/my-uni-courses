@@ -1,4 +1,14 @@
-# Material 01.5 Pointer, Reference
+# Material 01.5 Pointer, Reference  <!-- omit from toc --> 
+
+**Table of Contents**
+- [Deference in `C`](#deference-in-c)
+- [How pointer and dereference are implemented](#how-pointer-and-dereference-are-implemented)
+- [(WRONG )How to swap two variables in C? (pass by VALUE)](#wrong-how-to-swap-two-variables-in-c-pass-by-value)
+- [How to swap two variables in C? (pass by REFERENCE)](#how-to-swap-two-variables-in-c-pass-by-reference)
+- [How to swap two variables in C++? (pass by REFERENCE)](#how-to-swap-two-variables-in-c-pass-by-reference-1)
+- [Java's pass by REFERENCE](#javas-pass-by-reference)
+- [C++'s pass by REFERENCE](#cs-pass-by-reference)
+- [(PRACTICE) How to swap two variables in pass by REFERENCE in Java?](#practice-how-to-swap-two-variables-in-pass-by-reference-in-java)
 
 ```c
 char b;
@@ -10,7 +20,7 @@ print p;    // print the address of b
 print *p;   // print the value of b (this is called dereferencing)
 ```
 
-### Deference in `C`
+## Deference in `C`
 
 ```c
 struct X {
@@ -27,7 +37,7 @@ p->value; // same as above
 
 `p` 本來就放個門牌，麻煩 CPU 拿著這個門牌再走幾步去把 value 拿出來。
 
-### How pointer and dereference are implemented
+## How pointer and dereference are implemented
 
 inderect addressing mode
 ```asm
@@ -39,7 +49,7 @@ mov esi, OFFSET bVal  ;  ESI = 00404000h  address of bVal
 mov esi, [esi]        ; ESI = 10 ;  load from bVal
 ```
 
-### (WRONG )How to swap two variables in C? (pass by VALUE)
+## (WRONG )How to swap two variables in C? (pass by VALUE)
 
 ```c
 main() {
@@ -73,7 +83,7 @@ in user system stack, it looks like this:
 
 Therefore the problem is that the `swap` function is not changing the original `x` and `y` in the `main` function.
 
-### How to swap two variables in C? (pass by REFERENCE)
+## How to swap two variables in C? (pass by REFERENCE)
 
 ```c
 main() {
@@ -94,7 +104,7 @@ void swap(char *a, char *b) {
 }
 ```
 
-### How to swap two variables in C++? (pass by REFERENCE)
+## How to swap two variables in C++? (pass by REFERENCE)
 
 ```cpp
 main() {
@@ -154,7 +164,7 @@ void swap(A *a, A *b) {
 }
 ```
 
-### Java's pass by REFERENCE
+## Java's pass by REFERENCE
 
 ```java
 class T {
@@ -175,7 +185,7 @@ in memory, it looks like this:
 +--------+           +--------+
 ```
 
-### C++'s pass by REFERENCE
+## C++'s pass by REFERENCE
 
 ```cpp
 class T {
@@ -209,7 +219,7 @@ p = new T();
 dosomething(p); // pass by reference
 ```
 
-### (PRACTICE) How to swap two variables in pass by REFERENCE in Java?
+## (PRACTICE) How to swap two variables in pass by REFERENCE in Java?
 
 ```java
 class T {

@@ -51,17 +51,18 @@ private:
 > [!WARNING]
 > 喔！你抄襲就 0 分，你給別人抄襲你就變成 50% 分數
 
-
 每一題公告之前會告知哪一種類型
 
 
 ## Materials
 
-- [Software Engineering Basics](./materials/00_software_engineering_basics/)
-- [Classes and Object](./materials/01_classes_and_object/)
-- [Pointer, Reference](./materials/01-5_pointer_reference/)
+- [Software Engineering Basics](./materials/00-software-engineering-basics/)
+- [Classes and Object](./materials/01-classes-and-object/)
+- [Pointer, Reference](./materials/01-5-pointer-reference/)
 - [Inheritance](./materials/02_inheritance/)
-- [Why You Should Not Abuse Inheritance Over Composition](./materials/02-6_why_you_should_not_abuse_inheritance_over_composition/)
+- [Why You Should Not Abuse Inheritance Over Composition](./materials/02-6-why-you-should-not-abuse-inheritance-over-composition/)
+- [Polymorphism](./materials/03-polymorphism/)
+- [Multiple Inheritance](./materials/04-multiple-inheritance/)
 
 ## Collaboration Guidelines
 ### Forking this Repository:

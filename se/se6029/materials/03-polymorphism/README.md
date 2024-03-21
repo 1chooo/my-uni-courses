@@ -1,31 +1,30 @@
-# Material 03 - PolyMorphism
+# Material 03 - PolyMorphism    <!-- omit from toc --> 
 
 Polymorphism in C++ is exhibited by the ability of a pointer or reference to a base class type to behave in different ways when it is used to manipulate objects of different subtypes of that base class. 
 
 多形就是當你可以用基底 class 的指標或參考來進行處理時，卻可以依照其 subtype 來進行不一樣的事情（其實多形是很難用解釋的）
 
 **Table of Contents:**
-- [Material 03 - PolyMorphism](#material-03---polymorphism)
-  - [Using a graphics application](#using-a-graphics-application)
-  - [Virtual function](#virtual-function)
-    - [Object Slicing](#object-slicing)
-    - [Discussion `chorus` function](#discussion-chorus-function)
-      - [Pass by value](#pass-by-value)
-      - [Pass by pointer](#pass-by-pointer)
-      - [Pass by reference](#pass-by-reference)
-  - [Core Concept of Object-Oriented Programming](#core-concept-of-object-oriented-programming)
-  - [OOP (The Four Basic Elements)](#oop-the-four-basic-elements)
-    - [Making PolyMorphism without OOP](#making-polymorphism-without-oop)
-    - [How we can make it better?](#how-we-can-make-it-better)
-    - [function pointer](#function-pointer)
-      - [Making PloyMorphism with OOP](#making-ploymorphism-with-oop)
-    - [Static Linking of External References in C Language](#static-linking-of-external-references-in-c-language)
-      - [Indirect CALL \[^1\]](#indirect-call-1)
-    - [Dynamic Binding](#dynamic-binding)
-      - [Virtual Function Table of Derived Classes](#virtual-function-table-of-derived-classes)
-      - [Virtual Base Class (Abstract class)](#virtual-base-class-abstract-class)
-      - [Questions](#questions)
-  - [One Critical Point to Determine if you OO program is really doing right](#one-critical-point-to-determine-if-you-oo-program-is-really-doing-right)
+- [Using a graphics application](#using-a-graphics-application)
+- [Virtual function](#virtual-function)
+  - [Object Slicing](#object-slicing)
+  - [Discussion `chorus` function](#discussion-chorus-function)
+    - [Pass by value](#pass-by-value)
+    - [Pass by pointer](#pass-by-pointer)
+    - [Pass by reference](#pass-by-reference)
+- [Core Concept of Object-Oriented Programming](#core-concept-of-object-oriented-programming)
+- [OOP (The Four Basic Elements)](#oop-the-four-basic-elements)
+  - [Making PolyMorphism without OOP](#making-polymorphism-without-oop)
+  - [How we can make it better?](#how-we-can-make-it-better)
+  - [function pointer](#function-pointer)
+    - [Making PloyMorphism with OOP](#making-ploymorphism-with-oop)
+  - [Static Linking of External References in C Language](#static-linking-of-external-references-in-c-language)
+    - [Indirect CALL \[^1\]](#indirect-call-1)
+  - [Dynamic Binding](#dynamic-binding)
+    - [Virtual Function Table of Derived Classes](#virtual-function-table-of-derived-classes)
+    - [Virtual Base Class (Abstract class)](#virtual-base-class-abstract-class)
+    - [Questions](#questions)
+- [One Critical Point to Determine if you OO program is really doing right](#one-critical-point-to-determine-if-you-oo-program-is-really-doing-right)
 
 ## Using a graphics application
 

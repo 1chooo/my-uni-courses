@@ -1,4 +1,20 @@
-# Material 01 - Classes and Object
+# Material 01 - Classes and Object   <!-- omit from toc -->
+
+**Table of Contents**
+- [Course](#course)
+  - [Lab 02](#lab-02)
+  - [Lab 03](#lab-03)
+  - [Lab 04](#lab-04)
+  - [Lab 05](#lab-05)
+  - [Lab 06](#lab-06)
+  - [Lab 08](#lab-08)
+  - [Lab 10](#lab-10)
+  - [Lab 13](#lab-13)
+- [Take Home](#take-home)
+  - [Homework - Lab 01](#homework---lab-01)
+  - [Homework - Lab 07](#homework---lab-07)
+  - [Homework - Lab 12](#homework---lab-12)
+  - [Homework - Lab 14](#homework---lab-14)
 
 ## Course
 
@@ -52,7 +68,7 @@ My Ans:
 2. 1 time 
 3. malloc: Double free of object
 
-## Lab 04
+### Lab 04
 
 請用你的語言，向我們解釋object和class的不同之處。不限制語言，能表達你的論點即可。
 

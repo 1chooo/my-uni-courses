@@ -1,4 +1,23 @@
-# Material 02 - Inheritance
+# Material 02 - Inheritance <!-- omit from toc -->
+
+**Table of Contents**
+- [Course](#course)
+  - [Lab 05](#lab-05)
+  - [Lab 06](#lab-06)
+  - [Lab 07](#lab-07)
+  - [Lab 11](#lab-11)
+  - [Lab 08](#lab-08)
+  - [Lab 09](#lab-09)
+  - [Lab 13](#lab-13)
+  - [Lab 15](#lab-15)
+  - [Lab 18](#lab-18)
+- [Take Home](#take-home)
+  - [Homework - Lab 01](#homework---lab-01)
+  - [Homework - Lab 02](#homework---lab-02)
+  - [Homework - Lab 03](#homework---lab-03)
+  - [Homework - Lab 04](#homework---lab-04)
+  - [Homework - Lab 16](#homework---lab-16)
+
 
 ## Course
 
