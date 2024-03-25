@@ -1,4 +1,4 @@
-# Material 01 - Classes and Object   <!-- omit from toc -->
+# Material 01 Lab - Classes and Object   <!-- omit from toc -->
 
 **Table of Contents**
 - [Course](#course)

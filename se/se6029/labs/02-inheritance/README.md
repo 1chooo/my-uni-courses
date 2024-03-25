@@ -1,4 +1,4 @@
-# Material 02 - Inheritance <!-- omit from toc -->
+# Material 02 Lab - Inheritance <!-- omit from toc -->
 
 **Table of Contents**
 - [Course](#course)

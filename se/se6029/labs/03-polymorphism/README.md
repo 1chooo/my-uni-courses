@@ -1,4 +1,4 @@
-# Material 03 - PolyMorphism  <!-- omit from toc --> 
+# Material 03 Lab - PolyMorphism  <!-- omit from toc --> 
 
 **Table of Contents**
 - [Course](#course)

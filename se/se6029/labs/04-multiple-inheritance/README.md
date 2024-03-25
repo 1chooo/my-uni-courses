@@ -1,4 +1,4 @@
-# Material 04 - Multiple Inheritance     <!-- omit from toc -->
+# Material 04 Lab - Multiple Inheritance     <!-- omit from toc -->
 
 **Table of Contents**
 - [Course](#course)
@@ -14,7 +14,6 @@
   - [Lab 14](#lab-14)
   - [Lab 15](#lab-15)
   - [Lab 16](#lab-16)
-- [Take Home](#take-home)
 
 ## Course
 
@@ -203,6 +202,3 @@ So, according to the OO principle, A is B and A ____________ C
 >
 > can be
 
-
-
-## Take Home

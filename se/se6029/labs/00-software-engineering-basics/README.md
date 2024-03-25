@@ -1,4 +1,4 @@
-# Material 00 - Software Engineering Basics
+# Material 00 Lab - Software Engineering Basics
 
 ### Lab01
 Why software maintenance is particularly important compared to other engineering disciplines?
