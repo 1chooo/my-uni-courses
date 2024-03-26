@@ -4,13 +4,32 @@ This repo will record all the code that I have ever written.
 
 The code come from the courses in my university or the internet that learned by myself, this will record what I revolute in the coding skill and how my computer science trip develop.
 
-## [AP](./ap/)
+## [AP -- Dept. of Atmospheric Sciences, NCU.](./ap/)
+
+## [CE -- Dept. of Computer Science & Information Engineering, NCU.](./ce/)
+
+## [GS](./gs/)
 
 ## [MA](./ma/)
 
+| Course Number | Course Number | Language | Project |
+| :-------------: | :-------------: | :-------: | :-: |
+| [MA1003](/ma/ma1003/) | Calculus | `Python` |  |
+| [MA1004](/ma/ma1004/) | Calculus | `Python` |  |
+
 ## [PH](./ph/)
 
+| Course Number | Course Number | Language | Project |
+| :-------------: | :-------------: | :-------: | :-: |
+| [PH1031](/ph/ph1031/) | General Physics A | `Python` | [Bubble Probability Experiment](./ph/ph1031/bubble_experiment/) |
+| [PH1032](/ph/ph1032/) | General Physics A | `Python` | [Magnetic Field](./ph/ph1032/magnetic-field.py) |
+
 ## [SE](./se/)
+
+| Course Number | Course Number | Language | Project |
+| :-------------: | :-------------: | :-------: | :-: |
+| [SE6005](/se/se6005/) | Software Engineering |  | |
+| [SE6029](/se/se6029/) | Object Oriented Analysis and Design Writeups | `C++`, `JAVA` | [UML Editor](https://github.com/1chooo/uml-editor) |
 
 
 ## [Sophomore](./sophomore/)
