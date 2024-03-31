@@ -2,18 +2,34 @@
 
 ## 1. Choice of Questions (40%)
 
-1. Which of the following would lead you to believe that a given system is an SMP-type system? (C)
-   - [ ] Each processor is assigned a specific task.
-   - [ ] There is a boss–worker relationship between the processors.
-   - [ ] Each processor performs all tasks within the operating system.
-   - [ ] None of the above
+1. Which of the following would lead you to believe that a given system is an SMP-type system?
+   - [ ] A) Each processor is assigned a specific task.
+   - [ ] B) There is a boss–worker relationship between the processors.
+   - [x] C) Each processor performs all tasks within the operating system.
+   - [ ] D) None of the above
 
+> [!NOTE]
+> An SMP-type system is a symmetric multiprocessing system, where multiple processors share access to the same memory. Based on the given options, the correct answer would be None of the above. Here's why:
+> 1. If each processor is assigned a specific task, it indicates a distributed system, where each processor works independently on its task.
+> 2. A boss-worker relationship between processors suggests a master-slave system, where one processor (the boss) assigns tasks to the other processors (the workers).
+> 3. If each processor performs all tasks within the operating system, it points to a uniprocessor system, where there is only one processor.
+> 
+> Therefore, based on the options provided, the system cannot be classified as an SMP-type system.
+> - A) Asymmetric multiprocessing (ASMP) or Task-Parallel Processing (TPP)
+> - B) Master-Slave Processing
+> - C) Symmetric Multi-Processing (SMP)
+>
+> [SMP (symmetric multiprocessing)](https://www.techtarget.com/searchdatacenter/definition/SMP)
 
 2. A ____ can be used to prevent a user program from never returning control to the operating system.
    - [ ] portal	
    - [ ] program counter	
    - [ ] firewall	
-   - [ ] timer
+   - [x] timer
+
+> [!NOTE]
+>
+> Timer 
 
 3. Two important design issues for cache memory are ____.
    - [ ] speed and volatility
@@ -78,8 +94,21 @@
 
 
 15. Including the initial parent process, how many processes are created by the program shown in Figure 3.32? (6%)
- 
+
     ![alt text](image.png)
+
+    ```c
+    // Figure 3.32 How many processes are created?
+    #include <stdio.h>
+    #include <unistd.h>
+
+    int main() {
+        int i;
+        for (i = 0; i < 4; i++)
+            fork();
+        return 0;
+    }
+    ```
 
 16. Which of the following components of program state are shared across threads in a multithreaded process? (4%)
 a. Register values 
@@ -90,7 +119,16 @@ d. Stack memory
 
 17. Consider the following code segment: 
 
-    ![alt text](image-1.png)
+    ```c
+    pid_t pid;
+
+    pid = fork();
+    if (pid == 0) { /*child process*/
+        fork();
+        thread_create( ... );
+    }
+    fork();
+    ```
 
     - a. How many processes are created? (include main process) (4%)
     - b. How many threads are created? (4%)
