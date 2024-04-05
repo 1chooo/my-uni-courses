@@ -4,27 +4,44 @@ This repo will record all the code that I have ever written.
 
 The code come from the courses in my university or the internet that learned by myself, this will record what I revolute in the coding skill and how my computer science trip develop.
 
-## [AP -- Dept. of Atmospheric Sciences, NCU.](./ap/)
+## [AP -- Department of Atmospheric Physics, NCU.](./ap/)
 
-## [CE -- Dept. of Computer Science & Information Engineering, NCU.](./ce/)
+| Course Number | Course Number | Language | Project |
+| :-----------: | :-----------: | :------: | :-----: |
+| | | | |
 
-## [GS](./gs/)
+## [CE -- Department of Computer Science and Elec. Engineering, NCU](./ce/)
 
-## [MA](./ma/)
+| Course Number | Course Number | Language | Project |
+| :-----------: | :-----------: | :------: | :-----: |
+| | | | |
+
+## [GS -- General Education Center, NCU](./gs/)
+| Course Number | Course Number | Language | Project |
+| :-----------: | :-----------: | :------: | :-----: |
+| | | | |
+
+## [MA -- Department of Mathematics, NCU](./ma/)
 
 | Course Number | Course Number | Language | Project |
 | :-------------: | :-------------: | :-------: | :-: |
 | [MA1003](/ma/ma1003/) | Calculus | `Python` |  |
 | [MA1004](/ma/ma1004/) | Calculus | `Python` |  |
 
-## [PH](./ph/)
+## [MT -- School of Management, NCU](./mt/)
+
+| Course Number | Course Number | Language | Project |
+| :-----------: | :-----------: | :------: | :-----: |
+| | | | |
+
+## [PH -- Department of Physics, NCU](./ph/)
 
 | Course Number | Course Number | Language | Project |
 | :-------------: | :-------------: | :-------: | :-: |
 | [PH1031](/ph/ph1031/) | General Physics A | `Python` | [Bubble Probability Experiment](./ph/ph1031/bubble_experiment/) |
 | [PH1032](/ph/ph1032/) | General Physics A | `Python` | [Magnetic Field](./ph/ph1032/magnetic-field.py) |
 
-## [SE](./se/)
+## [SE -- Department of Computer Science and Elec. Engineering, NCU](./se/)
 
 | Course Number | Course Number | Language | Project |
 | :-------------: | :-------------: | :-------: | :-: |
