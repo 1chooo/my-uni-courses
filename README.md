@@ -4,44 +4,44 @@ This repo will record all the code that I have ever written.
 
 The code come from the courses in my university or the internet that learned by myself, this will record what I revolute in the coding skill and how my computer science trip develop.
 
-## [AP -- Department of Atmospheric Physics, NCU.](./ap/)
+## AP -- Department of Atmospheric Physics, NCU
 
 | Course Number | Course Number | Language | Project |
 | :-----------: | :-----------: | :------: | :-----: |
 | | | | |
 
-## [CE -- Department of Computer Science and Elec. Engineering, NCU](./ce/)
+## CE -- Department of Computer Science and Elec. Engineering, NCU
 
 | Course Number | Course Number | Language | Project |
 | :-----------: | :-----------: | :------: | :-----: |
 | | | | |
 
-## [GS -- General Education Center, NCU](./gs/)
+## GS -- General Education Center, NCU
 | Course Number | Course Number | Language | Project |
 | :-----------: | :-----------: | :------: | :-----: |
 | | | | |
 
-## [MA -- Department of Mathematics, NCU](./ma/)
+## MA -- Department of Mathematics, NCU
 
 | Course Number | Course Number | Language | Project |
 | :-------------: | :-------------: | :-------: | :-: |
 | [MA1003](/ma/ma1003/) | Calculus | `Python` |  |
 | [MA1004](/ma/ma1004/) | Calculus | `Python` |  |
 
-## [MT -- School of Management, NCU](./mt/)
+## MT -- School of Management, NCU
 
 | Course Number | Course Number | Language | Project |
 | :-----------: | :-----------: | :------: | :-----: |
 | | | | |
 
-## [PH -- Department of Physics, NCU](./ph/)
+## PH -- Department of Physics, NCU
 
 | Course Number | Course Number | Language | Project |
 | :-------------: | :-------------: | :-------: | :-: |
 | [PH1031](/ph/ph1031/) | General Physics A | `Python` | [Bubble Probability Experiment](./ph/ph1031/bubble_experiment/) |
 | [PH1032](/ph/ph1032/) | General Physics A | `Python` | [Magnetic Field](./ph/ph1032/magnetic-field.py) |
 
-## [SE -- Department of Computer Science and Elec. Engineering, NCU](./se/)
+## SE -- Department of Computer Science and Elec. Engineering, NCU
 
 | Course Number | Course Number | Language | Project |
 | :-------------: | :-------------: | :-------: | :-: |
@@ -49,7 +49,7 @@ The code come from the courses in my university or the internet that learned by 
 | [SE6029](/se/se6029/) | Object Oriented Analysis and Design Writeups | `C++`, `JAVA` | [UML Editor](https://github.com/1chooo/uml-editor) |
 
 
-## [Sophomore](./sophomore/)
+## Sophomore
 | Course Number | Course Number | Language | Project |
 | :-------------: | :-------------: | :-------: | :-: |
 | [AP2039](/sophomore/AP2039/) | Atmospheric Instrumentation and Observation Ⅰ | `Python` | |
