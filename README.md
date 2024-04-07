@@ -46,7 +46,7 @@ The code come from the courses in my university or the internet that learned by 
 
 | Course Number | Course Name | Language | Project |
 | :-----------: | :-----------: | :------: | :-----: |
-| | | | |
+| [MT1051](/mt/mt1051/) | An Introduction to Computing: Python | `Python` |  |
 
 ## PH -- Department of Physics, NCU
 
