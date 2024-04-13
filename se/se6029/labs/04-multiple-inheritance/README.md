@@ -201,4 +201,3 @@ So, according to the OO principle, A is B and A ____________ C
 > My Answer:
 >
 > can be
-

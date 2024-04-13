@@ -862,5 +862,196 @@ System.out.println("第"+clientno+"位玩家的右方物品屬性"+check[Charact
 336 } 
 ```
 
+**Refactor:**
+
+```java
+public void UpdateDirection(int clientno, int Movecode) {
+    int tempx;
+    int tempy;
+    tempx = character[clientno][3];
+    tempy = character[clientno][4];
+    switch (Movecode) {
+        case 0:
+            character[clientno][2] = 0;
+            break;
+        case 1:
+            if (cango(tempx, tempy - 10, 1, clientno)) {
+                character[clientno][1] = 1;
+                character[clientno][2] = 1;
+
+                // drawmap(tempx,tempy,clientno,1);
+                // System.out.println("UpdateDir " + character[clientno][3] + " " +
+                // character[clientno][4]);
+            }
+            break;
+        case 3:
+            if (cango(tempx, tempy + 10, 3, clientno)) {
+                // drawmap(tempx,tempy,clientno,2);
+                character[clientno][1] = 3;
+                character[clientno][2] = 1;
+
+                // System.out.println(character[clientno][3] + " " +
+                // character[clientno][4]);
+            }
+            break;
+        case 4:
+            if (cango(tempx - 10, tempy, 4, clientno)) {
+                // drawmap(tempx,tempy,clientno,3);
+                character[clientno][1] = 4;
+                character[clientno][2] = 1;
+                // System.out.println("west dir " +character[clientno][2]);
+                // System.out.println(character[clientno][3] + " " +
+                // character[clientno][4]);
+            }
+            break;
+        case 2:
+            if (cango(tempx + 10, tempy, 2, clientno)) {
+                // drawmap(tempx,tempy,clientno,4);
+                character[clientno][1] = 2;
+                character[clientno][2] = 1;
+                // System.out.println(character[clientno][3] + " " +
+                // character[clientno][4]);
+            }
+            break;
+    }
+}
+
+// 判斷是否下一個想要走的位置可以走,可以的話回傳true,否則回傳false
+boolean cango(int tempx, int tempy, int move, int no) {
+    int x1, x2, x3, x4, xx;
+    int y1, y2, y3, y4, yy;
+    int mapx, mapy;
+    x1 = tempx - 30 + 1; // 先取出各角落的pixel值
+    x2 = tempx - 10 + 1; // 用此角落的值,去做碰撞的判斷
+    x3 = tempx + 10 - 1; // 加或減一,是以防碰到邊界,避免map判斷出錯
+    x4 = tempx + 30 - 1;
+    y1 = tempy - 30 + 1;
+    y2 = tempy - 10 + 1;
+    y3 = tempy + 10 - 1;
+    y4 = tempy + 30 - 1;
+    if (x1 < 0 || x4 > 600 || y1 < 0 || y4 > 600) { // 邊界判定
+        // System.out.println("because of bound");
+        return false;
+    }
+    // map
+    switch (move) { // 根據要移動的方向,去看map是否有障礙
+        case 1:
+            mapy = y1 / 20; // map的障礙物,用array儲存,所以用/20來取map位置
+            if (map[mapy][x1 / 20] == -1 || map[mapy][x2 / 20] == -1 ||
+                    map[mapy][x3 / 20] == -1 || map[mapy][x4 / 20] == -1) {
+                // System.out.println("because of map");
+                return false;
+            }
+            break;
+        case 2: // 往2方向的碰撞判定
+            mapx = x4 / 20;
+            if (map[y1 / 20][mapx] == -1 || map[y2 / 20][mapx] == -1 ||
+                    map[y3 / 20][mapx] == -1 || map[y4 / 20][mapx] == -1) {
+                // System.out.println("because of map");
+                return false;
+            }
+            break;
+        case 3: // 往3方向的碰撞判定
+            mapy = y4 / 20;
+            if (map[mapy][x1 / 20] == -1 || map[mapy][x2 / 20] == -1 ||
+                    map[mapy][x3 / 20] == -1 || map[mapy][x4 / 20] == -1) {
+                // System.out.println("because of map");
+                return false;
+            }
+            break;
+        case 4: // 往4方向的碰撞判定
+            mapx = x1 / 20;
+            if (map[y1 / 20][mapx] == -1 || map[y2 / 20][mapx] == -1 ||
+                    map[y3 / 20][mapx] == -1 || map[y4 / 20][mapx] == -1) {
+                // System.out.println("because of map");
+                return false;
+            }
+            break;
+    }
+    for (int z = 1; z <= 4; z++) { // 去看其他腳色是否有碰撞的情況
+        yy = character[z][4];
+        xx = character[z][3];
+        if (z != no) {
+            if ((xx - tempx < 60 && xx - tempx > -60) &&
+                    (yy - tempy < 60 && yy - tempy > -60)) {
+                // System.out.println("because of client" + z);
+                return false;
+            }
+        }
+    }
+    return true;
+}
+```
+
 > [!TIP]
 > 不要動用到物件導向，用查表法去改寫。
+
+
+**After:**
+
+```java
+public void UpdateDirection(int clientno, int Movecode) {
+    int[][] directions = {
+        {0, 0},  // No movement
+        {1, 1},  // Up
+        {2, 1},  // Right
+        {3, 1},  // Down
+        {4, 1}   // Left
+    };
+
+    int tempx = character[clientno][3];
+    int tempy = character[clientno][4];
+
+    switch (Movecode) {
+        case 0:
+            character[clientno][2] = 0;
+            break;
+        default:
+            int direction = directions[Movecode][0];
+            int moveValue = directions[Movecode][1];
+            if (cango(tempx + (direction == 2 ? moveValue : 0) - (direction == 4 ? moveValue : 0), 
+                      tempy + (direction == 3 ? moveValue : 0) - (direction == 1 ? moveValue : 0), 
+                      Movecode, 
+                      clientno)) {
+                character[clientno][1] = Movecode;
+                character[clientno][2] = 1;
+            }
+            break;
+    }
+}
+
+boolean cango(int tempx, int tempy, int move, int no) {
+    int[][][] movements = {
+        {{-30, -10, 10, 30}, {-30, -30, -30, -30}},  // No movement
+        {{-30, -10, 10, 30}, {-30, -10, -10, -30}},  // Up
+        {{-30, -10, 10, 30}, {10, 10, 10, 10}},      // Right
+        {{-30, -10, 10, 30}, {10, 30, 30, 10}},     // Down
+        {{-30, -10, 10, 30}, {-30, -30, -30, -30}}   // Left
+    };
+
+    int[] movementX = movements[move][0];
+    int[] movementY = movements[move][1];
+
+    for (int i = 0; i < 4; i++) {
+        int x = tempx + movementX[i];
+        int y = tempy + movementY[i];
+        if (x < 0 || x > 600 || y < 0 || y > 600) {
+            return false;
+        }
+    }
+
+    for (int z = 1; z <= 4; z++) {
+        if (z != no) {
+            int xx = character[z][3];
+            int yy = character[z][4];
+            if (Math.abs(xx - tempx) < 60 && Math.abs(yy - tempy) < 60) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+```
+
+
