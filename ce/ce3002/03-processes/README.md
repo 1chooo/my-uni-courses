@@ -43,25 +43,28 @@ int main(int argc, char *argv[]) {
 
 ### Process State
 
-- New:  The process is being created
-- Running:  Instructions are being executed
-- Waiting:  The process is waiting for some event to occur
-- Ready:  The process is waiting to be assigned to a processor
-- Terminated:  The process has finished execution
+- New: The process is being created
+- Running: Instructions are being executed
+- Waiting: The process is waiting for some event to occur
+- Ready: The process is waiting to be assigned to a processor
+- Terminated: The process has finished execution
 
 ![alt text](image-2.png)
 
 ### Process Control Block (PCB)
 
-- Process state – running, waiting, etc.
-- Program counter – location of instruction to next execute
-- CPU registers – contents of all process-centric registers
-- CPU scheduling information- priorities, scheduling queue pointers
-- Memory-management information – memory allocated to the process
-- Accounting information – CPU used, clock time elapsed since start, time limits
-- I/O status information – I/O devices allocated to process, list of open files
+| Process Control Block (PCB) | Description |
+| --- | --- |
+| Process state | New, ready, running, waiting, terminated |
+| Program counter | Location of next instruction to execute |
+| CPU registers | Contents of all process-centric registers |
+| CPU scheduling information | Priorities, scheduling queue pointers |
+| Memory-management information | Memory allocated to the process |
+| Accounting information | CPU used, clock time elapsed since start, time limits |
+| I/O status information | I/O devices allocated to process, list of open files |
 
 ![alt text](image-3.png)
+
 
 ### Threads
 
@@ -77,13 +80,13 @@ int main(int argc, char *argv[]) {
 Represented by the C structure `task_struct`
 
 ```c
-pid t_pid; 			/* process identifier */ 
-long state; 			/* state of the process */ 
-unsigned int time_slice 	/* scheduling information */ 
-struct task_struct *parent;/* this process’s parent */ 
-struct list_head children; /* this process’s children */ 
-struct files_struct *files;/* list of open files */ 
-struct mm_struct *mm; 	/* address space of this process */
+pid t_pid; 			            /* process identifier */ 
+long state; 			          /* state of the process */ 
+unsigned int time_slice 	  /* scheduling information */ 
+struct task_struct *parent; /* this process’s parent */ 
+struct list_head children;  /* this process’s children */ 
+struct files_struct *files; /* list of open files */ 
+struct mm_struct *mm; 	    /* address space of this process */
 ```
 
 ![alt text](image-4.png)
@@ -98,6 +101,7 @@ struct mm_struct *mm; 	/* address space of this process */
   - Processes migrate among the various queues
 
 ### Ready and Wait Queues
+
 ![alt text](image-5.png)
 
 ### Representation of Process Scheduling
@@ -106,7 +110,7 @@ struct mm_struct *mm; 	/* address space of this process */
 
 ### CPU Switch From Process to Process
 
-A context switch occurs when the CPU  switches from one process to another.
+A context switch occurs when the CPU switches from one process to another.
 
 ![alt text](image-7.png)
 
@@ -115,16 +119,17 @@ A context switch occurs when the CPU  switches from one process to another.
 - When CPU switches to another process, the system must save the state of the old process and load the saved state for the new process via a context switch
 - Context of a process represented in the PCB
 - Context-switch time is pure overhead; the system does no useful work while switching
-  - The more complex the OS and the PCB  the longer the context switch
+  - The more complex the OS and the PCB, the longer the context switch
 - Time dependent on hardware support
-  - Some hardware provides multiple sets of registers per CPU  multiple contexts loaded at once
+  - Some hardware provides multiple sets of registers per CPU
+  - multiple contexts loaded at once
 
 ### Multitasking in Mobile Systems
 
-- Some mobile systems (e.g., early version of iOS)  allow only one process to run, others suspended
+- Some mobile systems (e.g., early version of iOS) allow only one process to run, others suspended
 - Due to screen real estate, user interface limits iOS provides for a 
-  - Single foreground process- controlled via user interface
-  - Multiple background processes– in memory, running, but not on the display, and with limits
+  - Single foreground process - controlled via user interface
+  - Multiple background processes – in memory, running, but not on the display, and with limits
   - Limits include single, short task, receiving notification of events, specific long-running tasks like audio playback
 - Android runs foreground and background, with fewer limits
   - Background process uses a service to perform tasks
@@ -137,7 +142,7 @@ A context switch occurs when the CPU  switches from one process to another.
 ### Process Creation
 
 - Parent process create children processes, which, in turn create other processes, forming a tree of processes
-- Generally, process identified and managed via a process identifier (pid)
+- Generally, process identified and managed via a process identifier (`pid`)
 - Resource sharing options
   - Parent and children share all resources
   - Children share subset of parent’s resources
@@ -149,11 +154,12 @@ A context switch occurs when the CPU  switches from one process to another.
   - Child duplicate of parent
   - Child has a program loaded into it
 - UNIX examples
-  - fork() system call creates new process
-  - exec() system call used after a fork() to replace the process’ memory space with a new program
-  - Parent process calls wait()waiting for the child to terminate
+  - `fork()` system call creates new process
+  - `exec()` system call used after a `fork()` to replace the process' memory space with a new program
+  - Parent process calls `wait()` waiting for the child to terminate
 
 ![alt text](image-8.png)
+
 
 ### A Tree of Processes in Linux
 
@@ -236,19 +242,19 @@ int main(void) {
 
 ### Process Termination
 
-- Process executes last statement and then asks the operating system to delete it using the exit() system call.
-  - Returns  status data from child to parent (via wait())
-  - Process’ resources are deallocated by operating system
-- Parent may terminate the execution of children processes  using the abort() system call.  Some reasons for doing so:
+- Process executes last statement and then asks the operating system to delete it using the `exit()` system call.
+  - Returns status data from child to parent (via `wait()`)
+  - Process' resources are deallocated by operating system
+- Parent may terminate the execution of children processes using the `abort()` system call. Some reasons for doing so:
   - Child has exceeded allocated resources
   - Task assigned to child is no longer required
   - The parent is exiting, and the operating systems does not allow  a child to continue if its parent terminates
-- Some operating systems do not allow child to exists if its parent has terminated.  If a process terminates, then all its children must also be terminated.
-  - cascading termination.  All children, grandchildren, etc.,  are  terminated.
+- Some operating systems do not allow child to exists if its parent has terminated. If a process terminates, then all its children must also be terminated.
+  - cascading termination. All children, grandchildren, etc., are terminated.
   - The termination is initiated by the operating system.
-- The parent process may wait for termination of a child process by using the wait()system call. The call returns status information and the pid of the terminated process `pid = wait(&status);`
-- If no parent waiting (did not invoke wait()) process is a zombie
-- If parent terminated without invoking wait(), process is an orphan
+- The parent process may wait for termination of a child process by using the `wait()` system call. The call returns status information and the pid of the terminated process `pid = wait(&status);`
+- If no parent waiting (did not invoke `wait()`) process is a zombie
+- If parent terminated without invoking` wait()`, process is an orphan
 
 ### Android Process Importance Hierarchy
 
@@ -273,7 +279,7 @@ int main(void) {
 ![alt text](image-10.png)
 
 
-## Interprocess Communication
+## Interprocess Communication (IPC)
 
 - Processes within a system may be independent or cooperating
 - Cooperating process can affect or be affected by other processes, including sharing data
@@ -282,7 +288,7 @@ int main(void) {
   - Computation speedup
   - Modularity
   - Convenience	
-- Cooperating processes need interprocess communication (IPC)
+- Cooperating processes need **interprocess communication (IPC)**
 - Two models of IPC
   - (a) Shared memory
   - (b) Message passing
@@ -314,7 +320,7 @@ int main(void) {
     ```c
     #define BUFFER_SIZE 10
     typedef struct {
-        . . .
+        ...
     } item;
 
     item buffer[BUFFER_SIZE];

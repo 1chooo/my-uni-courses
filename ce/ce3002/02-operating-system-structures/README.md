@@ -99,7 +99,7 @@ Provide an environment for execution of programs and services to programs and us
 ## System Calls
 
 - Programming interface to the services provided by the OS
-- Typically written in a high-level language (C or C++)
+- Typically written in a **high-level language (C or C++)**
 - Mostly accessed by programs via a high-level Application Programming Interface (API) rather than direct system call use
 - Three most common APIs are Win32 API for Windows, POSIX API for POSIX-based systems (including virtually all versions of UNIX, Linux, and Mac OS X), and Java API for the Java virtual machine (JVM)
 
@@ -134,6 +134,13 @@ Provide an environment for execution of programs and services to programs and us
     - This approach taken by Linux and Solaris
   - Parameters placed, or pushed, onto the stack by the program and popped off the stack by the operating system
   - Block and stack methods do not limit the number or length of parameters being passed
+
+> [!NOTE]
+> Three general methods used to pass parameters to the OS
+> 
+> - a. Pass parameters in registers 
+> - b. Registers pass starting addresses of blocks of parameters 
+> - c. Parameters can be placed, or pushed, onto the stack by the program, and popped off the stack by the operating system
 
 Parameters Passing via Table:
 
@@ -195,7 +202,7 @@ C program invoking `printf()` library call, which calls `write()` system call
   - Communications
   - Background services
   - Application programs
-- Most users’ view of the operation system is defined by system programs, not the actual system calls
+- Most users' view of the operation system is defined by system programs, not the actual system calls
 - Provide a convenient environment for program development and execution
   - Some of them are simply user interfaces to system calls; others are considerably more complex
 - File management - Create, delete, copy, rename, print, dump, list, and generally manipulate files and directories
@@ -270,16 +277,20 @@ C program invoking `printf()` library call, which calls `write()` system call
 - The separation of policy from mechanism is a very important principle, it allows maximum flexibility if policy decisions are to be changed later.
   - Example: change 100 to 200
 
+> [!NOTE]
+> - **Policy** determines what will be done.
+> - **Mechanism** determines how to do something
+
 ### Implementation
 
 - Much variation
   - Early OSes in assembly language
-  - Then system programming languages like Algol, PL/1
-  - Now C, C++
+  - Then system programming languages like `Algol, PL/1`
+  - Now `C, C++`
 - Actually usually a mix of languages
   - Lowest levels in assembly
   - Main body in C
-  - Systems programs in C, C++, scripting languages like PERL, Python, shell scripts
+  - Systems programs in `C, C++`, scripting languages like PERL, Python, shell scripts
 - More high-level language easier to port to other hardware
   - But slower
 - Emulation can allow an OS to run on non-native hardware
@@ -339,7 +350,7 @@ Monolithic plus modular design
 
 ### Modules
 
-- Many modern operating systems implement loadable kernel modules (LKMs)
+- Many modern operating systems implement **loadable kernel modules (LKMs)**
   - Uses object-oriented approach
   - Each core component is separate
   - Each talks to the others over known interfaces
@@ -407,12 +418,12 @@ Monolithic plus modular design
 ### Building and Booting Linux
 
 - Download Linux source code (http://www.kernel.org)
-- Configure kernel via “make menuconfig”
-- Compile the kernel using “make”
+- Configure kernel via `make menuconfig`
+- Compile the kernel using `make`
   - Produces vmlinuz, the kernel image
-  - Compile kernel modules via “make modules”
-  - Install kernel modules into vmlinuz via “make modules_install”
-  - Install new kernel on the system via “make install”
+  - Compile kernel modules via `make modules`
+  - Install kernel modules into vmlinuz via `make modules_install`
+  - Install new kernel on the system via `make install`
 
 ### System Boot
 
@@ -458,7 +469,7 @@ Monolithic plus modular design
 - Debugging interactions between user-level and kernel code nearly impossible without toolset that understands both and an instrument their actions
 - BCC (BPF Compiler Collection) is a rich toolkit providing tracing features for Linux
   - See also the original DTrace
-- For example, disksnoop.py traces disk I/O activity
+- For example, `disksnoop.py` traces disk I/O activity
   ![alt text](image-9.png)
 - Many other tools (next slide)
 
