@@ -410,10 +410,10 @@ while (true) {
     ```c
     S0: producer execute register1 = counter         {register1 = 5}
     S1: producer execute register1 = register1 + 1   {register1 = 6} 
-    S2: consumer execute register2 = counter        {register2 = 5} 
-    S3: consumer execute register2 = register2 – 1  {register2 = 4} 
+    S2: consumer execute register2 = counter         {register2 = 5} 
+    S3: consumer execute register2 = register2 – 1   {register2 = 4} 
     S4: producer execute counter = register1         {counter = 6 } 
-    S5: consumer execute counter = register2        {counter = 4}
+    S5: consumer execute counter = register2         {counter = 4}
     ```
 - Question – why was there no race condition in the first solution (where at most N – 1) buffers can be filled? -> More in Chapter 6.
 
@@ -637,7 +637,7 @@ mach port t server;
 #### Mach Message Passing - Client
 
 ```c
-/* lient Code */
+/* client Code */
 struct message message;
 
 // construct the header

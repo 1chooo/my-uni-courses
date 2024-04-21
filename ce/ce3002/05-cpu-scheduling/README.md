@@ -139,7 +139,7 @@
 ```
 Process	Burst Time	
    P1	      24
-   P2 	    3
+   P2       3
    P3	      3 
 ```
 
@@ -150,7 +150,7 @@ Suppose that the processes arrive in the order: P1 , P2 , P3  The Gantt Chart fo
 
 Suppose that the processes arrive in the order:
      $P2 , P3 , P1$
-- The Gantt chart for the schedule is:
+- The Gantt chart for the schedule is:  
   ![alt text](image-4.png)
 - Waiting time for $P1 = 6; P2 = 0; P3 = 3$
 - Average waiting time: $(6 + 0 + 3)/3 = 3$
@@ -222,13 +222,15 @@ Process   Arrival Time	Burst Time
 ```
 Process    Arrival Time (T)	Burst Time
    P1	            0	            8
-   P2             1	            4
+   P2             1             4
    P3	            2	            9
    P4	            3	            5
 ```
-- Preemptive SJF Gantt Chart
+- Preemptive SJF Gantt Chart  
   ![alt text](image-7.png)
 - Average waiting time = $[(10 - 1) + (1 - 1) + (17 - 2) + (5 - 3)] / 4 = 26 / 4 = 6.5$
+
+https://ithelp.ithome.com.tw/articles/10277694?sc=rss.iron
 
 ### Round Robin (RR)
 
@@ -284,7 +286,7 @@ Process    Aarrival Burst Time	Priority
   P4	              7	             1
   P5	              3	             3
 ```
-- Priority scheduling Gantt Chart
+- Priority scheduling Gantt Chart  
     ![alt text](image-11.png)
 - Average waiting time = 8.2
 

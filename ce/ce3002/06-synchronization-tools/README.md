@@ -11,7 +11,7 @@
 ### Race Condition
 
 - Processes P0 and P1 are creating child processes using the `fork()` system call
-- Race condition on kernel variable `next_available_pid` which represents the next available process identifier (pid)
+- Race condition on kernel variable `next_available_pid` which represents the next available process identifier (pid)  
   ![alt text](image.png)
 - Unless there is a mechanism to prevent P0 and P1 from accessing  the variable `next_available_pid`  the same pid could be assigned to two different processes!
 
@@ -20,7 +20,7 @@
 
 ## The Critical-Section Problem
 
-- Consider system of n processes {p0, p1, … pn-1}
+- Consider system of n processes ${p_0, p_1, ... p_n - 1}$
 - Each process has critical section segment of code
   - Process may be changing common variables, updating table, writing file, etc.
   - When one process in critical section, no other may be in its critical section
@@ -55,7 +55,7 @@ while (true) {
 
 ### Interrupt-based Solution
 
-- Entry section:  disable interrupts
+- Entry section: disable interrupts
 - Exit section:  enable  interrupts
 - Will this solve the problem?
     - What if the critical section is code that runs for an hour?
@@ -76,7 +76,7 @@ while (true) {
 ```c
 while (true){ 
 
-    while (turn = = j);
+    while (turn == j);
 
     /* critical section */
     turn = j;
@@ -169,7 +169,7 @@ while (true){
  
 ### Peterson’s Solution Revisited
             
-- The effects of instruction reordering in Peterson’s Solution
+- The effects of instruction reordering in Peterson’s Solution  
     ![alt text](image-1.png)
 - This allows both processes to be in their critical section at the same time!
 - To ensure that Peterson’s solution will work correctly on modern computer architecture we must use Memory Barrier.

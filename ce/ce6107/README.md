@@ -1,4 +1,4 @@
-# 2023 NCU ADL CTF Writeup
+# [CE6107] The Attack and Defense of Computers
 
 - link: [ctf.adl](http://ctf.adl.tw/)
 - useful tool: [IDA](https://hex-rays.com/IDA-pro/)

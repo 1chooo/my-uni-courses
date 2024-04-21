@@ -84,4 +84,22 @@ do {
 } while (TRUE);
 ```
 
+
+```c
+while (true){ 
+
+    flag[i] = true; 
+    turn = j; 
+    while (flag[j] && turn = = j)
+        ;
+
+        /* critical section */
+ 
+    flag[i] = false;
+ 
+    /* remainder section */
+ 
+}
+```
+
 - (B) N process using Test & Set atomic operation

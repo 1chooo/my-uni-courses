@@ -76,7 +76,7 @@ Ans:
 +--+----+------+----------+--------------+
 |P2| P1 |  P4  |    P5    |      P3      |
 +--+----+------+----------+--------------+
-0    1  3           7    12   20
+0    1  3           7    12              20
 ```
 #### Round Robin
 
@@ -139,17 +139,15 @@ int main() {
 
 Ans:
 
-If the program have n `Fork()` call then it will have `2＾n-1` child processes, Here n=4 therefore child process 24-1 = 15, so total process by `program = child process + one main process` = 15 + 1 =16  
+If the program have n `Fork()` call then it will have `2＾n-1` child processes, Here n=4 therefore child process 2^4-1 = 15, so total process by `program = child process + one main process` = 15 + 1 =16  
 
-### 8.(4%) 請解釋解決starvation的 aging方式是怎麼運作的。(要提到時間不然會扣分)
-
-Ans:
+### 8.(4%) 請解釋解決 starvation 的 aging 方式是怎麼運作的。
 
 1. **Aging:** fixed priority scheduling is a scheduling discipline, in which tasks queued for utilizing a system resource are assigned a priority each.
 2. Set the **TIME QUANTUM** for each process avoid to unfairly utilize CPU time.
  
-### 9.(9%) short term medium-term long-term scheduler的差異
-Ans:
+### 9.(9%) short term, medium-term, long-term scheduler 的差異
+
 - short-term (CPU scheduler) — selects from jobs in memory those jobs that are ready to execute and allocates the CPU to them.
 - medium-term — used especially with time-sharing systems as an intermediate scheduling level. A swapping scheme is implemented to remove partially run programs from memory and reinstate them later to continue where they left off.
 - long-term (job scheduler) — determines which jobs are brought into memory for processing.
@@ -158,15 +156,15 @@ Ans:
 作業系統 筆記 (1) | Morris' Blog (morris821028.github.io)
 
 ### 10.(9%) process 跟thread 的差異，就 overhead of context switching, management cost, shared resources 來看
-Ans:
 
-![alt text](image-2.png)
+| | Process | Thread |
+|---|---------|--------|
+| Overhead of context switching | High | Low |
+| Management cost | High | Low |
+| Shared data access control | Process 之間無共享 | 共享 Code Section, Data Section, OS Resources |
+
  
-參考資料：2020中央資工OS曾黎明期中考
- 
 ### 11.(5%) n race condition problem 是甚麼，可以舉例。
-
-Ans:
 
 A race condition is an undesirable situation that occurs when a device or system attempts to perform two or more operations at the same time, but because of the nature of the device or system, the operations must be done in the proper sequence to be done correctly.
 
@@ -180,7 +178,7 @@ Race conditions are considered a common issue for multithreaded applications.
 ### 12.(8%) context switch 是甚麼 還有請說明他怎麼運作的。
 Ans:
 
-當 CPU 切換至其他行程，透過 context switch，系統會儲存當前形成狀態並仔入新行程狀態。Context switch 發生，將當前 process 相關資訊、狀態 (context) 存於 PCB 中 (process 及其 CPU 存入 memory)，並將下一個 schedule 的形成及其 PCB 載入 kernel 執行。
+當 CPU 切換至其他行程，透過 context switch，系統會儲存當前形成狀態並仔入新行程狀態。Context switch 發生，將當前 process 相關資訊、狀態 (context) 存於 PCB (Process Control Block) 中 (process 及其 CPU 存入 memory)，並將下一個 schedule 的形成及其 PCB 載入 kernel 執行。
  
 
 ### 13.(7%) multithreading 的好處，至少列三個

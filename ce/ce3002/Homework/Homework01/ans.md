@@ -2,67 +2,77 @@
 
 ## 1. Choice of Questions (40%)
 
-### 1. Which of the following would lead you to believe that a given system is an SMP-type system?
-   - [ ] A) Each processor is assigned a specific task.
-   - [ ] B) There is a boss–worker relationship between the processors.
-   - [x] C) Each processor performs all tasks within the operating system.
-   - [ ] D) None of the above
+### 1. Which of the following would lead you to believe that a given system is an SMP-type (Symmetric multiprocessing) system?
+
+- [ ] A) Each processor is assigned a specific task.
+- [ ] B) There is a boss–worker relationship between the processors.
+- [x] C) Each processor performs all tasks within the operating system.
+- [ ] D) None of the above
 
 ### 2. A ____ can be used to prevent a user program from never returning control to the operating system.
-   - [ ] A) portal	
-   - [ ] B) program counter	
-   - [ ] C) firewall	
-   - [x] D) timer
+
+- [ ] A) portal	
+- [ ] B) program counter	
+- [ ] C) firewall	
+- [x] D) timer
 
 
 ### 3. Two important design issues for cache memory are ____.
-   - [ ] A) speed and volatility
-   - [x] B) size and replacement policy
-   - [ ] C) power consumption and reusability
-   - [ ] D) size and access privileges
+
+- [ ] A) speed and volatility
+- [x] B) size and replacement policy
+- [ ] C) power consumption and reusability
+- [ ] D) size and access privileges
 
 
 ### 4. What statement concerning privileged instructions is considered false?
-   - [ ] A) They may cause harm to the system.
-   - [ ] B) They can only be executed in kernel mode.
-   - [x] C) They cannot be attempted from user mode.
-   - [ ] D) They are used to manage interrupts.
+
+- [ ] A) They may cause harm to the system.
+- [ ] B) They can only be executed in kernel mode.
+- [x] C) They cannot be attempted from user mode.
+- [ ] D) They are used to manage interrupts.
 
 ### 5. The two separate modes of operating in a system are
-   - [ ] A) supervisor mode and system mode
-   - [ ] B) kernel mode and privileged mode
-   - [ ] C) physical mode and logical mode
-   - [x] D) user mode and kernel mode
+
+- [ ] A) supervisor mode and system mode
+- [ ] B) kernel mode and privileged mode
+- [ ] C) physical mode and logical mode
+- [x] D) user mode and kernel mode
 
 ### 6. If a program terminates abnormally, a dump of memory may be examined by a ____ to determine the cause of the problem.
-   - [ ] A) module
-   - [x] B) debugger
-   - [ ] C) shell
-   - [ ] D) ontrol card
+
+- [ ] A) module
+- [x] B) debugger
+- [ ] C) shell
+- [ ] D) ontrol card
 
 ### 7. Policy ____.
-   - [ ] A) determines how to do something
-   - [x] B) determines what will be done
-   - [ ] C) is not likely to change across places
-   - [ ] D) is not likely to change over time
+
+- [ ] A) determines how to do something
+- [x] B) determines what will be done
+- [ ] C) is not likely to change across places
+- [ ] D) is not likely to change over time
 
 ### 8. A microkernel is a kernel ____.
-    - [ ] A) containing many components that are optimized to reduce resident memory size
-    - [ ] B) that is compressed before loading in order to reduce its resident memory size
-    - [ ] C) that is compiled to produce the smallest size possible when stored to disk
-    - [x] D) that is stripped of all nonessential components
+
+- [ ] A) containing many components that are optimized to reduce resident memory size
+- [ ] B) that is compressed before loading in order to reduce its resident memory size
+- [ ] C) that is compiled to produce the smallest size possible when stored to disk
+- [x] D) that is stripped of all nonessential components
 
 ### 9. To the SYSGEN program of an operating system, the least useful piece of information is _____.
-    - [ ] A) the CPU being used
-    - [ ] B) amount of memory available
-    - [x] C) what applications to install
-    - [ ] D) operating-system options such as buffer sizes or CPU scheduling algorithms
+
+- [ ] A) the CPU being used
+- [ ] B) amount of memory available
+- [x] C) what applications to install
+- [ ] D) operating-system options such as buffer sizes or CPU scheduling algorithms
 
 ### 10. _____ provide(s) an interface to the services provided by an operating system.
-    - [ ] A) Shared memory		
-    - [x] B) System calls	
-    - [ ] C) Simulators		
-    - [ ] D) ommunication
+
+- [ ] A) Shared memory		
+- [x] B) System calls	
+- [ ] C) Simulators		
+- [ ] D) ommunication
 
 ## 二、問答題 (60%)
 

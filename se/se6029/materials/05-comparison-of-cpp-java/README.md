@@ -91,7 +91,7 @@ Pet allpets[100] ;  // declare 100 objects, memory space is allcated. Constructo
 ### Java
 ```java
 class Pet {
- }
+}
 ```
 
 Usage:

@@ -116,11 +116,29 @@ int main() {
         }
     }
 }
+```
 
 - [ ] A) 128
 - [ ] B) 637
 - [x] C) 729
 - [ ] D) 7414
+
+
+同2樓說的 parent用fork()生出來的child會從fork()繼
+續往下做，所以i=0時，執行 fork()==0，這裏fork生下而fork()則分別return parent他的child的pid(不為0)
+續往下做，所以i=0時，執行 fork()==0，這裏fork生下 01/25 12:31
+生下第一個child 而fork()則分別return parent他的 01/25 12:31
+child的pid(不為0) 同時return給child 0,所以child會 01/25 12:32
+進入{fork();fork();fork()}。第一次fork時生下一個 01/25 12:34
+一個child(1+1-->1+2); 第二個fork()時, 後面兩個 01/25 12:36
+child各生下一個，所以現在(1+2-->1+4);第三次fork() 01/25 12:36
+時，後面四個都再生一個，所以(1+4-->1+8)，執行完 01/25 12:37
+i=0後，共有9個process。同理, i=1時，這9個分別再生 01/25 12:37
+出9*8=72個，i=1結束共有9+9*8=81個; i=2時生下81*8 01/25 12:38
+=648個。i=2結束，共有81+648=729個。程式結束。
+
+https://www.cntofu.com/book/46/linux_system/linuxxi_tong_bian_cheng_zhi_jin_cheng_ff08_san_ff0.md
+
 
 ### 11. What would be the output of the following C program that uses the Pthreads API?
 
@@ -285,7 +303,7 @@ Consumer processes:
 - [x] C) Shortest job first
 - [x] D) Priority
 
-### 5. CPU scheduling decistions may take place when a process:
+### 5. CPU scheduling decisions may take place when a process:
 
 - [x] A) switches from running to waiting state
 - [x] B) Switches from the waiting state to the ready state
