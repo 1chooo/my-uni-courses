@@ -1,1 +1,0 @@
-mkdocs serve > mkdocs.log

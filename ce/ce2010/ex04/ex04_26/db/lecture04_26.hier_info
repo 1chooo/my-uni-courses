@@ -1,9 +1,0 @@
-|lecture04_26
-Y <= inst2.DB_MAX_OUTPUT_PORT_TYPE
-C => inst6.IN0
-B => inst3.IN0
-B => inst5.IN0
-D => inst4.IN0
-A => inst.IN0
-
-
