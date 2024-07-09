@@ -1,4 +1,0 @@
-- 註解全部重寫
-- linechart的role-playing以及strategy有問題
-- 圖的大小看要不要統一
-- 圖片標題位置調整

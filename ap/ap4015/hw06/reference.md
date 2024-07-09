@@ -1,3 +1,0 @@
-- [Plot stream line](https://matplotlib.org/stable/gallery/images_contours_and_fields/plot_streamplot.html)
-- [How to calculate and plot wind speed using MERRA-2 wind component data using Python](https://disc.gsfc.nasa.gov/information/howto?title=How%20to%20calculate%20and%20plot%20wind%20speed%20using%20MERRA-2%20wind%20component%20data%20using%20Python)
-- [](https://wrf-python.readthedocs.io/en/latest/plot.html#matplotlib-with-basemap)

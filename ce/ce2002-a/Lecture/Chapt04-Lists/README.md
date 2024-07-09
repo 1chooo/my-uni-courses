@@ -1,2 +1,0 @@
-# Chapter04 - Lists
-
